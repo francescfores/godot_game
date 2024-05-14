@@ -2,3 +2,6 @@ res://game_singleplayer.tscn
 res://level/tileset.tres
 res://level/props/wind_sway.tres
 res://gui/theme.tres
+res://addons/virtual_joystick/test/test.tscn
+res://gui/default.tres
+res://gui/pause_menu_singleplayer.tscn
