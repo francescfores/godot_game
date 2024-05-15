@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bq2sqb1u1l5ve"]
 
-[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_4k4lh"]
-[ext_resource type="Texture2D" uid="uid://kq1h264n0gxs" path="res://icon.svg" id="2_44wa8"]
-[ext_resource type="Script" path="res://addons/virtual_joystick/test/player.gd" id="3_dsmxw"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick_custom/virtual_joystick_scene.tscn" id="1_4k4lh"]
+[ext_resource type="Texture2D" uid="uid://ghyf3bh0bywq" path="res://icon.svg" id="2_44wa8"]
+[ext_resource type="Script" path="res://addons/virtual_joystick_custom/test/player.gd" id="3_dsmxw"]
 
 [node name="Test" type="Node2D"]
 
@@ -11,6 +11,7 @@
 [node name="Virtual joystick left" parent="UI" instance=ExtResource("1_4k4lh")]
 
 [node name="Virtual joystick right" parent="UI" instance=ExtResource("1_4k4lh")]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_right = 1.0
@@ -23,7 +24,8 @@ joystick_mode = 1
 use_input_actions = false
 
 [node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("joystick_left", "joystick_right")]
-position = Vector2(600, 300)
+visible = false
+position = Vector2(420, 248)
 texture = ExtResource("2_44wa8")
 script = ExtResource("3_dsmxw")
 joystick_left = NodePath("../UI/Virtual joystick left")

@@ -10,3 +10,5 @@ res://addons/virtual_joystick/virtual_joystick_scene.tscn
 res://addons/virtual_joystick/virtual_joystick.gd
 res://level/level.tscn
 res://game_splitscreen.tscn
+res://addons/virtual_joystick_custom/test/test.tscn
+res://addons/virtual_joystick_custom/virtual_joystick.gd
