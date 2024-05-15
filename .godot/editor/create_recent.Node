@@ -1,8 +1,10 @@
+CollisionShape2D
+Area2D
+Node2D
 AnimationPlayer
 AnimationTree
 AnimatedSprite2D
 Sprite2D
 VirtualJoystick
 CanvasLayer
-Node2D
 Node

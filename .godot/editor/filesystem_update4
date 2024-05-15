@@ -7,3 +7,8 @@ res://level/level.tscn
 res://game_splitscreen.tscn
 res://game_singleplayer.tscn
 res://addons/virtual_joystick_custom/test/test.tscn
+res://level/coin.tscn
+res://level/coin.gd
+res://game.gd
+res://next_level.gd
+res://levels/level2/level2.tscn
