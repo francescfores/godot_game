@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bidhvxf3fjnid"
+path="res://.godot/imported/enemi_rock.ase-4fc3c2ac2f797b34ed2e09f17e6f82ef.res"
+
+[deps]
+
+source_file="res://assets/aseprites/wario/enemi_rock.ase"
+dest_files=["res://.godot/imported/enemi_rock.ase-4fc3c2ac2f797b34ed2e09f17e6f82ef.res"]
+
+[params]
+

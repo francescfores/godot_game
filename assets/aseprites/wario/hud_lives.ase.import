@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://vgqja7wk3qb0"
+path="res://.godot/imported/hud_lives.ase-70f8e71566fd8e45e0a8c8aa6477dabf.res"
+
+[deps]
+
+source_file="res://assets/aseprites/wario/hud_lives.ase"
+dest_files=["res://.godot/imported/hud_lives.ase-70f8e71566fd8e45e0a8c8aa6477dabf.res"]
+
+[params]
+

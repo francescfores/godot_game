@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://2h8htawcdv8p"
+path="res://.godot/imported/enemi_2.ase-5b90f5f5c14215dac1930f27315bcc39.res"
+
+[deps]
+
+source_file="res://assets/aseprites/wario/enemi_2.ase"
+dest_files=["res://.godot/imported/enemi_2.ase-5b90f5f5c14215dac1930f27315bcc39.res"]
+
+[params]
+

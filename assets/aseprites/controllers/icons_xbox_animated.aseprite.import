@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bn2sjkcvwbtcr"
+path="res://.godot/imported/icons_xbox_animated.aseprite-bbfbdea62fa542cbb7a5a40e62326c27.res"
+
+[deps]
+
+source_file="res://assets/aseprites/controllers/icons_xbox_animated.aseprite"
+dest_files=["res://.godot/imported/icons_xbox_animated.aseprite-bbfbdea62fa542cbb7a5a40e62326c27.res"]
+
+[params]
+
