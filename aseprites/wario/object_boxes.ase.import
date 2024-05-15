@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b8b7tyq7x26j7"
+path="res://.godot/imported/object_boxes.ase-efb479ff15908f81e1f8b6becaa475cb.res"
+
+[deps]
+
+source_file="res://aseprites/wario/object_boxes.ase"
+dest_files=["res://.godot/imported/object_boxes.ase-efb479ff15908f81e1f8b6becaa475cb.res"]
+
+[params]
+
