@@ -20,8 +20,6 @@ layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("4_x6l06")]
 
-[node name="Node" type="Node" parent="."]
-
 [node name="Test" parent="." instance=ExtResource("5_4mkvk")]
 
 [connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
