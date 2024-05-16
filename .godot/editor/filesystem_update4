@@ -15,3 +15,11 @@ res://level/tileset.tres
 res://levels/level_4/level_4.tscn
 res://levels/level_4/level/tileset.tres
 res://levels/level_4/level/level.tscn
+res://next_level.gd
+res://scenes/scene_1/scene_1.tscn
+res://scenes/scene_1/level/tileset.tres
+res://scenes/scene_2/level/tileset.tres
+res://scenes/scene_1/level/level_1.tscn
+res://scenes/scene_2/scene_2.tscn
+res://scenes/scene_2/level/level_1.tscn
+res://scenes/scene_2/level/level_2.tscn
