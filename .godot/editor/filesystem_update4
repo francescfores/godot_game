@@ -1,8 +1,8 @@
-res://levels/level_1/level/level.tscn
+res://game_singleplayer.tscn
 res://level/tileset.tres
 res://level/props/wind_sway.tres
 res://gui/theme.tres
-res://game_singleplayer.tscn
 res://levels/level_1/level_1.tscn
 res://level/level.tscn
+res://levels/level_1/level/level.tscn
 res://player/player.tscn

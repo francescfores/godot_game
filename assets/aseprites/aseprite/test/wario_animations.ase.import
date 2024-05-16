@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://budmwb51ec3mo"
+path="res://.godot/imported/wario_animations.ase-942aae8d9065850e87b5af71134de0ef.res"
+
+[deps]
+
+source_file="res://assets/aseprites/aseprite/test/wario_animations.ase"
+dest_files=["res://.godot/imported/wario_animations.ase-942aae8d9065850e87b5af71134de0ef.res"]
+
+[params]
+

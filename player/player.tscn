@@ -443,8 +443,9 @@ _data = {
 "run_weapon": SubResource("Animation_120ag")
 }
 
-[sub_resource type="RectangleShape2D" id="11"]
-size = Vector2(42.5, 54.5)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o141g"]
+radius = 20.0
+height = 73.0
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.8, 0.8)
@@ -538,7 +539,7 @@ limit_bottom = 690
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
-shape = SubResource("11")
+shape = SubResource("CapsuleShape2D_o141g")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5")
