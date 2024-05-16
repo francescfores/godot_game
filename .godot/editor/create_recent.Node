@@ -1,6 +1,7 @@
-Level_1
-Node
 Node2D
+Level_1
+Level1
+Node
 CollisionShape2D
 Area2D
 AnimationPlayer

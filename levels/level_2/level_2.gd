@@ -1,4 +1,4 @@
-class_name Level1 extends Node
+class_name Level2 extends Node
 
 
 @onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu
