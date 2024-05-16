@@ -4,7 +4,7 @@ class_name Gun extends Marker2D
 
 
 const BULLET_VELOCITY = 850.0
-const BULLET_SCENE = preload("res://player/bullet.tscn")
+const BULLET_SCENE = preload("res://src/player/bullet.tscn")
 
 @onready var sound_shoot := $Shoot as AudioStreamPlayer2D
 @onready var timer := $Cooldown as Timer

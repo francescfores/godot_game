@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b01brytl75mwa"
-path="res://.godot/imported/shoot.wav-c76164c7ce3589c9fdcbf989e9819ed2.sample"
+path="res://.godot/imported/shoot.wav-28ebff144ecd8ae239c7791d832fbcba.sample"
 
 [deps]
 
-source_file="res://player/shoot.wav"
-dest_files=["res://.godot/imported/shoot.wav-c76164c7ce3589c9fdcbf989e9819ed2.sample"]
+source_file="res://src/player/shoot.wav"
+dest_files=["res://.godot/imported/shoot.wav-28ebff144ecd8ae239c7791d832fbcba.sample"]
 
 [params]
 

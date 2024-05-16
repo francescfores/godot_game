@@ -6,3 +6,5 @@ res://levels/level_1/level_1.tscn
 res://level/level.tscn
 res://levels/level_1/level/level.tscn
 res://player/player.tscn
+res://src/player/player.tscn
+res://src/player/gun.gd
