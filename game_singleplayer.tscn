@@ -33,7 +33,5 @@ shape = SubResource("RectangleShape2D_hpsh6")
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("6_3874m")]
-fade_in_duration = 0
-fade_out_duration = 0
 
 [connection signal="body_entered" from="Level/next_level" to="Level/next_level" method="_on_body_entered"]

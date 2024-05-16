@@ -10,6 +10,7 @@
 size = Vector2(118, 196)
 
 [node name="Level1" type="Node"]
+process_mode = 3
 script = ExtResource("1_m6xy5")
 
 [node name="Level3" parent="." instance=ExtResource("2_n4ojs")]
@@ -32,7 +33,5 @@ position = Vector2(209, 403)
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_a6xie")]
-fade_in_duration = 0
-fade_out_duration = 0
 
 [connection signal="body_entered" from="Level3/next_level" to="Level3/next_level" method="_on_body_entered"]
