@@ -24,7 +24,7 @@ script = ExtResource("4_5ocl4")
 escena = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/next_level"]
-position = Vector2(352, 580)
+position = Vector2(238, 317)
 shape = SubResource("RectangleShape2D_hpsh6")
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
