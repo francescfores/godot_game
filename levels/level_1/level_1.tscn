@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cij5xg1vqyuf5"]
+[gd_scene load_steps=9 format=3 uid="uid://cij5xg1vqyuf5"]
 
 [ext_resource type="Script" path="res://levels/level_1/level_1.gd" id="1_bqfde"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="3_mnrpn"]
 [ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
-[ext_resource type="PackedScene" uid="uid://b2v6dinl1o7qe" path="res://levels/level_1/level/level.tscn" id="4_o41jp"]
+[ext_resource type="PackedScene" uid="uid://b2v6dinl1o7qe" path="res://levels/level_2/level/level.tscn" id="4_o41jp"]
 [ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
 [ext_resource type="PackedScene" uid="uid://bq2sqb1u1l5ve" path="res://addons/virtual_joystick_custom/test/test.tscn" id="6_dinyu"]
+[ext_resource type="Script" path="res://levels/level_1/level/level.gd" id="8_aaluj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hpsh6"]
 size = Vector2(118, 196)
@@ -14,14 +15,13 @@ size = Vector2(118, 196)
 process_mode = 3
 script = ExtResource("1_bqfde")
 
-[node name="Test" parent="." instance=ExtResource("6_dinyu")]
-
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
 
 [node name="Level1" parent="." instance=ExtResource("4_o41jp")]
+script = ExtResource("8_aaluj")
 
 [node name="Player" parent="Level1" instance=ExtResource("3_mnrpn")]
 position = Vector2(90, 546)
@@ -31,11 +31,13 @@ script = ExtResource("4_3cu1w")
 escena = "2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level1/next_level"]
-position = Vector2(-107, 552)
+position = Vector2(-53, 354)
 shape = SubResource("RectangleShape2D_hpsh6")
 
 [node name="spawn_player" type="Node2D" parent="Level1"]
 position = Vector2(209, 403)
+
+[node name="Test" parent="." instance=ExtResource("6_dinyu")]
 
 [connection signal="coin_collected" from="Level1/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
 [connection signal="body_entered" from="Level1/next_level" to="Level1/next_level" method="_on_body_entered"]

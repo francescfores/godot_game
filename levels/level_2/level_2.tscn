@@ -32,12 +32,12 @@ shape = SubResource("RectangleShape2D_hpsh6")
 [node name="spawn_player" type="Node2D" parent="Level2"]
 position = Vector2(209, 403)
 
-[node name="Test" parent="." instance=ExtResource("6_dinyu")]
-
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
+
+[node name="Test" parent="." instance=ExtResource("6_dinyu")]
 
 [connection signal="coin_collected" from="Level2/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
 [connection signal="body_entered" from="Level2/next_level" to="Level2/next_level" method="_on_body_entered"]
