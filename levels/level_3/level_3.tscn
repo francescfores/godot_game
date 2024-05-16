@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://levels/level_3/level_3.gd" id="1_1u114"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="3_mnrpn"]
 [ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
-[ext_resource type="PackedScene" uid="uid://dou14gydlvtmg" path="res://levels/level_3/level/level.tscn" id="4_yatxs"]
+[ext_resource type="PackedScene" uid="uid://dou14gydlvtmg" path="res://levels/level_4/level/level.tscn" id="4_yatxs"]
 [ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
 [ext_resource type="PackedScene" uid="uid://bq2sqb1u1l5ve" path="res://addons/virtual_joystick_custom/test/test.tscn" id="6_dinyu"]
 

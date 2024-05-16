@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://egrmcnk4rpye"]
 
-[ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://scenes/scene_1/level/tileset.tres" id="1_d7s17"]
+[ext_resource type="TileSet" uid="uid://08mkofgbxx70" path="res://scenes/scene_3/level/tileset.tres" id="1_d7s17"]
 [ext_resource type="Material" uid="uid://djwm5nol3d801" path="res://level/props/wind_sway.tres" id="2_nvw3x"]
 [ext_resource type="Texture2D" uid="uid://ddmq5iwm2qd1j" path="res://level/props/flower_1.webp" id="9_0tvmb"]
 [ext_resource type="Texture2D" uid="uid://crfy1osk1c1gc" path="res://level/props/ground_flowers_1.webp" id="10_rxccs"]
