@@ -1,39 +1,38 @@
-class_name PauseMenu extends Control
+class_name GameSinlgePlayer extends Control
 
 
-@export var fade_in_duration := 0
-@export var fade_out_duration := 0
+@export var fade_in_duration := 0.3
+@export var fade_out_duration := 0.2
 
 @onready var center_cont := $ColorRect/CenterContainer as CenterContainer
 @onready var resume_button := center_cont.get_node(^"VBoxContainer/ResumeButton") as Button
 @onready var coins_counter := $ColorRect/CoinsCounter as CoinsCounter
 
+@export var escena := ""
 
 func _ready() -> void:
 	hide()
 
 
 func close() -> void:
-		print_debug('open')
-		get_tree().paused = false
-		var tween := create_tween()
-		tween.tween_property(
-			self,
-			^"modulate:a",
-			0.0,
-			fade_out_duration
-		).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
-		tween.parallel().tween_property(
-			center_cont,
-			^"anchor_bottom",
-			0.5,
-			fade_out_duration
-		).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		tween.tween_callback(hide)
+	var tween := create_tween()
+	get_tree().paused = false
+	tween.tween_property(
+		self,
+		^"modulate:a",
+		0.0,
+		fade_out_duration
+	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(
+		center_cont,
+		^"anchor_bottom",
+		0.5,
+		fade_out_duration
+	).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(hide)
 
 
 func open() -> void:
-	print_debug('open')
 	show()
 	resume_button.grab_focus()
 
@@ -59,7 +58,8 @@ func _on_coin_collected() -> void:
 
 
 func _on_resume_button_pressed() -> void:
-	close()
+			get_tree().change_scene_to_file("res://scenes/scene_"+escena+"/scene_"+escena+".tscn")
+	#close()
 
 
 func _on_singleplayer_button_pressed() -> void:
@@ -76,5 +76,4 @@ func _on_splitscreen_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	if visible:
-		print_debug('quit')
 		get_tree().quit()
