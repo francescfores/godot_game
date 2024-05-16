@@ -21,7 +21,7 @@ position = Vector2(90, 546)
 
 [node name="next_level" type="Area2D" parent="Level"]
 script = ExtResource("4_5ocl4")
-escena = "3"
+escena = "1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/next_level"]
 position = Vector2(206, 556)

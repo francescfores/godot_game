@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://6y1l5ut3wjh3"]
+
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="3_mnrpn"]
+[ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
+[ext_resource type="PackedScene" uid="uid://c7ai4bigaryci" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
+[ext_resource type="PackedScene" uid="uid://dhn0vaibbt76n" path="res://levels/level_2/level/level.tscn" id="7_1otja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v8o8"]
+size = Vector2(118, 196)
+
+[node name="Level2" type="Node"]
+
+[node name="Level2" parent="." instance=ExtResource("7_1otja")]
+
+[node name="Player" parent="Level2" instance=ExtResource("3_mnrpn")]
+position = Vector2(90, 546)
+
+[node name="next_level" type="Area2D" parent="Level2"]
+script = ExtResource("4_3cu1w")
+escena = "3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/next_level"]
+position = Vector2(-96, 393)
+shape = SubResource("RectangleShape2D_8v8o8")
+
+[node name="spawn_player" type="Node2D" parent="Level2"]
+position = Vector2(209, 403)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
+
+[connection signal="body_entered" from="Level2/next_level" to="Level2/next_level" method="_on_body_entered"]
