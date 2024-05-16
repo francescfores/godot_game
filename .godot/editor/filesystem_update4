@@ -2,10 +2,10 @@ res://game_singleplayer.tscn
 res://src/scenes/scene_3/level/tileset.tres
 res://level/props/wind_sway.tres
 res://gui/theme.tres
-res://gui/pause_menu_singleplayer.tscn
+res://src/gui/pause_menu.gd
+res://src/gui/theme.tres
 res://gui/pause_menu.tscn
-res://game_splitscreen.tscn
-res://scenes/scene_2/scene_2.tscn
-res://next_level.gd
-res://src/scenes/scene_2/scene_2.tscn
-res://src/scenes/scene_2/scene_2.gd
+res://gui/pause_menu_singleplayer.tscn
+res://src/game_singleplayer.tscn
+res://src/gui/pause_menu.tscn
+res://src/gui/pause_menu_singleplayer.tscn
