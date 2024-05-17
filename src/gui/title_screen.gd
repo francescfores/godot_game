@@ -1,4 +1,4 @@
-class_name PauseMenu extends Control
+class_name TitleScreen extends Control
 
 
 @export var fade_in_duration := 0
@@ -10,7 +10,8 @@ class_name PauseMenu extends Control
 
 
 func _ready() -> void:
-	hide()
+	print_debug('open')
+	#hide()
 
 
 func close() -> void:
@@ -65,13 +66,13 @@ func _on_resume_button_pressed() -> void:
 func _on_singleplayer_button_pressed() -> void:
 	if visible:
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://game_singleplayer.tscn")
+		get_tree().change_scene_to_file("res://src/game_singleplayer.tscn")
 
 
 func _on_splitscreen_button_pressed() -> void:
 	if visible:
 		get_tree().paused = false
-		get_tree().change_scene_to_file("res://game_splitscreen.tscn")
+		get_tree().change_scene_to_file("res://src/game_splitscreen.tscn")
 
 
 func _on_quit_button_pressed() -> void:

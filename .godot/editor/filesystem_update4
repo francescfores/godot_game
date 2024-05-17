@@ -12,3 +12,6 @@ res://src/gui/pause_menu_singleplayer.tscn
 res://gui/pause_menu.gd
 res://gui/pause_menu_splitscreen.tscn
 res://src/game_splitscreen.tscn
+res://src/game.gd
+res://src/gui/title_screen.gd
+res://src/gui/title_screen.tscn
