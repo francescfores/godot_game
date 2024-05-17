@@ -16,8 +16,6 @@ script = ExtResource("2")
 layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("6_3874m")]
-fade_in_duration = 0
-fade_out_duration = 0
 
 [node name="Level" parent="." instance=ExtResource("3")]
 
