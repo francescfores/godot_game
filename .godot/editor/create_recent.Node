@@ -1,3 +1,4 @@
+Control
 VBoxContainer
 HBoxContainer
 TextureRect
@@ -5,7 +6,6 @@ BoxContainer
 Node
 Switch_level
 TitleScreen
-Control
 Node2D
 Level3
 Level1

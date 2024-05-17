@@ -43,33 +43,45 @@ func _on_ClickButton_pressed() -> void:
 
 # Esta es la lista de niveles, cada nivel tiene un nombre y una imagen
 var levels = [
-	{"name": "Level 1", "image_path": "res://assets/images/platformer.webp"},
+	{"name": "Level 1", "image_path": "res://assets/tiles/catastrophi_tiles.png"},
 	{"name": "Level 2", "image_path": "res://assets/images/platformer.webp"},
 	{"name": "Level 3", "image_path": "res://assets/images/platformer.webp"},
 	{"name": "Level 4", "image_path": "res://assets/images/platformer.webp"}
 ]
 
 func _ready():
-	var vbox_container =  $CenterContainer/HBoxContainer
-	if not vbox_container:
-		print("Error: CenterContainer/VBoxContainer not found!")
+	var hbox_container = $CenterContainer/HBoxContainer
+	if not hbox_container:
+		print("Error: CenterContainer/HBoxContainer not found!")
 		return
 		
+	var vbox_template =  $CenterContainer/HBoxContainer/VBoxContainer
+	if not vbox_template:
+		print("Error: CenterContainer/VBoxContainer not found!")
+		return
+	vbox_template.visible = false
+
 	for level in levels:
-		var level_box = create_level_box(level["name"], level["image_path"])
-		vbox_container.add_child(level_box)
+		create_level_box(level["name"], level["image_path"], hbox_container, vbox_template)
 
-func create_level_box(level_name: String, image_path: String) -> VBoxContainer:
-	var level_vbox = VBoxContainer.new()
-	var label = Label.new()
-	label.text = level_name
-	level_vbox.add_child(label)
+func create_level_box(level_name: String, image_path: String, hbox_container: HBoxContainer, vbox_template: VBoxContainer) -> void:
+	var new_vbox = vbox_template.duplicate()  # Clonar el VBoxContainer template
 	
-	var texture_rect = TextureRect.new()
-	var texture = load(image_path)
-	texture_rect.texture = texture
-	texture_rect.expand_mode = TextureRect.EXPAND_FIT_HEIGHT
-	level_vbox.add_child(texture_rect)
+	# Configurar el Label del nuevo VBoxContainer
+	var label = new_vbox.get_node("Label")
+	if label:
+		label.text = level_name
+	else:
+		print("Error: Label node not found in VBoxContainer template!")
 	
-	return level_vbox
-
+	# Configurar la imagen del nuevo VBoxContainer
+	var image = new_vbox.get_node("TextureRect")
+	if image:
+		var texture = load(image_path)
+		image.texture = texture
+	else:
+		print("Error: Image node not found in VBoxContainer template!")
+	
+	hbox_container.add_child(new_vbox)  # Agregar el nuevo VBoxContainer al HBoxContainer
+	# Hacer visible el nuevo VBoxContainer duplicado
+	new_vbox.visible = true
