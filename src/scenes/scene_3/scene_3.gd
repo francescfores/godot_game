@@ -1,6 +1,8 @@
-class_name Level1 extends Node
+extends Node
+
 
 @onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"toggle_fullscreen"):
@@ -13,14 +15,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_tree().root.set_input_as_handled()
 
 	elif event.is_action_pressed(&"toggle_pause"):
-		print_debug('toggle_pause')
 		var tree := get_tree()
 		tree.paused = not tree.paused
-		
 		if tree.paused:
-			print_debug('toggle_pause')
 			_pause_menu.open()
 		else:
-			print_debug('toggle_open')
 			_pause_menu.close()
 		get_tree().root.set_input_as_handled()

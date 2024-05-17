@@ -8,9 +8,15 @@ class_name TitleScreen extends Control
 @onready var resume_button := center_cont.get_node(^"VBoxContainer/ResumeButton") as Button
 @onready var coins_counter := $ColorRect/CoinsCounter as CoinsCounter
 
+@export var scene := ""
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://src/scenes/scene_"+scene+"/scene_"+scene+".tscn")
 
 func _ready() -> void:
-	hide()
+	print_debug('open')
+	#hide()
 
 
 func close() -> void:
@@ -59,7 +65,8 @@ func _on_coin_collected() -> void:
 
 
 func _on_resume_button_pressed() -> void:
-	close()
+	get_tree().change_scene_to_file("res://src/scenes/scene_"+scene+"/scene_"+scene+".tscn")
+	#close()
 
 
 func _on_singleplayer_button_pressed() -> void:

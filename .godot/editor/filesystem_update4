@@ -1,10 +1,12 @@
-res://src/game_singleplayer.tscn
+res://src/gui/title_screen.tscn
 res://gui/theme.tres
 res://src/scenes/scene_3/level/tileset.tres
 res://level/props/wind_sway.tres
-res://src/game.gd
-res://src/gui/title_screen.tscn
-res://gui/pause_menu.gd
-res://src/scenes/scene_2/scene_2.gd
+res://src/game_singleplayer.tscn
 res://gui/pause_menu_singleplayer.tscn
+res://src/scenes/scene_3/scene_3.tscn
+res://src/scenes/scene_3/level/level_3.tscn
+res://src/game_splitscreen.tscn
+res://src/scenes/scene_2/scene_2_spleetscreen.tscn
+res://src/scenes/scene_2/level/level_2.tscn
 res://src/scenes/scene_2/scene_2.tscn
