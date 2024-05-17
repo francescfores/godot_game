@@ -1,5 +1,6 @@
 res://src/game_singleplayer.tscn
+res://gui/theme.tres
 res://src/scenes/scene_3/level/tileset.tres
 res://level/props/wind_sway.tres
-res://gui/theme.tres
-res://src/scenes/scene_2/scene_2.tscn
+res://src/game.gd
+res://src/gui/title_screen.tscn
