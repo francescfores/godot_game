@@ -1,7 +1,7 @@
 class_name Game extends Node
 
 
-@onready var _pause_menu := $InterfaceLayer/TitleScreen as TitleScreen
+@onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu
 
 
 func _unhandled_input(event: InputEvent) -> void:
