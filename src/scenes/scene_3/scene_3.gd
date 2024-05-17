@@ -1,4 +1,4 @@
-extends Node
+class_name Scene_3 extends Node
 
 
 @onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu

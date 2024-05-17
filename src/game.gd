@@ -2,7 +2,7 @@ class_name Game extends Node
 
 
 @onready var _pause_menu := $InterfaceLayer/TitleScreen as TitleScreen
-
+var level=''
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"toggle_fullscreen"):
@@ -12,7 +12,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		#get_tree().root.set_input_as_handled()
+		get_tree().root.set_input_as_handled()
 
 	elif event.is_action_pressed(&"toggle_pause"):
 		var tree := get_tree()
@@ -21,4 +21,4 @@ func _unhandled_input(event: InputEvent) -> void:
 			_pause_menu.open()
 		else:
 			_pause_menu.close()
-		#get_tree().root.set_input_as_handled()
+		get_tree().root.set_input_as_handled()

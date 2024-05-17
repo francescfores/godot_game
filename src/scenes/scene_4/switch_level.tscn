@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvs20kltq7t57"]
+
+[ext_resource type="Script" path="res://src/scenes/scene_4/switch_level.gd" id="1_8jwex"]
+[ext_resource type="PackedScene" uid="uid://w8a0c25e54ob" path="res://src/scenes/scene_4/levels/GrassLevel.tscn" id="2_dkj6h"]
+[ext_resource type="PackedScene" uid="uid://b4y8yco1k2lbi" path="res://src/scenes/scene_4/levels/DesertLevel.tscn" id="3_04mps"]
+[ext_resource type="PackedScene" uid="uid://dnqtrjfw7vr01" path="res://src/scenes/scene_4/levels/LevelList.tscn" id="4_4mhj2"]
+
+[node name="Scene4" type="Node"]
+process_mode = 3
+script = ExtResource("1_8jwex")
+
+[node name="GrassLevel" parent="." instance=ExtResource("2_dkj6h")]
+visible = false
+
+[node name="DesertLevel" parent="." instance=ExtResource("3_04mps")]
+visible = false
+
+[node name="LevelList" parent="." instance=ExtResource("4_4mhj2")]
+level_name = "desert"

@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4y8yco1k2lbi"]
+
+[ext_resource type="Script" path="res://src/scenes/scene_4/Level.gd" id="1_q7gam"]
+
+[node name="DesertLevel" type="CanvasLayer"]
+script = ExtResource("1_q7gam")
+level_name = "desert"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.94902, 0.87451, 0.380392, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+text = "Desert Level"
+uppercase = true
+
+[node name="ChangeSceneButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = 71.0
+offset_right = 190.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "Change Scene"
+
+[node name="ClickLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 69.0
+offset_right = -35.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clicks: 0"
+uppercase = true
+
+[node name="ClickButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -164.0
+offset_top = 5.0
+offset_right = -87.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click Me!"
+
+[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+
+[node name="LevelLoadedSound" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
+[connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
