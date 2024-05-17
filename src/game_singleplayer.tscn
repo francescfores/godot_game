@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/game.gd" id="2"]
 [ext_resource type="PackedScene" uid="uid://ctgumjaytuoch" path="res://level/level.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cdm6bhvcw3iqr" path="res://src/gui/title_screen.tscn" id="4_yoglm"]
 [ext_resource type="PackedScene" uid="uid://bq2sqb1u1l5ve" path="res://addons/virtual_joystick_custom/test/test.tscn" id="6_4dkb7"]
-[ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="6_3874m"]
 [ext_resource type="Script" path="res://next_level.gd" id="6_tkbmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dgby"]
@@ -19,7 +19,7 @@ script = ExtResource("2")
 [node name="InterfaceLayer" type="CanvasLayer" parent="."]
 layer = 100
 
-[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("6_3874m")]
+[node name="TitleScreen" parent="InterfaceLayer" instance=ExtResource("4_yoglm")]
 
 [node name="Level" parent="." instance=ExtResource("3")]
 
