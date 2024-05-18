@@ -1,8 +1,9 @@
-class_name LevelList extends CanvasLayer
+class_name LevelsList extends CanvasLayer
 
 
-signal level_changed(level_name)
+signal level_changed(next_name)
 
+@export  var next_name = ""
 @export  var level_name = "level"
 
 var level_parameters := {
@@ -34,7 +35,7 @@ func set_clicks(new_click_amount: int):
 func _on_ChangeSceneButton_pressed() -> void:
 	$ButtonClickedSound.play()
 	$ChangeSceneButton.disabled = true
-	emit_signal("level_changed", level_name)
+	emit_signal("level_changed", next_name)
 
 
 func _on_ClickButton_pressed() -> void:

@@ -1,9 +1,12 @@
-class_name Switch_level extends Node
+class_name LevelsMain extends Node
 
 
 var next_level = null
 
-@onready var current_level = $LevelList
+#Cargar la Escena o el nivel a elegir pero se tiene que
+#agregar al nodo par coger la referencia $nombredelnodo
+# y ocultar o quitar los otros
+@onready var current_level = $LevelsList
 
 func _ready() -> void:
 	current_level.connect("level_changed", Callable(self, "handle_level_changed"))
@@ -15,17 +18,11 @@ func handle_level_changed(current_level_name: String):
 	#get_tree().change_scene_to_file("res://src/scenes/scene_4/levels/DesertLevel.tscn")
 	#get_tree().change_scene_to_file("res://src/scenes/scene_4/levels/"+ next_level_name +"Level.tscn")
 	print_debug(current_level_name)
-	match current_level_name:
-		"grass":
-			next_level_name = "Desert"
-		"desert":
-			next_level_name = "Grass"
-		_:
-			return
+	next_level_name = current_level_name
 			
 	print_debug(next_level_name)
-	next_level = load("res://src/scenes/scene_4/levels/%sLevel.tscn" % next_level_name).instantiate()
-
+	next_level = load("res://src/scenes/scene_levels/level_"+ next_level_name +"/level.tscn").instantiate()
+	#next_level = load("res://src/scenes/levels/"+ next_level_name +"Level.tscn").instantiate()
 	add_child(next_level)
 	next_level.connect("level_changed", Callable(self, "handle_level_changed"))
 	next_level.play_loaded_sound()

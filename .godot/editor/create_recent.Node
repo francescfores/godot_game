@@ -1,10 +1,10 @@
+CanvasLayer
 Control
 VBoxContainer
 HBoxContainer
 TextureRect
 BoxContainer
 Node
-Switch_level
 TitleScreen
 Node2D
 Level3

@@ -66,7 +66,7 @@ func _on_coin_collected() -> void:
 
 func _on_resume_button_pressed() -> void:
 	#get_tree().change_scene_to_file("res://src/scenes/scene_"+scene+"/scene_"+scene+".tscn")
-			get_tree().change_scene_to_file("res://src/scenes/scene_4/switch_level.tscn")
+			get_tree().change_scene_to_file("res://src/scenes/main.tscn")
 	#close()
 
 

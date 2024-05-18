@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://b84eg7nkkqf4m"]
+
+[ext_resource type="AudioStream" uid="uid://bikkxqt1epbam" path="res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav" id="1_5a1sn"]
+[ext_resource type="Script" path="res://src/scenes/Scene.gd" id="1_femx8"]
+
+[node name="menuLevel" type="CanvasLayer"]
+script = ExtResource("1_femx8")
+next_name = "Desert"
+level_name = "Grass"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.435294, 0.94902, 0.380392, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0
+offset_top = -208.0
+offset_right = 73.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "menu scene"
+uppercase = true
+
+[node name="ChangeSceneButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -19.0
+offset_right = 83.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Change Scene"
+
+[node name="ClickLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 220.0
+offset_top = -168.0
+offset_right = 291.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clicks: 0"
+uppercase = true
+
+[node name="ClickButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -132.0
+offset_right = 287.0
+offset_bottom = -101.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click Me!"
+
+[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5a1sn")
+
+[node name="LevelLoadedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5a1sn")
+
+[node name="ChangeSceneButton2" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = 38.0
+offset_right = 83.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Change Scene"
+
+[connection signal="pressed" from="ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
+[connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
+[connection signal="pressed" from="ChangeSceneButton2" to="." method="_on_change_scene_button_2_pressed"]
