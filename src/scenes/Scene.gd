@@ -46,5 +46,12 @@ func _on_ClickButton_pressed() -> void:
 func _on_change_scene_button_2_pressed():
 	$ButtonClickedSound.play()
 	$ChangeSceneButton.disabled = true
-	next_name='Desert'
+	next_name='levels'
+	emit_signal("level_changed", next_name)
+
+
+func _on_change_scene_button_3_pressed():
+	$ButtonClickedSound.play()
+	$ChangeSceneButton.disabled = true
+	next_name='load_game'
 	emit_signal("level_changed", next_name)

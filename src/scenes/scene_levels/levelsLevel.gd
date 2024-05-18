@@ -6,7 +6,7 @@ var next_level = null
 #Cargar la Escena o el nivel a elegir pero se tiene que
 #agregar al nodo par coger la referencia $nombredelnodo
 # y ocultar o quitar los otros
-@onready var current_level = $LevelsList
+@onready var current_level = $DesertLevel
 
 func _ready() -> void:
 	current_level.connect("level_changed", Callable(self, "handle_level_changed"))
@@ -33,3 +33,7 @@ func transfer_data_between_scenes(old_scene: CanvasLayer, new_scene: CanvasLayer
 	if old_scene and new_scene:
 		new_scene.load_level_parameters(old_scene.level_parameters)
 
+func play_loaded_sound() -> void:
+	print_debug('todo')
+	#$LevelLoadedSound.play()
+	#$ChangeSceneButton.disabled = false

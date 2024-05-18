@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://bthaplnnkatrm"]
+
+[ext_resource type="AudioStream" uid="uid://bikkxqt1epbam" path="res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav" id="1_5a1sn"]
+[ext_resource type="Script" path="res://src/scenes/scene_levels/Level.gd" id="1_8pnf5"]
+
+[node name="GrassLevel" type="CanvasLayer"]
+script = ExtResource("1_8pnf5")
+next_name = "1"
+level_name = "1"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.479619, 0.911566, 0.775748, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+text = "Level 3"
+uppercase = true
+
+[node name="ChangeSceneButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -44.0
+offset_right = -19.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+disabled = true
+text = "Change Scene"
+
+[node name="ClickLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 95.0
+offset_top = -62.0
+offset_right = 166.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Clicks: 0"
+uppercase = true
+
+[node name="ClickButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -64.0
+offset_right = 67.0
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Click Me!"
+
+[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5a1sn")
+
+[node name="LevelLoadedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_5a1sn")
+
+[connection signal="pressed" from="ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
+[connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]

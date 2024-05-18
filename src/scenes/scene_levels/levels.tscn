@@ -1,10 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4y8yco1k2lbi"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_levels/levelsLevel.gd" id="1_fhpg8"]
-[ext_resource type="PackedScene" uid="uid://dnqtrjfw7vr01" path="res://src/scenes/levels_list/LevelsList.tscn" id="2_wwcly"]
+[ext_resource type="PackedScene" uid="uid://c0oakj7od2fwg" path="res://src/scenes/scene_levels/level_1/level.tscn" id="2_cjryq"]
 
 [node name="LevelsLevel" type="CanvasLayer"]
 script = ExtResource("1_fhpg8")
 
-[node name="LevelsList" parent="." instance=ExtResource("2_wwcly")]
-visible = false
+[node name="DesertLevel" parent="." instance=ExtResource("2_cjryq")]

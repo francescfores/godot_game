@@ -1,11 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvs20kltq7t57"]
 
 [ext_resource type="Script" path="res://src/scenes/main.gd" id="1_acy5p"]
-[ext_resource type="PackedScene" uid="uid://b84eg7nkkqf4m" path="res://src/scenes/scene_menu/menuLevel.tscn" id="2_u5j7x"]
+[ext_resource type="PackedScene" uid="uid://b84eg7nkkqf4m" path="res://src/scenes/scene_menu/menu.tscn" id="2_u5j7x"]
 
 [node name="Main" type="Node"]
 process_mode = 3
 script = ExtResource("1_acy5p")
 
 [node name="menuLevel" parent="." instance=ExtResource("2_u5j7x")]
-next_name = "levels"

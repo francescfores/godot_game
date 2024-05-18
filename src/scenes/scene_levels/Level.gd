@@ -17,7 +17,7 @@ func load_level_parameters(new_level_parameters: Dictionary):
 
 
 func play_loaded_sound() -> void:
-	$LevelLoadedSound.play()
+	#$LevelLoadedSound.play()
 	$ChangeSceneButton.disabled = false
 
 

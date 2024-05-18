@@ -17,7 +17,8 @@ func load_level_parameters(new_level_parameters: Dictionary):
 
 
 func play_loaded_sound() -> void:
-	$LevelLoadedSound.play()
+	print_debug('todo load sounds')
+	#$LevelLoadedSound.play()
 	$ChangeSceneButton.disabled = false
 
 
@@ -44,10 +45,10 @@ func _on_ClickButton_pressed() -> void:
 
 # Esta es la lista de niveles, cada nivel tiene un nombre y una imagen
 var levels = [
-	{"name": "Level 1", "image_path": "res://assets/tiles/catastrophi_tiles.png"},
-	{"name": "Level 2", "image_path": "res://assets/images/platformer.webp"},
-	{"name": "Level 3", "image_path": "res://assets/images/platformer.webp"},
-	{"name": "Level 4", "image_path": "res://assets/images/platformer.webp"}
+	{"name": "level_1", "image_path": "res://assets/tiles/catastrophi_tiles.png"},
+	{"name": "level_2", "image_path": "res://assets/images/platformer.webp"},
+	{"name": "level_3", "image_path": "res://assets/images/platformer.webp"},
+
 ]
 
 func _ready():
@@ -83,6 +84,21 @@ func create_level_box(level_name: String, image_path: String, hbox_container: HB
 	else:
 		print("Error: Image node not found in VBoxContainer template!")
 	
+	# Conectar la señal de click del VBoxContainer a la función que maneja el click
+		# Pasar el nombre del nivel al VBoxContainer usando la nueva función
+	new_vbox.set_level_name(level_name)
+	# Conectar la señal de level_selected del VBoxContainer a la función que maneja el click
+	new_vbox.connect("level_selected",Callable(self, "_on_level_selected"))
+	
 	hbox_container.add_child(new_vbox)  # Agregar el nuevo VBoxContainer al HBoxContainer
 	# Hacer visible el nuevo VBoxContainer duplicado
 	new_vbox.visible = true
+
+func _on_level_selected(level_name: String) -> void:
+	print("Clicked on level:", level_name)
+	#load("res://src/scenes/scene_levels/"+ level_name +"/level.tscn").instantiate()
+	get_tree().change_scene_to_file("res://src/scenes/scene_levels/"+ level_name +"/level.tscn")
+	
+
+	#emit_signal("level_changed", level_name)
+

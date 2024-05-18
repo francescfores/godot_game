@@ -5,13 +5,17 @@
 
 [node name="menuLevel" type="CanvasLayer"]
 script = ExtResource("1_femx8")
-next_name = "Desert"
+next_name = "levels_list"
 level_name = "Grass"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.435294, 0.94902, 0.380392, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -41,7 +45,7 @@ offset_right = 83.0
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Change Scene"
+text = "List levels"
 
 [node name="ClickLabel" type="Label" parent="."]
 anchors_preset = 8
@@ -90,8 +94,24 @@ offset_right = 83.0
 offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Change Scene"
+text = "New game
+"
+
+[node name="ChangeSceneButton3" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = 88.0
+offset_right = 85.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cargar partida"
 
 [connection signal="pressed" from="ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
 [connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
 [connection signal="pressed" from="ChangeSceneButton2" to="." method="_on_change_scene_button_2_pressed"]
+[connection signal="pressed" from="ChangeSceneButton3" to="." method="_on_change_scene_button_3_pressed"]
