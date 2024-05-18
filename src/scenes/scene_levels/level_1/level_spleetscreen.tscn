@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dol6fjbuibouo"]
 
-[ext_resource type="Script" path="res://src/scenes/scene_2/scene_2_spleetscreen.gd" id="1_yglow"]
-[ext_resource type="PackedScene" uid="uid://bsonoxt65nkmx" path="res://src/scenes/scene_2/level/level_2.tscn" id="3_21upe"]
+[ext_resource type="Script" path="res://src/scenes/scene_levels/level_2/level_spleetscreen.gd" id="1_yglow"]
+[ext_resource type="PackedScene" uid="uid://bsonoxt65nkmx" path="res://src/scenes/scene_levels/level_2/level/level_2.tscn" id="3_21upe"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="4_k5ra5"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="4_nashj"]
 [ext_resource type="PackedScene" uid="uid://dggactv0aho4p" path="res://gui/pause_menu_splitscreen.tscn" id="5_k803m"]
@@ -47,7 +47,7 @@ unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(2, 2)
+size = Vector2i(399, 480)
 render_target_update_mode = 4
 
 [node name="Player1" parent="Black/SplitContainer/ViewportContainer1/Viewport1" instance=ExtResource("4_nashj")]
@@ -75,7 +75,7 @@ unique_name_in_owner = true
 handle_input_locally = false
 canvas_item_default_texture_filter = 0
 audio_listener_enable_2d = true
-size = Vector2i(2, 2)
+size = Vector2i(399, 480)
 render_target_update_mode = 4
 
 [node name="ParallaxBackground" parent="Black/SplitContainer/ViewportContainer2/Viewport2" instance=ExtResource("4_k5ra5")]

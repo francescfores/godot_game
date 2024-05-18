@@ -1,11 +1,10 @@
-class_name Level_333 extends Node
+class_name Level_1 extends Node
 
 
 @onready var _pause_menu := $InterfaceLayer/PauseMenu as PauseMenu
 
-
 func _ready():
-	_pause_menu.scene='2'
+	_pause_menu.scene='1'
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"toggle_fullscreen"):
 		var mode := DisplayServer.window_get_mode()

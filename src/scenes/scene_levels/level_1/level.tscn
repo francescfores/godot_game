@@ -1,74 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0oakj7od2fwg"]
+[gd_scene load_steps=7 format=3 uid="uid://c0oakj7od2fwg"]
 
-[ext_resource type="Script" path="res://src/scenes/scene_levels/Level.gd" id="1_w2g5b"]
+[ext_resource type="Script" path="res://src/scenes/scene_levels/level_1/level.gd" id="1_jxyri"]
+[ext_resource type="PackedScene" uid="uid://h4j52v5c4wfe" path="res://src/scenes/scene_levels/level_1/level_map/level_1_map.tscn" id="3_0bmxw"]
+[ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
+[ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="5_we8i3"]
 
-[node name="DesertLevel" type="CanvasLayer"]
-script = ExtResource("1_w2g5b")
-next_name = "2"
-level_name = "1"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oiwc"]
+size = Vector2(118, 196)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0.94902, 0.87451, 0.380392, 1)
+[node name="Level1" type="Node"]
+process_mode = 3
+script = ExtResource("1_jxyri")
 
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-text = "Desert level"
-uppercase = true
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+layer = 100
 
-[node name="ChangeSceneButton" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 74.0
-offset_top = 71.0
-offset_right = 190.0
-offset_bottom = 102.0
-grow_horizontal = 2
-grow_vertical = 2
-disabled = true
-text = "Change Scene"
+[node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
 
-[node name="ClickLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -106.0
-offset_top = 69.0
-offset_right = -35.0
-offset_bottom = 92.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Clicks: 0"
-uppercase = true
+[node name="Level2" parent="." instance=ExtResource("3_0bmxw")]
 
-[node name="ClickButton" type="Button" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -164.0
-offset_top = 5.0
-offset_right = -87.0
-offset_bottom = 36.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Click Me!"
+[node name="next_level" type="Area2D" parent="Level2"]
+script = ExtResource("4_3cu1w")
+escena = "3"
 
-[node name="ButtonClickedSound" type="AudioStreamPlayer" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/next_level"]
+position = Vector2(-96, 393)
+shape = SubResource("RectangleShape2D_7oiwc")
 
-[node name="LevelLoadedSound" type="AudioStreamPlayer" parent="."]
+[node name="Player" parent="Level2" instance=ExtResource("5_we8i3")]
+position = Vector2(90, 546)
 
-[connection signal="pressed" from="ChangeSceneButton" to="." method="_on_ChangeSceneButton_pressed"]
-[connection signal="pressed" from="ClickButton" to="." method="_on_ClickButton_pressed"]
+[connection signal="body_entered" from="Level2/next_level" to="Level2/next_level" method="_on_body_entered"]
