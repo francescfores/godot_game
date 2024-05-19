@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://vt6texw2d2wi"
+path="res://.godot/imported/hot wheels.aseprite-7a40f75d70e30f54fa5fcd69d5f69a98.res"
+
+[deps]
+
+source_file="res://src/players/Bot Wheel/hot wheels.aseprite"
+dest_files=["res://.godot/imported/hot wheels.aseprite-7a40f75d70e30f54fa5fcd69d5f69a98.res"]
+
+[params]
+
