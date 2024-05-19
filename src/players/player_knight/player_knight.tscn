@@ -815,7 +815,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_attack_1",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1363,8 +1363,7 @@ visibility_mode = 1
 position = Vector2(2.5, -56.25)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_c656k")
-animation = &"run_attack"
-frame_progress = 0.577391
+animation = &"jumping_attack"
 
 [node name="Sprite2D_wario" type="Sprite2D" parent="."]
 visible = false
@@ -1392,6 +1391,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 
 [node name="Gun" type="Marker2D" parent="Sprite2D_wario"]
+visible = false
 position = Vector2(14, 1)
 script = ExtResource("22_y2s70")
 

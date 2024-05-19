@@ -34,23 +34,11 @@ var direction = 0
 var attack_number='';
 
 func _physics_process(delta: float) -> void:
+	handle_input(delta)
+	update_combo_timer(delta)
+		
 	if is_on_floor():
 		_double_jump_charged = true
-
-
-	if Input.is_action_just_pressed("move_left" + action_suffix) :
-		direction = 1
-	elif Input.is_action_just_pressed("move_right" + action_suffix) :
-		direction = -1
-				
-	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix) :
-		velocity.x = wall_push_back * direction
-		direction=direction*direction
-	if Input.is_action_just_pressed("jump" + action_suffix):
-		try_jump()
-	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
-		# The player let go of jump early, reduce vertical momentum.
-		velocity.y *= 0.6
 	# Fall.
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
@@ -72,23 +60,50 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot" + action_suffix):
 		is_shooting = gun.shoot(sprite.scale.x)
 
-	if combo_timer > COMBO_MAX_TIME:
-		is_attack=false
-	
 	print_debug(is_attack)	
 	#var animation := get_new_animation(is_shooting)
 	#if animation != animation_player.current_animation and shoot_timer.is_stopped():
 		#if is_shooting:
 			#shoot_timer.start()
 	var animation := get_new_animation(is_shooting)
-	if animation != animation_player.current_animation and !is_attack:
-		if is_shooting:
-			shoot_timer.start()
-		#animation_player.play(animation)
+	if !is_attack:
+		#if is_shooting:
+		#	shoot_timer.start()
+		animation_player.play(animation)
 		animation_player2.play(animation)
 	
-	#animation_player2.play(animation)
+func handle_input(delta):
+	if Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
+		current_attack_state = AttackState.ATTACK_1
+		combo_timer = 0.0
+		is_attack=true
+		animation_player2.play("slide")
+	elif Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
+		current_attack_state = AttackState.ATTACK_1
+		combo_timer = 0.0
+		is_attack=true
+		animation_player2.play("jumping_attack")
+	elif Input.is_action_just_pressed(attack_input):
+		is_attack=true
+		handle_attack()
+
+	if Input.is_action_just_pressed("move_left" + action_suffix) :
+		direction = 1
+	elif Input.is_action_just_pressed("move_right" + action_suffix) :
+		direction = -1
+				
+	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix) :
+		velocity.x = wall_push_back * direction
+		direction=direction*direction
+	if Input.is_action_just_pressed("jump" + action_suffix):
+		try_jump()
+	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
+		# The player let go of jump early, reduce vertical momentum.
+		velocity.y *= 0.6
 		
+func play_animation(animation) -> void:
+	animation_player2.play(animation)
+			
 func get_new_animation(is_shooting := false) -> String:
 	var animation_new: String
 	if is_on_floor():
@@ -132,21 +147,13 @@ var combo_timer = 0.0
 var attack_input = "shoot" + action_suffix
 var is_attack = false
 
-func _process(delta):
-	handle_input(delta)
-	update_combo_timer(delta)
+#func _process(delta):
+	#handle_input(delta)
+	#update_combo_timer(delta)
 
-func handle_input(delta):
-	if Input.is_action_just_pressed(attack_input) and Input.is_action_pressed('move_down'):
-		current_attack_state = AttackState.ATTACK_1
-		combo_timer = 0.0
-		is_attack=true
-		animation_player2.play("slide")
-	elif Input.is_action_just_pressed(attack_input):
-		handle_attack()
+
 
 func handle_attack():
-	is_attack=true
 	match current_attack_state:
 		AttackState.IDLE:
 			current_attack_state = AttackState.ATTACK_1
@@ -171,6 +178,8 @@ func perform_attack(attack_number):
 	animation_player2.play("idle_attack_%d"% attack_number)
 
 func update_combo_timer(delta):
+	if combo_timer > COMBO_MAX_TIME:
+		is_attack=false
 	if current_attack_state != AttackState.IDLE:
 		combo_timer += delta
 		if combo_timer > COMBO_MAX_TIME:
