@@ -29,6 +29,6 @@ position = Vector2(-96, 393)
 shape = SubResource("RectangleShape2D_7oiwc")
 
 [node name="Player" parent="Level2" instance=ExtResource("5_we8i3")]
-position = Vector2(90, 546)
+position = Vector2(-67, 572)
 
 [connection signal="body_entered" from="Level2/next_level" to="Level2/next_level" method="_on_body_entered"]

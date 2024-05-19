@@ -23,10 +23,6 @@ run/main_scene="res://src/game_singleplayer.tscn"
 config/features=PackedStringArray("4.2")
 config/icon="res://icon.webp"
 
-[autoload]
-
-Music="*res://music.tscn"
-
 [display]
 
 window/size/viewport_width=800

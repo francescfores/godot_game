@@ -27,11 +27,24 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var gun = sprite.get_node(^"Gun") as Gun
 @onready var camera := $Camera as Camera2D
 var _double_jump_charged := false
-
+@export var wall_slide_gravity = 100
+@export var wall_push_back = 200
+var is_wall_slide = 200
+var direction = 0
 
 func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		_double_jump_charged = true
+		
+
+	if Input.is_action_just_pressed("move_left" + action_suffix) :
+		direction = 1
+	elif Input.is_action_just_pressed("move_right" + action_suffix) :
+		direction = -1
+				
+	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix) :
+		velocity.x = wall_push_back * direction
+		direction=direction*direction
 	if Input.is_action_just_pressed("jump" + action_suffix):
 		try_jump()
 	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
@@ -45,9 +58,9 @@ func _physics_process(delta: float) -> void:
 
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
-			sprite.scale.x = 1.5
+			sprite.scale.x = 2
 		else:
-			sprite.scale.x = -1.5	
+			sprite.scale.x = -2
 
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
@@ -61,7 +74,6 @@ func _physics_process(delta: float) -> void:
 		if is_shooting:
 			shoot_timer.start()
 		animation_player.play(animation)
-
 
 func get_new_animation(is_shooting := false) -> String:
 	var animation_new: String
@@ -79,15 +91,20 @@ func get_new_animation(is_shooting := false) -> String:
 		animation_new += "_weapon"
 	return animation_new
 
-
 func try_jump() -> void:
+
+	
 	if is_on_floor():
 		jump_sound.pitch_scale = 1.0
-	elif _double_jump_charged:
-		_double_jump_charged = false
+	elif _double_jump_charged :
+		if !is_on_wall():
+			_double_jump_charged = false
+			
 		velocity.x *= 2.5
 		jump_sound.pitch_scale = 1.5
 	else:
 		return
+		
+
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()

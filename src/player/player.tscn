@@ -1,11 +1,15 @@
-[gd_scene load_steps=35 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=39 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="3"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/player/jump.wav" id="5"]
 [ext_resource type="Texture2D" uid="uid://cctchtfym5omi" path="res://assets/aseprites/aseprite/wario_animations_booooooo.png" id="5_bvs4t"]
 [ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://src/player/shoot.wav" id="6"]
+[ext_resource type="Texture2D" uid="uid://8g15fmgwiffk" path="res://gui/touch_button_left.webp" id="7_gi6o1"]
+[ext_resource type="Texture2D" uid="uid://tgw4f8fu0btj" path="res://gui/touch_button_fire.webp" id="7_s52yd"]
 [ext_resource type="Script" path="res://src/player/gun.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://d3frwb2tyw2r7" path="res://gui/touch_button_right.webp" id="8_0cvqi"]
 [ext_resource type="Texture2D" uid="uid://cc7o7t0ramd6y" path="res://src/player/robot.webp" id="9"]
+[ext_resource type="Texture2D" uid="uid://c6rum08i3ntoo" path="res://gui/touch_button_jump.webp" id="9_05iaa"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "crouch"
@@ -490,7 +494,7 @@ libraries = {
 [node name="Sprite2D_wario" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-1.25, -17.5)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 texture = ExtResource("5_bvs4t")
 hframes = 196
 frame = 13
@@ -549,27 +553,33 @@ volume_db = -3.0
 layer = 0
 
 [node name="Left" type="TouchScreenButton" parent="UI"]
-position = Vector2(-302, 318)
-scale = Vector2(2, 2)
+position = Vector2(65, 92)
+scale = Vector2(0.59375, 0.640625)
+texture_normal = ExtResource("7_gi6o1")
 passby_press = true
 action = "move_left"
 visibility_mode = 1
 
 [node name="Right" type="TouchScreenButton" parent="UI"]
-position = Vector2(-49, 307)
-scale = Vector2(2, 2)
+position = Vector2(312, 19)
+scale = Vector2(0.585938, 0.609375)
+texture_normal = ExtResource("8_0cvqi")
 passby_press = true
 action = "move_right"
 visibility_mode = 1
 
 [node name="Jump" type="TouchScreenButton" parent="UI"]
-position = Vector2(305, 333)
-scale = Vector2(2, 2)
+position = Vector2(247, 21)
+scale = Vector2(0.515625, 0.5)
+texture_normal = ExtResource("9_05iaa")
 action = "jump"
 visibility_mode = 1
 
 [node name="Fire" type="TouchScreenButton" parent="UI"]
-position = Vector2(344, 339)
-scale = Vector2(2, 2)
+position = Vector2(356, 116)
+scale = Vector2(0.304688, 0.359375)
+texture_normal = ExtResource("7_s52yd")
 action = "shoot"
 visibility_mode = 1
+
+[node name="Debug" type="Node" parent="."]
