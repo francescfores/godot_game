@@ -25,7 +25,7 @@ script = ExtResource("4_3cu1w")
 escena = "3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/next_level"]
-position = Vector2(-96, 393)
+position = Vector2(-256, 546)
 shape = SubResource("RectangleShape2D_7oiwc")
 
 [node name="Player" parent="Level2" instance=ExtResource("6_aslgj")]

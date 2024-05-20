@@ -388,21 +388,21 @@ region = Rect2(160, 0, 64, 64)
 atlas = ExtResource("11_t2xu3")
 region = Rect2(32, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfrmm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuoj8"]
 atlas = ExtResource("11_t2xu3")
-region = Rect2(160, 64, 64, 64)
+region = Rect2(128, 64, 128, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3t40s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh8dm"]
 atlas = ExtResource("11_t2xu3")
-region = Rect2(32, 128, 64, 64)
+region = Rect2(0, 128, 128, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_knaoj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_71pp2"]
 atlas = ExtResource("11_t2xu3")
-region = Rect2(160, 128, 64, 64)
+region = Rect2(128, 128, 128, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2deo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkibh"]
 atlas = ExtResource("11_t2xu3")
-region = Rect2(32, 192, 64, 64)
+region = Rect2(0, 192, 128, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7g07b"]
 atlas = ExtResource("21_8v7dn")
@@ -886,22 +886,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wlhys")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gfrmm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3t40s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knaoj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x2deo")
 }],
 "loop": true,
-"name": &"jumping_attack",
+"name": &"jumping_attack_1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuoj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fh8dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71pp2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkibh")
+}],
+"loop": true,
+"name": &"jumping_attack_2",
+"speed": 4.0
 }, {
 "frames": [],
 "loop": true,
@@ -1363,7 +1368,8 @@ visibility_mode = 1
 position = Vector2(2.5, -56.25)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_c656k")
-animation = &"jumping_attack"
+animation = &"hanging"
+frame_progress = 0.00708588
 
 [node name="Sprite2D_wario" type="Sprite2D" parent="."]
 visible = false

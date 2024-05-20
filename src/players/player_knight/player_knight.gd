@@ -43,8 +43,10 @@ func _physics_process(delta: float) -> void:
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
 	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
-	velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
-
+	if combo_timer>COMBO_MAX_TIME:
+		velocity.x = move_toward(velocity.x, direction,ACCELERATION_SPEED * delta)
+	else:
+		velocity.x = move_toward(velocity.x, direction, ACCELERATION_SPEED * delta)
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			$AnimatedSprite2D.flip_h = false
@@ -60,29 +62,59 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot" + action_suffix):
 		is_shooting = gun.shoot(sprite.scale.x)
 
-	print_debug(is_attack)	
+
 	#var animation := get_new_animation(is_shooting)
 	#if animation != animation_player.current_animation and shoot_timer.is_stopped():
 		#if is_shooting:
 			#shoot_timer.start()
 	var animation := get_new_animation(is_shooting)
-	if !is_attack:
+	
+	if is_slide and !is_on_floor():
+		is_slide=false
+		combo_timer = COMBO_MAX_TIME
+		
+		
+	if is_attack_jump_down and is_on_floor():
+		is_attack_jump_down=false
+		combo_timer = 0.6
+		animation_player2.play("jumping_attack_2")
+		
+		
+	if combo_timer>COMBO_MAX_TIME and !is_attack and !is_slide and !is_attack_jump_down and !is_pray:
 		#if is_shooting:
 		#	shoot_timer.start()
 		animation_player.play(animation)
 		animation_player2.play(animation)
 	
+	
+	if is_hanging:
+		if Input.is_action_just_pressed("jump"):
+			is_hanging = false
+			velocity.y = JUMP_FORCE
+		return
+
+	if can_hang and Input.is_action_just_pressed("ui_up"):	
+		get_tree().change_scene_to_file("res://src/scenes/main.tscn")
+		is_hanging = true
+		velocity = Vector2()
+		global_position = hang_position
+		return
+
+	velocity.y += GRAVITY * delta
+	#velocity = move_and_slide(velocity, Vector2.UP)
+	
+	
 func handle_input(delta):
 	if Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
 		current_attack_state = AttackState.ATTACK_1
 		combo_timer = 0.0
-		is_attack=true
+		is_slide=true
 		animation_player2.play("slide")
 	elif Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
 		current_attack_state = AttackState.ATTACK_1
 		combo_timer = 0.0
-		is_attack=true
-		animation_player2.play("jumping_attack")
+		is_attack_jump_down=true
+		animation_player2.play("jumping_attack_1")
 	elif Input.is_action_just_pressed(attack_input):
 		is_attack=true
 		handle_attack()
@@ -100,6 +132,11 @@ func handle_input(delta):
 	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
 		# The player let go of jump early, reduce vertical momentum.
 		velocity.y *= 0.6
+	if Input.is_action_pressed("pray" + action_suffix):
+		animation_player2.play("pray")
+		is_pray=true
+	else:
+		is_pray=false
 		
 func play_animation(animation) -> void:
 	animation_player2.play(animation)
@@ -146,12 +183,12 @@ var combo_timer = 0.0
 # Variables de entrada (esto asume que ya tienes configuradas las acciones en el Input Map)
 var attack_input = "shoot" + action_suffix
 var is_attack = false
-
+var is_slide = false
+var is_attack_jump_down = false
+var is_pray = false
 #func _process(delta):
 	#handle_input(delta)
 	#update_combo_timer(delta)
-
-
 
 func handle_attack():
 	match current_attack_state:
@@ -180,7 +217,31 @@ func perform_attack(attack_number):
 func update_combo_timer(delta):
 	if combo_timer > COMBO_MAX_TIME:
 		is_attack=false
+		is_slide=false
+		is_attack_jump_down=false
 	if current_attack_state != AttackState.IDLE:
 		combo_timer += delta
 		if combo_timer > COMBO_MAX_TIME:
 			current_attack_state = AttackState.IDLE
+
+
+var is_hanging = false
+var can_hang = false
+var hang_position = Vector2()
+
+const GRAVITY = 200
+const JUMP_FORCE = -300
+#var velocity = Vector2()
+
+func _ready():
+	print_debug('s')
+	# Encuentra todas las áreas de saliente en la escena y conéctalas
+#		saliente.connect("player_can_hang", Callable(self, "_on_player_can_hang"))
+#		saliente.connect("player_cannot_hang",  Callable(self, "_on_player_cannot_hang"))
+
+func _on_player_can_hang(position):
+	can_hang = true
+	hang_position = position
+
+func _on_player_cannot_hang():
+	can_hang = false
