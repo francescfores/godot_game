@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://d16a8rdfy3vka"]
+
+[ext_resource type="Texture2D" uid="uid://c5f0dgbrx5asm" path="res://backgrounds/The Dawn/Layers/2.png" id="1_2cd7w"]
+[ext_resource type="Texture2D" uid="uid://uv1hvabnd8qs" path="res://backgrounds/The Dawn/Layers/3.png" id="3_wb81h"]
+[ext_resource type="Texture2D" uid="uid://bxbqhdwpgu3lj" path="res://backgrounds/The Dawn/Layers/6.png" id="4_22k3g"]
+[ext_resource type="Texture2D" uid="uid://su4pd210figm" path="res://backgrounds/The Dawn/Layers/4.png" id="5_oq3sw"]
+[ext_resource type="Texture2D" uid="uid://3xqwnvliqei3" path="res://backgrounds/The Dawn/Layers/5.png" id="6_xqhjw"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_base_scale = Vector2(0.1, 0)
+
+[node name="Sky" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sky"]
+position = Vector2(-48, -29)
+scale = Vector2(0.7, 0.678)
+texture = ExtResource("1_2cd7w")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.1, 1)
+motion_offset = Vector2(-550, 0)
+
+[node name="CloudGroup1" type="Node2D" parent="Clouds"]
+position = Vector2(-780, 0)
+
+[node name="Sprite2" type="Sprite2D" parent="Clouds/CloudGroup1"]
+position = Vector2(957, -29)
+scale = Vector2(0.7, 0.678)
+texture = ExtResource("3_wb81h")
+centered = false
+
+[node name="Sprite3" type="Sprite2D" parent="Clouds/CloudGroup1"]
+position = Vector2(128, -4)
+scale = Vector2(0.7, 0.678)
+texture = ExtResource("3_wb81h")
+centered = false
+flip_h = true
+
+[node name="Sprite4" type="Sprite2D" parent="Clouds/CloudGroup1"]
+position = Vector2(442, -89)
+scale = Vector2(0.960101, 0.733556)
+texture = ExtResource("4_22k3g")
+centered = false
+
+[node name="Mountains2" type="ParallaxLayer" parent="."]
+position = Vector2(0, 243)
+motion_scale = Vector2(0.2, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains2"]
+position = Vector2(-403, 158)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_oq3sw")
+region_rect = Rect2(0, 0, 2048, 251.104)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Mountains2"]
+position = Vector2(983, 160)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_oq3sw")
+flip_h = true
+region_rect = Rect2(0, 0, 2048, 251.104)
+
+[node name="Sprite4" type="Sprite2D" parent="Mountains2"]
+visible = false
+position = Vector2(-367, -269)
+scale = Vector2(0.960101, 0.733556)
+texture = ExtResource("4_22k3g")
+centered = false
+
+[node name="Mountains1" type="ParallaxLayer" parent="."]
+position = Vector2(0, 246)
+motion_scale = Vector2(0.4, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Mountains1"]
+position = Vector2(609, 238)
+scale = Vector2(1, 0.7)
+texture = ExtResource("6_xqhjw")
+region_rect = Rect2(1093, 561.5, 8, 32)
+
+[node name="Sprite4" type="Sprite2D" parent="Mountains1"]
+visible = false
+position = Vector2(-361, -353)
+scale = Vector2(1.03283, 0.822222)
+texture = ExtResource("4_22k3g")
+centered = false

@@ -18,7 +18,6 @@ layer = 100
 
 [node name="Player" parent="Level" instance=ExtResource("5_iopbj")]
 position = Vector2(-247, 234)
-wall_push_back = 200
 
 [node name="Player2" parent="Level" instance=ExtResource("5_iopbj")]
 position = Vector2(-349, 538)
