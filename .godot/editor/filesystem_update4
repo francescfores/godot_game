@@ -9,3 +9,7 @@ res://level/platforms/hangable.tscn
 res://level/level.tscn
 res://src/gui/title_screen.tscn
 res://src/players/player_knight/player_knight.gd
+res://shaders/sprite_shaders.tscn
+res://shaders/aura.gdshader
+res://shaders/silouette.gdshader
+res://shaders/glow.gdshader

@@ -279,13 +279,32 @@ var wait_attack=0.4
 var blink_timer: Timer
 var blink_interval: float = 0.05
 var should_blink: bool = false
+@onready var auroa_material = sprite.material as ShaderMaterial
 
 func _process(delta):
 	if current_attack_state != AttackState.ATTACK_4 and combo_timer<COMBO_MAX_TIME and combo_timer>wait_attack:
 		start_blinking()
+		is_auroa_active=true
 	else:
 		stop_blinking()
+		is_auroa_active=false
 		
+	# Aquí puedes poner la condición bajo la cual se activa/desactiva el material
+	if is_auroa_active:
+		_activate_auroa_material()
+	else:
+		_deactivate_auroa_material()
+
+func _activate_auroa_material():
+	auroa_material.set("shader_param/aura_width", 0.4) # Ajusta el valor según tus necesidades
+	auroa_material.set("shader_param/aura_color", Color(0.70, 0.60, 0, 1)) # Ajusta el color según tus necesidades
+
+func _deactivate_auroa_material():
+	auroa_material.set("shader_param/aura_width", 0.0) # O cualquier valor que "desactive" visualmente el shader
+
+
+var is_auroa_active = false
+
 func handle_attack():
 	
 	if combo_timer>wait_attack:
@@ -314,9 +333,10 @@ func handle_attack():
 					perform_attack(4)
 			AttackState.ATTACK_4:
 				COMBO_MAX_TIME = 0.8
-				wait_attack=0.1
-				if combo_timer < COMBO_MAX_TIME:
-					current_attack_state = AttackState.ATTACK_1
+				wait_attack=0.0
+				current_attack_state = AttackState.ATTACK_1
+				#if combo_timer < COMBO_MAX_TIME:
+				#	current_attack_state = AttackState.ATTACK_1
 					#perform_attack(1)
 		# Reiniciar el temporizador de combo cada vez que se hace un ataque
 		combo_timer = 0.0
