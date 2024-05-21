@@ -14,7 +14,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		emit_signal("player_can_hang", global_position + hang_position_offset)
+		emit_signal("player_can_hang", global_position) #+ hang_position_offset)
 		#get_tree().change_scene_to_file("res://src/scenes/scene_4/switch_level.tscn")
 
 func _on_body_exited(body):

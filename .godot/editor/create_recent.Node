@@ -1,4 +1,6 @@
+Node2D
 Node
+CanvasGroup
 CanvasLayer
 Control
 VBoxContainer
@@ -6,9 +8,7 @@ HBoxContainer
 TextureRect
 BoxContainer
 TitleScreen
-Node2D
 Level3
 Level1
 Level2
 CollisionShape2D
-Area2D

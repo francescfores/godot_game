@@ -1,15 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0oakj7od2fwg"]
+[gd_scene load_steps=5 format=3 uid="uid://c0oakj7od2fwg"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_levels/level_1/level.gd" id="1_jxyri"]
 [ext_resource type="PackedScene" uid="uid://h4j52v5c4wfe" path="res://src/scenes/scene_levels/level_1/level_map/level_1_map.tscn" id="3_0bmxw"]
-[ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
 [ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
 [ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/players/player_knight/player_knight.tscn" id="6_aslgj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7oiwc"]
-size = Vector2(118, 196)
-
-[node name="Level1" type="Node"]
+[node name="Level" type="Node"]
 process_mode = 3
 script = ExtResource("1_jxyri")
 
@@ -18,16 +14,8 @@ layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
 
-[node name="Level2" parent="." instance=ExtResource("3_0bmxw")]
+[node name="Level" parent="." instance=ExtResource("3_0bmxw")]
 
-[node name="next_level" type="Area2D" parent="Level2"]
-script = ExtResource("4_3cu1w")
-escena = "3"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level2/next_level"]
-position = Vector2(-256, 546)
-shape = SubResource("RectangleShape2D_7oiwc")
-
-[node name="Player" parent="Level2" instance=ExtResource("6_aslgj")]
-
-[connection signal="body_entered" from="Level2/next_level" to="Level2/next_level" method="_on_body_entered"]
+[node name="Player" parent="Level" instance=ExtResource("6_aslgj")]
+position = Vector2(-247, 234)
+wall_push_back = 200

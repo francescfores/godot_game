@@ -25,8 +25,8 @@
 [ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://src/players/player_knight/shoot.wav" id="23_wwxjc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o141g"]
-radius = 20.0
-height = 73.0
+radius = 13.75
+height = 102.5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tau3u"]
 atlas = ExtResource("12_04srh")
@@ -1036,7 +1036,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"slide",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="Animation" id="Animation_xh44k"]
@@ -1300,6 +1300,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(10, -4)
 scale = Vector2(0.8, 0.8)
 collision_mask = 30
 floor_constant_speed = true
@@ -1310,11 +1311,12 @@ script = ExtResource("1_xoxff")
 one_shot = true
 
 [node name="PlatformDetector" type="RayCast2D" parent="."]
+position = Vector2(1.25001, -3.8147e-06)
 target_position = Vector2(0, 6)
 collision_mask = 8
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(0, -28)
+position = Vector2(1.90735e-06, -3.8147e-06)
 offset = Vector2(0, 50)
 limit_left = -715
 limit_top = -250
@@ -1322,15 +1324,17 @@ limit_right = 1425
 limit_bottom = 690
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(7.62939e-06, 7.5)
 shape = SubResource("CapsuleShape2D_o141g")
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(7.62939e-06, -3.8147e-06)
 stream = ExtResource("5")
 volume_db = -3.0
 
 [node name="UI" type="CanvasLayer" parent="."]
 layer = 0
+visible = false
 
 [node name="Left" type="TouchScreenButton" parent="UI"]
 position = Vector2(65, 92)
@@ -1365,14 +1369,24 @@ visibility_mode = 1
 [node name="Debug" type="Node" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.5, -56.25)
+position = Vector2(0, -21.25)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_c656k")
-animation = &"hanging"
-frame_progress = 0.00708588
+animation = &"idle"
+
+[node name="Gun" type="Marker2D" parent="AnimatedSprite2D"]
+position = Vector2(14, 1)
+script = ExtResource("22_y2s70")
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/Gun"]
+position = Vector2(-30.6589, -6.13176)
+stream = ExtResource("23_wwxjc")
+
+[node name="Cooldown" type="Timer" parent="AnimatedSprite2D/Gun"]
+wait_time = 0.3
+one_shot = true
 
 [node name="Sprite2D_wario" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(-1.25, -17.5)
 scale = Vector2(2, 2)
@@ -1397,7 +1411,6 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 
 [node name="Gun" type="Marker2D" parent="Sprite2D_wario"]
-visible = false
 position = Vector2(14, 1)
 script = ExtResource("22_y2s70")
 
