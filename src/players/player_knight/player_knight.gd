@@ -16,7 +16,7 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var animation_player := $AnimationPlayer_wario as AnimationPlayer
 @onready var animation_player2 := $AnimatedSprite2D as AnimatedSprite2D
-@onready var sprite := $AnimatedSprite2D as Sprite2D
+@onready var sprite := $Sprite2D_wario as Sprite2D
 
 #@onready var animation_player := $AnimationPlayer as AnimationPlayer
 #@onready var sprite := $Sprite2D as Sprite2D
