@@ -86,3 +86,7 @@ func _on_titlescreen_button_pressed() -> void:
 		#get_tree().change_scene_to_file("res://src/game_splitscreen.tscn")
 		get_tree().change_scene_to_file("res://src/scenes/scene_menu/menu.tscn")
 
+
+
+func _on_player_coin_collected():
+	pass # Replace with function body.

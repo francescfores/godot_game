@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oiwc"]
 size = Vector2(118, 196)
 
-[node name="Level2" type="Node"]
+[node name="Level" type="Node"]
 process_mode = 3
 script = ExtResource("1_4yu76")
 
@@ -31,4 +31,5 @@ escena = "3"
 position = Vector2(-96, 393)
 shape = SubResource("RectangleShape2D_7oiwc")
 
+[connection signal="coin_collected" from="Level/Player" to="InterfaceLayer/PauseMenu" method="_on_coin_collected"]
 [connection signal="body_entered" from="Level/next_level" to="Level/next_level" method="_on_body_entered"]

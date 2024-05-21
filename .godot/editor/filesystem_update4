@@ -20,3 +20,10 @@ res://src/scenes/scene_levels/level_2/level_spleetscreen.gd
 res://src/scenes/scene_3/scene_3.tscn
 res://src/scenes/main.tscn
 res://src/scenes/scene_levels/level_2/level_spleetscreen.tscn
+res://src/scenes/scene_levels/level_2/level_map/level_map.tscn
+res://gui/pause_menu.gd
+res://gui/pause_menu_singleplayer.tscn
+res://gui/pause_menu.tscn
+res://gui/pause_menu_splitscreen.tscn
+res://src/scenes/scene_2/scene_2.gd
+res://gui/coins_counter.tscn
