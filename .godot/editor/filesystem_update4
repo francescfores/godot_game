@@ -13,3 +13,10 @@ res://shaders/sprite_shaders.tscn
 res://shaders/aura.gdshader
 res://shaders/silouette.gdshader
 res://shaders/glow.gdshader
+res://level/background/parallax_background.tscn
+res://src/gui/title_screen.gd
+res://src/scenes/scene_levels/level_2/level.tscn
+res://src/scenes/scene_levels/level_2/level_spleetscreen.gd
+res://src/scenes/scene_3/scene_3.tscn
+res://src/scenes/main.tscn
+res://src/scenes/scene_levels/level_2/level_spleetscreen.tscn

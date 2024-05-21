@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/scenes/scene_2/scene_2.gd" id="1_4yu76"]
 [ext_resource type="PackedScene" uid="uid://dlnm83nen2cjv" path="res://src/scenes/scene_levels/level_2/level_map/level_map.tscn" id="2_dhfg6"]
-[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="3_mnrpn"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/players/player_knight/player_knight.tscn" id="3_mnrpn"]
 [ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
 [ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
 
@@ -18,17 +18,17 @@ layer = 100
 
 [node name="PauseMenu" parent="InterfaceLayer" instance=ExtResource("5_gox1p")]
 
-[node name="Level3" parent="." instance=ExtResource("2_dhfg6")]
+[node name="Level" parent="." instance=ExtResource("2_dhfg6")]
 
-[node name="Player" parent="Level3" instance=ExtResource("3_mnrpn")]
+[node name="Player" parent="Level" instance=ExtResource("3_mnrpn")]
 position = Vector2(90, 546)
 
-[node name="next_level" type="Area2D" parent="Level3"]
+[node name="next_level" type="Area2D" parent="Level"]
 script = ExtResource("4_3cu1w")
 escena = "3"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level3/next_level"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/next_level"]
 position = Vector2(-96, 393)
 shape = SubResource("RectangleShape2D_7oiwc")
 
-[connection signal="body_entered" from="Level3/next_level" to="Level3/next_level" method="_on_body_entered"]
+[connection signal="body_entered" from="Level/next_level" to="Level/next_level" method="_on_body_entered"]

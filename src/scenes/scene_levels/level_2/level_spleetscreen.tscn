@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dol6fjbuibouo"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_levels/level_2/level_spleetscreen.gd" id="1_yglow"]
-[ext_resource type="PackedScene" uid="uid://bsonoxt65nkmx" path="res://src/scenes/scene_levels/level_2/level/level_2.tscn" id="3_21upe"]
+[ext_resource type="PackedScene" uid="uid://dyi5bgtsdr678" path="res://src/scenes/scene_levels/level_2/level.tscn" id="3_21upe"]
 [ext_resource type="PackedScene" uid="uid://cw6nldo3rjyyq" path="res://level/background/parallax_background.tscn" id="4_k5ra5"]
-[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="4_nashj"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/players/player_knight/player_knight.tscn" id="4_nashj"]
 [ext_resource type="PackedScene" uid="uid://dggactv0aho4p" path="res://gui/pause_menu_splitscreen.tscn" id="5_k803m"]
 
 [sub_resource type="Gradient" id="Gradient_77njx"]

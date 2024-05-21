@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgmpgtolqd72d"]
+[gd_scene load_steps=8 format=3 uid="uid://cgmpgtolqd72d"]
 
 [ext_resource type="Script" path="res://src/scenes/scene_3/scene_3.gd" id="1_arvjl"]
 [ext_resource type="PackedScene" uid="uid://hnntk2oees6d" path="res://src/scenes/scene_3/level/level_3.tscn" id="2_4uaw3"]
-[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="3_mnrpn"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/players/player_knight/player_knight.tscn" id="3_mnrpn"]
 [ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
 [ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
+[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player/player.tscn" id="6_n03ml"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oiwc"]
 size = Vector2(118, 196)
@@ -33,5 +34,7 @@ shape = SubResource("RectangleShape2D_7oiwc")
 
 [node name="spawn_player" type="Node2D" parent="Level"]
 position = Vector2(209, 403)
+
+[node name="Player2" parent="Level" instance=ExtResource("6_n03ml")]
 
 [connection signal="body_entered" from="Level/next_level" to="Level/next_level" method="_on_body_entered"]
