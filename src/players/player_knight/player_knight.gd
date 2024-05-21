@@ -17,6 +17,7 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var animation_player := $AnimationPlayer_wario as AnimationPlayer
 @onready var animation_player2 := $AnimatedSprite2D as AnimatedSprite2D
 @onready var sprite := $Sprite2D_wario as Sprite2D
+@onready var sword := $Sprite2D_wario/Sword2D as Area2D
 
 #@onready var animation_player := $AnimationPlayer as AnimationPlayer
 #@onready var sprite := $Sprite2D as Sprite2D
@@ -42,9 +43,9 @@ var hang_gravity = 0
 const JUMP_FORCE = -300
 #var velocity = Vector2()
 # Enumeramos los posibles estados de ataque
-enum AttackState { IDLE, ATTACK_1, ATTACK_2, ATTACK_3 }
+enum AttackState { IDLE, ATTACK_1, ATTACK_2, ATTACK_3, ATTACK_4 }
 # Tiempo máximo entre ataques para que se considere un combo
-const COMBO_MAX_TIME = 1
+var COMBO_MAX_TIME = 0.8
 # Variables para el manejo del combo
 var current_attack_state = AttackState.ATTACK_1
 var combo_timer = 0.0
@@ -76,10 +77,10 @@ func _physics_process(delta: float) -> void:
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			$AnimatedSprite2D.flip_h = false
-			sprite.scale.x = 2
+			sprite.scale.x = 2.5
 		else:
 			$AnimatedSprite2D.flip_h = true
-			sprite.scale.x = -2
+			sprite.scale.x = -2.5 
 
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
@@ -102,6 +103,7 @@ func _physics_process(delta: float) -> void:
 	if is_attack_jump_down and is_on_floor():
 		is_attack_jump_down=false
 		combo_timer = 0.6
+		animation_player.play("jumping_attack_2")
 		animation_player2.play("jumping_attack_2")
 		
 		
@@ -122,6 +124,7 @@ func _physics_process(delta: float) -> void:
 		
 	if can_hang and Input.is_action_just_pressed("ui_up"):	
 		animation_player2.play('hanging')
+		animation_player.play("hanging")
 		# Obtener la posición global del jugador
 		var player_position = global_position
 		# Determinar la dirección hacia el punto de colisión
@@ -151,10 +154,12 @@ func _physics_process(delta: float) -> void:
 			if direction_to_hang.x > 0:
 				offset=20
 				$AnimatedSprite2D.flip_h = false
+				sprite.scale.x = 2.5 
 				global_position = Vector2(hang_position.x-offset, hang_position.y + height/2+10)
 		# Si el punto de colisión está a la izquierda del jugador
 			else:
 				$AnimatedSprite2D.flip_h = true
+				sprite.scale.x = -2.5 
 				offset=20
 				global_position = Vector2(hang_position.x+offset, hang_position.y + height/2+10)
 		if shape is RectangleShape2D:
@@ -187,11 +192,14 @@ func handle_input(delta):
 		combo_timer = 0.0
 		is_slide=true
 		animation_player2.play("slide")
+		animation_player.play("slide")
+		
 	elif Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
 		current_attack_state = AttackState.ATTACK_1
 		combo_timer = 0.0
 		is_attack_jump_down=true
 		animation_player2.play("jumping_attack_1")
+		animation_player.play("jumping_attack_1")
 	elif Input.is_action_just_pressed(attack_input):
 		is_attack=true
 		handle_attack()
@@ -227,12 +235,14 @@ func handle_input(delta):
 		velocity.y *= 0.6
 	if Input.is_action_pressed("pray" + action_suffix):
 		animation_player2.play("pray")
+		animation_player.play("pray")
 		is_pray=true
 	else:
 		is_pray=false
 		
 func play_animation(animation) -> void:
 	animation_player2.play(animation)
+	animation_player.play(animation)
 			
 func get_new_animation(is_shooting := false) -> String:
 	var animation_new: String
@@ -265,30 +275,56 @@ func try_jump() -> void:
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()
 
+var wait_attack=0.4
+var blink_timer: Timer
+var blink_interval: float = 0.05
+var should_blink: bool = false
 
+func _process(delta):
+	if current_attack_state != AttackState.ATTACK_4 and combo_timer<COMBO_MAX_TIME and combo_timer>wait_attack:
+		start_blinking()
+	else:
+		stop_blinking()
+		
 func handle_attack():
-	match current_attack_state:
-		AttackState.IDLE:
-			current_attack_state = AttackState.ATTACK_1
-			perform_attack(1)
-		AttackState.ATTACK_1:
-			if combo_timer < COMBO_MAX_TIME:
-				current_attack_state = AttackState.ATTACK_2
-				perform_attack(2)
-		AttackState.ATTACK_2:
-			if combo_timer < COMBO_MAX_TIME:
-				current_attack_state = AttackState.ATTACK_3
-				perform_attack(3)
-		AttackState.ATTACK_3:
-			if combo_timer < COMBO_MAX_TIME:
+	
+	if combo_timer>wait_attack:
+		match current_attack_state:
+			AttackState.IDLE:
+				COMBO_MAX_TIME = 0.8
+				wait_attack=0.4
 				current_attack_state = AttackState.ATTACK_1
-				#perform_attack(1)
-	# Reiniciar el temporizador de combo cada vez que se hace un ataque
-	combo_timer = 0.0
+				perform_attack(1)
+			AttackState.ATTACK_1:
+				if combo_timer < COMBO_MAX_TIME:
+					COMBO_MAX_TIME = 0.8
+					wait_attack=0.5
+					current_attack_state = AttackState.ATTACK_2
+					perform_attack(2)
+					start_blinking()
+			AttackState.ATTACK_2:
+				COMBO_MAX_TIME = 0.8
+				if combo_timer < COMBO_MAX_TIME:
+					current_attack_state = AttackState.ATTACK_3
+					perform_attack(3)
+			AttackState.ATTACK_3:
+				COMBO_MAX_TIME = 0.8
+				if combo_timer < COMBO_MAX_TIME:
+					current_attack_state = AttackState.ATTACK_4
+					perform_attack(4)
+			AttackState.ATTACK_4:
+				COMBO_MAX_TIME = 0.8
+				wait_attack=0.1
+				if combo_timer < COMBO_MAX_TIME:
+					current_attack_state = AttackState.ATTACK_1
+					#perform_attack(1)
+		# Reiniciar el temporizador de combo cada vez que se hace un ataque
+		combo_timer = 0.0
 
 func perform_attack(attack_number):
 	# Aquí es donde realizas la lógica de ataque real, como animaciones y detección de colisiones
 	animation_player2.play("idle_attack_%d"% attack_number)
+	animation_player.play("idle_attack_%d"% attack_number)
 
 func update_combo_timer(delta):
 	timer += delta
@@ -300,9 +336,7 @@ func update_combo_timer(delta):
 		combo_timer += delta
 		if combo_timer > COMBO_MAX_TIME:
 			current_attack_state = AttackState.IDLE
-
-
-
+			stop_blinking() 
 func _ready():
 	# Obtener una referencia al nodo Level
 	level_node = get_tree().get_root().get_node("Level")
@@ -314,8 +348,29 @@ func _ready():
 				if saliente is Area2D:
 					saliente.connect("player_can_hang", Callable(self, "_on_player_can_hang"))
 					saliente.connect("player_cannot_hang",  Callable(self, "_on_player_cannot_hang"))
+					
+	blink_timer = Timer.new()
+	blink_timer.wait_time = blink_interval
+	blink_timer.connect("timeout",Callable(self, "_on_blink_timer_timeout"))
+	add_child(blink_timer)
 
+func start_blinking():
+	should_blink = true
+	if blink_timer.is_stopped():
+		blink_timer.start()
 
+func stop_blinking():
+	should_blink = false
+	sword.visible = false
+	blink_timer.stop()
+
+func _on_blink_timer_timeout():
+	if should_blink:
+		sword.visible = not sword.visible
+	else:
+		sword.visible = true
+		blink_timer.stop()
+		
 func _on_player_can_hang(position):
 	can_hang = true
 	hang_position = position

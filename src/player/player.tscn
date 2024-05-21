@@ -471,7 +471,7 @@ position = Vector2(0, -14)
 texture = ExtResource("9")
 hframes = 8
 vframes = 8
-frame = 48
+frame = 10
 
 [node name="Gun" type="Marker2D" parent="Sprite2D"]
 position = Vector2(14, 1)
