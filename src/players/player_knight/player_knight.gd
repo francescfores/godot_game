@@ -11,17 +11,12 @@ const TERMINAL_VELOCITY = 700
 ## The player listens for input actions appended with this suffix.[br]
 ## Used to separate controls for multiple players in splitscreen.
 @export var action_suffix := ""
-
 var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var animation_player := $AnimationPlayer_wario as AnimationPlayer
 @onready var animation_player2 := $AnimatedSprite2D as AnimatedSprite2D
 @onready var sprite := $Sprite2D_wario as Sprite2D
 @onready var sword := $Sprite2D_wario/Sword2D as Area2D
-
-#@onready var animation_player := $AnimationPlayer as AnimationPlayer
-#@onready var sprite := $Sprite2D as Sprite2D
-
 @onready var shoot_timer := $ShootAnimation as Timer
 
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
@@ -60,6 +55,17 @@ var is_pray = false
 	#update_combo_timer(delta)
 var level_node = null
 
+enum State {
+	WALKING,
+	DEAD,
+	FOLLOW,
+	ATTACK,
+	SPAWN,
+	IDLE,
+	COMBO
+}
+
+var _state := State.WALKING
 
 func _physics_process(delta: float) -> void:
 	handle_input(delta)
@@ -71,7 +77,7 @@ func _physics_process(delta: float) -> void:
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
 
 	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
-	if !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
+	if !is_attack and !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
 		velocity.x = move_toward(velocity.x, direction,ACCELERATION_SPEED * delta)
 
 	if not is_zero_approx(velocity.x):
@@ -86,14 +92,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	var is_shooting := false
-	if Input.is_action_just_pressed("shoot" + action_suffix):
-		is_shooting = gun.shoot(sprite.scale.x)
+	#if Input.is_action_just_pressed("shoot" + action_suffix):
+		#is_shooting = gun.shoot(sprite.scale.x)
 
 
 	var animation := get_new_animation(is_shooting)
-	if animation != animation_player.current_animation and shoot_timer.is_stopped():
-		if is_shooting:
-			shoot_timer.start()
+	#if animation != animation_player.current_animation and shoot_timer.is_stopped():
+		#if is_shooting:
+			#shoot_timer.start()
 	
 	if is_slide and !is_on_floor():
 		is_slide=false
@@ -103,8 +109,8 @@ func _physics_process(delta: float) -> void:
 	if is_attack_jump_down and is_on_floor():
 		is_attack_jump_down=false
 		combo_timer = 0.6
-		animation_player.play("jumping_attack_2")
-		animation_player2.play("jumping_attack_2")
+		animation_player.play("jump_attack_down_2")
+		animation_player2.play("jump_attack_down_2")
 		
 		
 	if !is_wall_slide and combo_timer>COMBO_MAX_TIME and !is_hanging and !is_attack and !is_slide and !is_attack_jump_down and !is_pray:
@@ -187,52 +193,57 @@ func get_last_movement_direction():
 		return Vector2.ZERO
 		
 func handle_input(delta):
-	if Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
+	#slide
+	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
 		current_attack_state = AttackState.ATTACK_1
 		combo_timer = 0.0
 		is_slide=true
 		animation_player2.play("slide")
 		animation_player.play("slide")
-		
-	elif Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
-		current_attack_state = AttackState.ATTACK_1
-		combo_timer = 0.0
-		is_attack_jump_down=true
-		animation_player2.play("jumping_attack_1")
-		animation_player.play("jumping_attack_1")
-	elif Input.is_action_just_pressed(attack_input):
+	#	
+	if Input.is_action_just_pressed(attack_input):
 		is_attack=true
 		handle_attack()
+	if Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
+		current_attack_state = AttackState.ATTACK_1
+		velocity.x=velocity.x/4
+		combo_timer = 0.0
+		is_attack_jump_down=true
+		animation_player2.play("jump_attack_down_1")
+		animation_player.play("jump_attack_down_1")
+	
+
 		
 	if Input.is_action_pressed("move_left" + action_suffix) :
 		direction = -1
 	elif Input.is_action_pressed("move_right" + action_suffix) :
 		direction = 1
 	
+	#jump on wall
 	if is_on_wall() and !is_hanging:
-		velocity.y=170
-		velocity.x=0
+		#velocity.y=170
+		#velocity.x=0
 		if direction==1:
 			direction = -1
 		else:
-			direction = 1
-			
+			direction = 1		
 	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix):
-		timer=0.2
-		is_wall_slide = true;
-		velocity.x = (wall_push_back*3) * direction
-		velocity.y = JUMP_VELOCITY*1.5
+		#timer=0.2
+		#is_wall_slide = true;
+		#velocity.x = (wall_push_back*3) * direction
+		#velocity.y = JUMP_VELOCITY*1.5
 		_double_jump_charged = false
 	if is_wall_slide and timer>wall_slide_timer:
 		is_wall_slide = false;
 		
-		
+	#jump
 	if Input.is_action_just_pressed("jump" + action_suffix):
-
 		try_jump()
 	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
 		# The player let go of jump early, reduce vertical momentum.
 		velocity.y *= 0.6
+		
+	#pray
 	if Input.is_action_pressed("pray" + action_suffix):
 		animation_player2.play("pray")
 		animation_player.play("pray")
@@ -250,6 +261,7 @@ func get_new_animation(is_shooting := false) -> String:
 		if absf(velocity.x) > 0.1:
 			animation_new = "run"
 		else:
+			#direction=0
 			animation_new = "idle"
 			if Input.is_action_pressed("move_down" + action_suffix):
 				animation_new='crouch'
@@ -306,13 +318,14 @@ func _deactivate_auroa_material():
 var is_auroa_active = false
 
 func handle_attack():
-	
+	velocity.x=0
 	if combo_timer>wait_attack:
 		match current_attack_state:
 			AttackState.IDLE:
 				COMBO_MAX_TIME = 0.8
 				wait_attack=0.4
 				current_attack_state = AttackState.ATTACK_1
+				velocity.x=velocity.x+ (60*direction)
 				perform_attack(1)
 			AttackState.ATTACK_1:
 				if combo_timer < COMBO_MAX_TIME:
@@ -326,6 +339,7 @@ func handle_attack():
 				if combo_timer < COMBO_MAX_TIME:
 					current_attack_state = AttackState.ATTACK_3
 					perform_attack(3)
+					velocity.x=velocity.x+ (60*direction)
 			AttackState.ATTACK_3:
 				COMBO_MAX_TIME = 0.8
 				if combo_timer < COMBO_MAX_TIME:
@@ -334,8 +348,10 @@ func handle_attack():
 			AttackState.ATTACK_4:
 				COMBO_MAX_TIME = 0.8
 				wait_attack=0.0
-				current_attack_state = AttackState.ATTACK_1
-				#if combo_timer < COMBO_MAX_TIME:
+				
+				if combo_timer < COMBO_MAX_TIME:
+					current_attack_state = AttackState.ATTACK_1
+					velocity.x=velocity.x+ (60*direction)
 				#	current_attack_state = AttackState.ATTACK_1
 					#perform_attack(1)
 		# Reiniciar el temporizador de combo cada vez que se hace un ataque

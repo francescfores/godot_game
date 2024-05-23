@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://w8a0c25e54ob"]
+[gd_scene load_steps=3 format=3 uid="uid://cjeheyew14puc"]
 
 [ext_resource type="AudioStream" uid="uid://bikkxqt1epbam" path="res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav" id="1_5a1sn"]
 [ext_resource type="Script" path="res://src/scenes/Scene.gd" id="1_femx8"]

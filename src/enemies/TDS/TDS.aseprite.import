@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cugi15vyn30rm"
+path="res://.godot/imported/TDS.aseprite-43f8d68afcbf31a2297f0eabd4e4fd27.res"
+
+[deps]
+
+source_file="res://src/enemies/TDS/TDS.aseprite"
+dest_files=["res://.godot/imported/TDS.aseprite-43f8d68afcbf31a2297f0eabd4e4fd27.res"]
+
+[params]
+

@@ -1,11 +1,12 @@
-res://src/scenes/scene_levels/level_2/level_map/level_map.tscn
-res://src/scenes/scene_levels/level_2/level_map/tileset.tres
+res://src/scenes/scene_levels/level_2/level.tscn
 res://level/props/wind_sway.tres
 res://src/scenes/scene_levels/level_2/level_map/tileset2.tres
 res://shaders/aura.gdshader
 res://gui/theme.tres
 res://shaders/glow.gdshader
 res://shaders/silouette.gdshader
-res://src/scenes/scene_levels/level_2/level.tscn
-res://src/players/player_knight/player_knight.tscn
-res://backgrounds/The Dawn/dawn_parallax_background.tscn
+res://src/scenes/scene_levels/level_2/level_map/level_map.tscn
+res://src/enemies/bringer_death/bringer_death.tscn
+res://src/enemies/bringer_death/bringer_death.gd
+res://src/players/player_knight/player_knight.gd
+res://src/player_knight.tscn

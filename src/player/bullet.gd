@@ -9,5 +9,7 @@ func destroy() -> void:
 
 
 func _on_body_entered(body: Node) -> void:
-	if body is Enemy:
-		(body as Enemy).destroy()
+	if body is Enemy2:
+		(body as Enemy2).destroy()
+	if body is  EnemyBridge:
+		(body as EnemyBridge).destroy()

@@ -84,8 +84,8 @@ func _on_titlescreen_button_pressed() -> void:
 	if visible:
 		get_tree().paused = false
 		#get_tree().change_scene_to_file("res://src/game_splitscreen.tscn")
-		get_tree().change_scene_to_file("res://src/scenes/scene_menu/menu.tscn")
-
+		get_tree().change_scene_to_file("res://src/scenes/main.tscn")
+ 
 
 
 func _on_player_coin_collected():
