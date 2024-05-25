@@ -47,7 +47,6 @@ var combo_timer = 0.0
 # Variables de entrada (esto asume que ya tienes configuradas las acciones en el Input Map)
 var attack_input = "shoot" + action_suffix
 var is_attack = false
-var is_slide = false
 var is_attack_jump_down = false
 var is_pray = false
 #func _process(delta):
@@ -56,30 +55,133 @@ var is_pray = false
 var level_node = null
 
 enum State {
-	WALKING,
-	DEAD,
-	FOLLOW,
-	ATTACK,
-	SPAWN,
 	IDLE,
-	COMBO
+	WALKING,
+	JUMP,
+	FALLING,
+	ATTACK,
+	SLIDE,
+	HANGING,
+	DEATH,	
+	SPAWN,
+	COMBO,
+	CLIMB,
+	CROUCH,
+	CROUCH_ATTACK,
+	DASH,
+	DEAD,
+	HEALT,
+	HURT,
+	IDLE_ATTACK,
+	JUMP_ATTACK,	
+	PRAY,
+	ROLL,
+	RUN
 }
 
-var _state := State.WALKING
-
-func _physics_process(delta: float) -> void:
-	handle_input(delta)
-	update_combo_timer(delta)
+var _state := State.IDLE
+func handle_input(delta):
+	#walk
+	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
+	#if _state!=State.ATTACK and !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
+	if _state!=State.HURT and _state!=State.ATTACK and !is_hanging and !is_wall_slide :# and  combo_timer>COMBO_MAX_TIME:
+		velocity.x = move_toward(velocity.x, direction,ACCELERATION_SPEED * delta)
 		
+	#jump
+	if _state!=State.SLIDE:
+		if Input.is_action_just_pressed("jump" + action_suffix):
+			if _state==State.HURT:
+				_state=State.WALKING
+
+			try_jump()
+		elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
+			# The player let go of jump early, reduce vertical momentum.
+			velocity.y *= 0.6
+			
+		
+	#slide
+	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
+		current_attack_state = AttackState.ATTACK_1
+		_state=State.SLIDE
+		COMBO_MAX_TIME = 2
+		combo_timer = 0.0
+		#is_slide=true
+		velocity.x = velocity.x*2.5
+	if Input.is_action_just_pressed(attack_input):
+		_state=State.ATTACK
+		handle_attack()
+	if Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
+		current_attack_state = AttackState.ATTACK_1
+		velocity.x=velocity.x/4
+		combo_timer = 0.0
+		is_attack_jump_down=true
+		animation_player.play("jump_attack_down_1")
+			
+	if Input.is_action_pressed("move_left" + action_suffix) :
+		direction = -1
+	elif Input.is_action_pressed("move_right" + action_suffix) :
+		direction = 1
+	
+	#jump on wall
+	if is_on_wall() and !is_hanging:
+		#velocity.y=170
+		#velocity.x=0
+		if direction==1:
+			direction = -1
+		else:
+			direction = 1		
+			
+	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix):
+		timer=0.2
+		is_wall_slide = true;
+		velocity.x = (wall_push_back*3) * direction
+		velocity.y = JUMP_VELOCITY*1.5
+		_double_jump_charged = false
+	if is_wall_slide and timer>wall_slide_timer:
+		is_wall_slide = false;
+				
+	#pray
+	if Input.is_action_pressed("pray" + action_suffix):
+		animation_player.play("pray")
+		is_pray=true
+	else:
+		is_pray=false
+	
+func _physics_process(delta: float) -> void:
+	print(_state)		
+	handle_input(delta)
+	
+	if _state==State.SLIDE and !is_on_floor():
+		_state=State.IDLE
+		combo_timer = COMBO_MAX_TIME
+	if _state==State.HURT:
+		print('eeeeeeeeeeeee')		
+		#_state=State.HURT
+		animation_player.play("hurt")
+		velocity.y=0
+		velocity.x=0
+	elif abs(velocity.x) == 0 :
+		_state=State.IDLE
+		animation_player.play("idle")
+
+	if abs(velocity.x) != 0 :
+		_state=State.WALKING
+		animation_player.play("waling")
+	if velocity.y > 0.0:
+		_state=State.FALLING
+		animation_player.play("falling")
+		
+	#else:
+	#	_state=State.JUMP
+				
+
+	update_combo_timer(delta)
+
 	if is_on_floor():
 		_double_jump_charged = true
-	# Fall.
+	#fall
 	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
-
-	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
-	if !is_attack and !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
-		velocity.x = move_toward(velocity.x, direction,ACCELERATION_SPEED * delta)
-
+	#flipsprite
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			$AnimatedSprite2D.flip_h = false
@@ -87,38 +189,26 @@ func _physics_process(delta: float) -> void:
 		else:
 			$AnimatedSprite2D.flip_h = true
 			sprite.scale.x = -2.5 
-
 	floor_stop_on_slope = not platform_detector.is_colliding()
 	move_and_slide()
 
+	#shoot
 	var is_shooting := false
 	#if Input.is_action_just_pressed("shoot" + action_suffix):
 		#is_shooting = gun.shoot(sprite.scale.x)
 
-
-	var animation := get_new_animation(is_shooting)
-	#if animation != animation_player.current_animation and shoot_timer.is_stopped():
+	var animation := get_new_animation()
 		#if is_shooting:
 			#shoot_timer.start()
 	
-	if is_slide and !is_on_floor():
-		is_slide=false
-		combo_timer = COMBO_MAX_TIME
-		
-		
 	if is_attack_jump_down and is_on_floor():
 		is_attack_jump_down=false
 		combo_timer = 0.6
-		animation_player.play("jump_attack_down_2")
-		animation_player2.play("jump_attack_down_2")
 		
-		
-	if !is_wall_slide and combo_timer>COMBO_MAX_TIME and !is_hanging and !is_attack and !is_slide and !is_attack_jump_down and !is_pray:
+	if !is_wall_slide and combo_timer>COMBO_MAX_TIME and !is_hanging and _state!=State.ATTACK and _state!=State.SLIDE and !is_attack_jump_down and !is_pray:
 		#if is_shooting:
 		#	shoot_timer.start()
 		animation_player.play(animation)
-		animation_player2.play(animation)
-	
 	
 	if is_hanging:
 		if Input.is_action_just_pressed("jump"):
@@ -126,11 +216,7 @@ func _physics_process(delta: float) -> void:
 			is_hanging = false
 			#velocity.y = JUMP_FORCE
 		return
-		
-		
 	if can_hang and Input.is_action_just_pressed("ui_up"):	
-		animation_player2.play('hanging')
-		animation_player.play("hanging")
 		# Obtener la posición global del jugador
 		var player_position = global_position
 		# Determinar la dirección hacia el punto de colisión
@@ -178,85 +264,53 @@ func _physics_process(delta: float) -> void:
 	else:
 		gravity = ProjectSettings.get("physics/2d/default_gravity")
 		return
-
-	#velocity.y += hang_gravity * delta
-	#velocity = move_and_slide(velocity, Vector2.UP)
-	
-func get_last_movement_direction():
-	# Obtener la dirección del último movimiento utilizando la velocidad
-	var slide_collisions = get_slide_collision_count()
-	if slide_collisions > 0:
-		var collision = get_slide_collision(0)
-		var normal = collision.normal
-		return normal.normalized()
-	else:
-		return Vector2.ZERO
-		
-func handle_input(delta):
-	#slide
-	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
-		current_attack_state = AttackState.ATTACK_1
-		combo_timer = 0.0
-		is_slide=true
-		animation_player2.play("slide")
-		animation_player.play("slide")
-	#	
-	if Input.is_action_just_pressed(attack_input):
-		is_attack=true
-		handle_attack()
-	if Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
-		current_attack_state = AttackState.ATTACK_1
-		velocity.x=velocity.x/4
-		combo_timer = 0.0
-		is_attack_jump_down=true
-		animation_player2.play("jump_attack_down_1")
-		animation_player.play("jump_attack_down_1")
-	
-
-		
-	if Input.is_action_pressed("move_left" + action_suffix) :
-		direction = -1
-	elif Input.is_action_pressed("move_right" + action_suffix) :
-		direction = 1
-	
-	#jump on wall
-	if is_on_wall() and !is_hanging:
-		#velocity.y=170
-		#velocity.x=0
-		if direction==1:
-			direction = -1
-		else:
-			direction = 1		
-	if is_on_wall() and Input.is_action_just_pressed("jump" + action_suffix):
-		#timer=0.2
-		#is_wall_slide = true;
-		#velocity.x = (wall_push_back*3) * direction
-		#velocity.y = JUMP_VELOCITY*1.5
-		_double_jump_charged = false
-	if is_wall_slide and timer>wall_slide_timer:
-		is_wall_slide = false;
-		
-	#jump
-	if Input.is_action_just_pressed("jump" + action_suffix):
-		try_jump()
-	elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
-		# The player let go of jump early, reduce vertical momentum.
-		velocity.y *= 0.6
-		
-	#pray
-	if Input.is_action_pressed("pray" + action_suffix):
-		animation_player2.play("pray")
-		animation_player.play("pray")
-		is_pray=true
-	else:
-		is_pray=false
-		
-func play_animation(animation) -> void:
-	animation_player2.play(animation)
-	animation_player.play(animation)
-			
-func get_new_animation(is_shooting := false) -> String:
+func get_new_animation() -> String:
 	var animation_new: String
+	if _state==State.IDLE:
+		animation_new = "idle"
+	if _state==State.WALKING:
+		animation_new = "walking"
+	if _state==State.RUN:
+		animation_new = "run"
+	if _state==State.JUMP:
+		animation_new = "jumping"
+	if _state==State.FALLING:
+		animation_new = "falling"
+	#if _state==State.ATTACK:
+	#	animation_player.play("idle_attack_1")	
+	if _state==State.SLIDE:
+		animation_new = "slide"
+	if _state==State.HANGING:
+		animation_new = "hanging"
+	if _state==State.DEATH:
+		animation_new = "death"
+	if _state==State.SPAWN:
+		animation_new = "spawn"
+	#if _state==State.COMBO:
+	#	animation_player.play("Combo")
+	if _state==State.CLIMB:
+		animation_new = "climb"
+	if _state==State.CROUCH:
+		animation_new = "crouch"
+	if _state==State.CROUCH_ATTACK:
+		animation_new = "crouch_attack"
+	if _state==State.DASH:
+		animation_player.play("dash")
+	if _state==State.HEALT:
+		animation_new = "healt"
+	if _state==State.HURT:
+		animation_new = "hurt"
+	#if _state==State.IDLE_ATTACK:
+	#	animation_player.play("hurt")	
+	if _state==State.JUMP_ATTACK:
+		animation_new = "jump_attack_down_2"
+	if _state==State.PRAY:
+		animation_new = "pray"
+	if _state==State.ROLL:
+		animation_new = "roll"						
+	print('eeeeeeeeeeeee')		
+	print(_state)		
+		
 	if is_on_floor():
 		if absf(velocity.x) > 0.1:
 			animation_new = "run"
@@ -270,12 +324,9 @@ func get_new_animation(is_shooting := false) -> String:
 			animation_new = "falling"
 		else:
 			animation_new = "jumping"
-	#if is_shooting:
-	#	animation_new += "_attack"
 	return animation_new
 
 func try_jump() -> void:
-
 	if is_on_floor():
 		jump_sound.pitch_scale = 1.0
 	elif _double_jump_charged :
@@ -286,7 +337,7 @@ func try_jump() -> void:
 		return
 	velocity.y = JUMP_VELOCITY
 	jump_sound.play()
-
+var test=false
 var wait_attack=0.4
 var blink_timer: Timer
 var blink_interval: float = 0.05
@@ -294,6 +345,7 @@ var should_blink: bool = false
 @onready var auroa_material = sprite.material as ShaderMaterial
 
 func _process(delta):
+	print(test)
 	if current_attack_state != AttackState.ATTACK_4 and combo_timer<COMBO_MAX_TIME and combo_timer>wait_attack:
 		start_blinking()
 		is_auroa_active=true
@@ -314,11 +366,10 @@ func _activate_auroa_material():
 func _deactivate_auroa_material():
 	auroa_material.set("shader_param/aura_width", 0.0) # O cualquier valor que "desactive" visualmente el shader
 
-
 var is_auroa_active = false
 
 func handle_attack():
-	velocity.x=0
+	#velocity.x=0
 	if combo_timer>wait_attack:
 		match current_attack_state:
 			AttackState.IDLE:
@@ -333,7 +384,7 @@ func handle_attack():
 					wait_attack=0.5
 					current_attack_state = AttackState.ATTACK_2
 					perform_attack(2)
-					start_blinking()
+					#start_blinking()
 			AttackState.ATTACK_2:
 				COMBO_MAX_TIME = 0.8
 				if combo_timer < COMBO_MAX_TIME:
@@ -359,20 +410,22 @@ func handle_attack():
 
 func perform_attack(attack_number):
 	# Aquí es donde realizas la lógica de ataque real, como animaciones y detección de colisiones
-	animation_player2.play("idle_attack_%d"% attack_number)
 	animation_player.play("idle_attack_%d"% attack_number)
 
 func update_combo_timer(delta):
 	timer += delta
+
 	if combo_timer > COMBO_MAX_TIME:
-		is_attack=false
-		is_slide=false
+		#is_attack=false
+		_state=State.IDLE
 		is_attack_jump_down=false
+	if _state != State.IDLE:
+		combo_timer += delta
 	if current_attack_state != AttackState.IDLE:
 		combo_timer += delta
-		if combo_timer > COMBO_MAX_TIME:
-			current_attack_state = AttackState.IDLE
-			stop_blinking() 
+		#if combo_timer > COMBO_MAX_TIME:
+			#current_attack_state = AttackState.IDLE
+			#stop_blinking() 
 func _ready():
 	# Obtener una referencia al nodo Level
 	level_node = get_tree().get_root().get_node("Level")

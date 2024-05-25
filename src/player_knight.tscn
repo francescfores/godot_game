@@ -1777,7 +1777,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("24_l0tvr")
 hframes = 8
 vframes = 48
-frame = 361
+frame = 336
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 0,
 "keep_anim_length": false,

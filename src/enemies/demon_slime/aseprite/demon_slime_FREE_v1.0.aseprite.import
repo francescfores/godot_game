@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://tsb7n66kn5di"
+path="res://.godot/imported/demon_slime_FREE_v1.0.aseprite-174e5914b3fc9cda93d8f2ea83c1ba97.res"
+
+[deps]
+
+source_file="res://src/enemies/demon_slime/aseprite/demon_slime_FREE_v1.0.aseprite"
+dest_files=["res://.godot/imported/demon_slime_FREE_v1.0.aseprite-174e5914b3fc9cda93d8f2ea83c1ba97.res"]
+
+[params]
+

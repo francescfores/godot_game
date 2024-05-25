@@ -7,6 +7,6 @@ res://shaders/glow.gdshader
 res://shaders/silouette.gdshader
 res://src/scenes/scene_levels/level_2/level_map/level_map.tscn
 res://src/enemies/bringer_death/bringer_death.tscn
-res://src/enemies/bringer_death/bringer_death.gd
-res://src/players/player_knight/player_knight.gd
 res://src/player_knight.tscn
+res://src/enemies/demon_slime/demonslime.tscn
+res://src/players/player_knight/player_knight.gd
