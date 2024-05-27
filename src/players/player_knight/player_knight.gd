@@ -8,7 +8,7 @@ signal coin_collected()
 ## The player listens for input actions appended with this suffix.[br]
 ## Used to separate controls for multiple players in splitscreen.
 @export var action_suffix := ""
-var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
+var gravity: int = ProjectSettings.get("physics/2d/default_gravity")/2
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var animation_player := $AnimationPlayer_wario as AnimationPlayer
 @onready var animation_player2 := $AnimatedSprite2D as AnimatedSprite2D
@@ -67,7 +67,6 @@ enum State {
 	DASH,
 	DEAD,
 	HEALT,
-	HURT,
 	IDLE_ATTACK,
 	JUMP_ATTACK,	
 	PRAY,
@@ -82,11 +81,8 @@ func handle_input(delta):
 	if machine_state.current_state.can_move:
 		direction= Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * machine_state.current_state.WALK_SPEED
 	#if _state!=State.ATTACK and !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
-	if _state!=State.HURT and _state!=State.ATTACK and !is_hanging and !is_wall_slide :# and  combo_timer>COMBO_MAX_TIME:
+	if _state!=State.ATTACK and !is_hanging and !is_wall_slide :# and  combo_timer>COMBO_MAX_TIME:
 		velocity.x = move_toward(velocity.x, direction,machine_state.current_state.ACCELERATION_SPEED * delta)
-		
-	#jump
-
 		
 	#slide
 	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
@@ -96,16 +92,15 @@ func handle_input(delta):
 		combo_timer = 0.0
 		#is_slide=true
 		velocity.x = velocity.x*2.5
-	if Input.is_action_just_pressed(attack_input):
-		_state=State.ATTACK
-		handle_attack()
+	#if Input.is_action_just_pressed(attack_input):
+	#	_state=State.ATTACK
+	#	handle_attack()
 	if Input.is_action_just_pressed(attack_input) and !is_on_floor() and Input.is_action_pressed('move_down'):
 		current_attack_state = AttackState.ATTACK_1
 		velocity.x=velocity.x/4
 		combo_timer = 0.0
 		is_attack_jump_down=true
 		#animation_player.play("jump_attack_down_1")
-			
 	if Input.is_action_pressed("move_left" + action_suffix) :
 		direction = -1
 	elif Input.is_action_pressed("move_right" + action_suffix) :
@@ -135,8 +130,10 @@ func handle_input(delta):
 		is_pray=true
 	else:
 		is_pray=false
-	
+
 func _physics_process(delta: float) -> void:
+	velocity.y = minf(machine_state.current_state.TERMINAL_VELOCITY, velocity.y + gravity * delta)
+	
 	handle_input(delta)
 	
 	refactor(delta)
@@ -147,19 +144,8 @@ func refactor(delta):
 	if _state==State.SLIDE and !is_on_floor():
 		_state=State.IDLE
 		combo_timer = COMBO_MAX_TIME
-	if _state==State.HURT:
-		#_state=State.HURT
-		#animation_player.play("hurt")
-		velocity.y=0
-		velocity.x=0
-	elif abs(velocity.x) == 0 :
-		_state=State.IDLE
-		#animation_player.play("idle")
 
-	if abs(velocity.x) != 0 :
-		_state=State.WALKING
-		#animation_player.play("waling")
-	if velocity.y > 0.0:
+		#animation_player.play("idle")
 		_state=State.FALLING
 		#animation_player.play("falling")
 		
@@ -170,7 +156,6 @@ func refactor(delta):
 	#if is_on_floor():
 		#_double_jump_charged = true
 	#fall
-	velocity.y = minf(machine_state.current_state.TERMINAL_VELOCITY, velocity.y + gravity * delta)
 	#flipsprite
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
@@ -243,7 +228,7 @@ func refactor(delta):
 			var radius = shape.radius
 		# Puedes agregar más condiciones para otros tipos de formas si las necesitas
 	else:
-		gravity = ProjectSettings.get("physics/2d/default_gravity")
+		gravity = ProjectSettings.get("physics/2d/default_gravity")/2
 		return
 
 func get_new_animation() -> String:
@@ -280,10 +265,6 @@ func get_new_animation() -> String:
 		animation_player.play("dash")
 	if _state==State.HEALT:
 		animation_new = "healt"
-	if _state==State.HURT:
-		animation_new = "hurt"
-	#if _state==State.IDLE_ATTACK:
-	#	animation_player.play("hurt")	
 	if _state==State.JUMP_ATTACK:
 		animation_new = "jump_attack_down_2"
 	if _state==State.PRAY:
@@ -322,10 +303,10 @@ func _process(delta):
 		is_auroa_active=false
 		
 	# Aquí puedes poner la condición bajo la cual se activa/desactiva el material
-	if is_auroa_active:
-		_activate_auroa_material()
-	else:
-		_deactivate_auroa_material()
+	#if is_auroa_active:
+	#	_activate_auroa_material()
+	#else:
+	#	_deactivate_auroa_material()
 
 func _activate_auroa_material():
 	auroa_material.set("shader_param/aura_width", 0.4) # Ajusta el valor según tus necesidades
@@ -396,6 +377,7 @@ func update_combo_timer(delta):
 			#current_attack_state = AttackState.IDLE
 			#stop_blinking() 
 func _ready():
+	_deactivate_auroa_material()
 	# Obtener una referencia al nodo Level
 	level_node = get_tree().get_root().get_node("Level")
 	# Asegúrate de que `level_node` tiene un nodo `Hangables`
@@ -416,6 +398,10 @@ func start_blinking():
 	should_blink = true
 	if blink_timer.is_stopped():
 		blink_timer.start()
+# Referencias a los nodos de la barra de vida
+@onready var barra_vida = $Node2D/BarraVidas
+@onready var barra_fondo = barra_vida.get_node("Fondo")
+@onready var barra_actual = barra_vida.get_node("VidaActual")
 
 func stop_blinking():
 	should_blink = false

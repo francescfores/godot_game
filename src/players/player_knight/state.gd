@@ -4,18 +4,19 @@ class_name StateMachine
 
 var WALK_SPEED = 300.0
 var ACCELERATION_SPEED = WALK_SPEED * 6.0
-var JUMP_VELOCITY = -725.0
+var JUMP_VELOCITY = -700.0
 ## Maximum speed at which the player can fall.
-var TERMINAL_VELOCITY = 700
+var TERMINAL_VELOCITY = 400
 
 var character : CharacterBody2D
 var animationPlayer : AnimationPlayer
-
+var sprite : AnimationPlayer
+var auroa_material :ShaderMaterial
 var new_state : StateMachine = null
 var next_state : StateMachine = null
 
 @export var can_move=true
-var _double_jump_charged := false
+
 func state_process(delta):
 	pass
 
@@ -37,4 +38,4 @@ func _on_exit():
 
 
 func _on_animation_finished_player_(anim_name):
-	print('anim_nameeeeeeeeeeeeeeeeeeeeeeeeeeee')
+	print('_on_animation_finished_player__on_animation_finished_player__on_animation_finished_player_')

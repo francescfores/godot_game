@@ -1,6 +1,8 @@
 Node
 CollisionShape2D
 Area2D
+Timer
+Label
 Node2D
 Control
 ColorRect
@@ -10,5 +12,3 @@ VBoxContainer
 HBoxContainer
 TextureRect
 BoxContainer
-TitleScreen
-Level3

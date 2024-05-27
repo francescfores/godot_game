@@ -85,10 +85,11 @@ var objetivo = null
 @onready var area_vision = $Area2D
 @onready var area_attack = $AttackArea2D
 @onready var area_sword = $Sprite2D/Sword2D
-
+var damage =30
 
 	
 func _ready():
+	area_sword.set_meta("owner", self)
 	actualizar_barra_vida()
 	area_vision.connect("body_entered", Callable(self, "_on_area_2d_area_entered"))
 	area_vision.connect("body_exited", Callable(self, "_on_area_2d_area_exited"))
@@ -259,8 +260,6 @@ var i =0
 func _on_sword_2d_area_entered(area):
 		if area.name == "Player":
 			i=1+i
-			area.test = true
-			area._state = area.State.HURT
-			area.combo_timer = 0.0
-			area.animation_player.play("idle_attack_1")
-			print_debug(area._state)
+			#area.combo_timer = 0.0
+			#area.animation_player.play("idle_attack_1")
+			#print_debug(area._state)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=199 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Script" path="res://src/players/player_knight/player_knight.gd" id="1_u24k8"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/players/player_knight/jump.wav" id="2_arex7"]
@@ -30,10 +30,16 @@
 [ext_resource type="Script" path="res://src/players/player_knight/spawn_state.gd" id="28_aqd4x"]
 [ext_resource type="Script" path="res://src/players/player_knight/doble_jump_state.gd" id="29_ospd0"]
 [ext_resource type="Script" path="res://src/players/player_knight/attack_state.gd" id="30_32imw"]
+[ext_resource type="Script" path="res://src/players/player_knight/debug_state.gd" id="31_5eeou"]
+[ext_resource type="Script" path="res://src/players/player_knight/hurt_state.gd" id="31_vvnl0"]
+[ext_resource type="Script" path="res://src/players/player_knight/slide_state.gd" id="32_rgvnd"]
+[ext_resource type="Script" path="res://src/players/player_knight/idle_attack_2_state.gd" id="33_8ne0q"]
+[ext_resource type="Script" path="res://src/players/player_knight/idle_attack_3_state.gd" id="34_nbf2e"]
+[ext_resource type="Script" path="res://src/players/player_knight/idle_attack_4_state.gd" id="35_xj62p"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o141g"]
 radius = 13.75
-height = 102.5
+height = 190.625
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tau3u"]
 atlas = ExtResource("7_wq1yr")
@@ -1206,7 +1212,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vsars"]
 resource_name = "falling"
-length = 0.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1335,7 +1341,8 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_xpwj3"]
 resource_name = "punch"
-length = 0.8
+length = 0.35
+step = 0.04
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1343,7 +1350,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"times": PackedFloat32Array(0, 0.04, 0.08, 0.12, 0.16, 0.2, 0.24),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -1387,8 +1394,8 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_y6ihi"]
 resource_name = "idle_attack_2"
-length = 0.8
-loop_mode = 1
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1396,7 +1403,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [6, 7, 8, 9]
@@ -1440,8 +1447,8 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_h4k5g"]
 resource_name = "idle_attack_3"
-length = 0.8
-loop_mode = 1
+length = 0.3
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1449,10 +1456,10 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [9, 10, 11, 12, 13]
+"values": [9, 10, 12, 13, 11]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1494,7 +1501,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_s5i8p"]
 resource_name = "idle_attack_4"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1580,6 +1586,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_y0ls4"]
 resource_name = "jump"
 length = 0.5
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1587,7 +1594,7 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [288, 289, 296]
@@ -1683,6 +1690,17 @@ _data = {
 "slide": SubResource("Animation_g68ec")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_amixm"]
+shader = ExtResource("23_bv4vj")
+shader_parameter/aura_width = 4.0
+shader_parameter/aura_color = Color(0, 0.780392, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnhvo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_450o8"]
+radius = 16.25
+height = 115.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("machine_state")]
 position = Vector2(10, -4)
 scale = Vector2(0.8, 0.8)
@@ -1703,14 +1721,13 @@ collision_mask = 8
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(1.90735e-06, -3.8147e-06)
 offset = Vector2(0, 50)
-zoom = Vector2(0.7, 0.7)
 limit_left = -3715
 limit_top = -250
 limit_right = 1425
 limit_bottom = 2000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.62939e-06, 17.5)
+position = Vector2(-12.5, 3.75)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("CapsuleShape2D_o141g")
 
@@ -1777,11 +1794,12 @@ one_shot = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_j7t82")
-position = Vector2(0, -21)
+position = Vector2(-12.5, 3.75)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("24_l0tvr")
 hframes = 8
 vframes = 48
+frame = 296
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 0,
 "keep_anim_length": false,
@@ -1804,7 +1822,7 @@ position = Vector2(14, 1)
 script = ExtResource("21_o55tq")
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D/Gun"]
-position = Vector2(-30.6589, -6.13176)
+position = Vector2(-30.1589, -6.13176)
 stream = ExtResource("22_bv7td")
 
 [node name="Cooldown" type="Timer" parent="Sprite2D/Gun"]
@@ -1828,32 +1846,131 @@ libraries = {
 "": SubResource("AnimationLibrary_va7ae")
 }
 
-[node name="machine_state" type="Node" parent="." node_paths=PackedStringArray("character", "animationPlayer", "current_state")]
+[node name="machine_state" type="Node" parent="." node_paths=PackedStringArray("character", "animationPlayer", "sprite", "current_state", "hurt_state")]
 script = ExtResource("25_wrfe3")
 character = NodePath("..")
 animationPlayer = NodePath("../AnimationPlayer_wario")
+sprite = NodePath("../Sprite2D")
+auroa_material = SubResource("ShaderMaterial_amixm")
 current_state = NodePath("spawn_state")
+hurt_state = NodePath("hurt_state")
 
-[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state")]
+[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state", "coyote_timer")]
 script = ExtResource("26_j8l6t")
 jump_state = NodePath("../air_state")
 attack_state = NodePath("../attack_state")
+coyote_timer = NodePath("coyote_timer")
 
-[node name="air_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "doble_jump_state")]
+[node name="coyote_timer" type="Timer" parent="machine_state/ground_state"]
+wait_time = 0.2
+one_shot = true
+
+[node name="air_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "doble_jump_state", "attack_state")]
 script = ExtResource("27_hj1tp")
 ground_state = NodePath("../ground_state")
 doble_jump_state = NodePath("../doble_jump_state")
+attack_state = NodePath("../attack_state")
 
 [node name="spawn_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("28_aqd4x")
 ground_state = NodePath("../ground_state")
 
-[node name="doble_jump_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+[node name="doble_jump_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "air_state", "attack_state")]
 script = ExtResource("29_ospd0")
 ground_state = NodePath("../ground_state")
+air_state = NodePath("../air_state")
+attack_state = NodePath("../attack_state")
 
-[node name="attack_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+[node name="attack_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "idle_attack_3_state")]
 script = ExtResource("30_32imw")
 ground_state = NodePath("../ground_state")
+idle_attack_3_state = NodePath("../idle_attack_2_state")
+can_move = false
+
+[node name="hurt_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("31_vvnl0")
+air_state = NodePath("../air_state")
+
+[node name="slide_state" type="Node" parent="machine_state"]
+script = ExtResource("32_rgvnd")
+can_move = false
+
+[node name="idle_attack_2_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "idle_attack_3_state")]
+script = ExtResource("33_8ne0q")
+ground_state = NodePath("../ground_state")
+idle_attack_3_state = NodePath("../idle_attack_3_state")
+can_move = false
+
+[node name="idle_attack_3_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "idle_attack_4_state")]
+script = ExtResource("34_nbf2e")
+ground_state = NodePath("../ground_state")
+idle_attack_4_state = NodePath("../idle_attack_4_state")
+can_move = false
+
+[node name="idle_attack_4_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+script = ExtResource("35_xj62p")
+ground_state = NodePath("../ground_state")
+can_move = false
+
+[node name="debug_state" type="Label" parent="." node_paths=PackedStringArray("machine_state")]
+offset_left = -31.25
+offset_top = -125.0
+offset_right = 8.75
+offset_bottom = -102.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnhvo")
+text = "state"
+script = ExtResource("31_5eeou")
+machine_state = NodePath("../machine_state")
+
+[node name="damage_zone" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="damage_zone"]
+shape = SubResource("CapsuleShape2D_450o8")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-12.5, 3.75)
+
+[node name="BarraVidas" type="Control" parent="Node2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -28.75
+offset_top = -105.0
+offset_right = 31.25
+offset_bottom = -80.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Fondo" type="ColorRect" parent="Node2D/BarraVidas"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.375
+anchor_top = 0.113636
+anchor_right = 1.375
+anchor_bottom = 0.113636
+offset_left = -82.1818
+offset_top = 4.77616
+offset_right = -52.1818
+offset_bottom = 7.77616
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 0.329412)
+metadata/_edit_use_anchors_ = true
+
+[node name="VidaActual" type="ColorRect" parent="Node2D/BarraVidas"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.39015
+anchor_top = 0.0772729
+anchor_right = 1.39015
+anchor_bottom = 0.0772729
+offset_left = -82.1818
+offset_top = 3.9091
+offset_right = -52.1818
+offset_bottom = 6.9091
+scale = Vector2(2, 2)
+color = Color(0.223529, 0.67451, 0, 0.721569)
+metadata/_edit_use_anchors_ = true
 
 [connection signal="animation_finished" from="AnimationPlayer_wario" to="machine_state" method="_on_animation_finished_player_"]
+[connection signal="timeout" from="machine_state/ground_state/coyote_timer" to="machine_state/ground_state" method="_on_coyote_timer_timeout"]
+[connection signal="area_entered" from="damage_zone" to="machine_state" method="_on_area_2d_area_entered"]
+[connection signal="area_shape_entered" from="damage_zone" to="machine_state" method="_on_area_2d_area_shape_entered"]

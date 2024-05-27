@@ -5,15 +5,14 @@ extends StateMachine
 var is_auroa_active
 
 var timer: Timer
-var interval: float = 0.15
+var interval: float = 0.3
 var anim_length 
 func _on_enter():
 	_deactivate_auroa_material()
 	print('State doooooooooooooooooo:', self.name)
-	animationPlayer.play('idle_attack_1')
+	animationPlayer.play('idle_attack_4')
 
 	timer = Timer.new()
-	
 	timer.connect("timeout",Callable(self, "_on_timer_timeout"))
 	timer.one_shot = true
 	anim_length = animationPlayer.current_animation_length
@@ -31,7 +30,7 @@ func _on_enter():
 func _on_timer_timeout():
 	print("0.3 seconds before ddddddddddddthe animation ends")
 	#animationPlayer.play('idle_attack_2')
-	is_auroa_active=true
+	#is_auroa_active=true
 	
 func state_process(delta):
 
@@ -49,12 +48,12 @@ func state_input(event:InputEvent):
 		
 func _on_animation_finished_player_(anim_name):
 	print(anim_name)
-	if anim_name == 'idle_attack_1':
+	if anim_name == 'idle_attack_4':
 		#stop_blinking()
 		is_auroa_active=false
 		_deactivate_auroa_material()
 		if combo:
-			next_state = idle_attack_3_state
+			next_state = ground_state
 		else:	
 			next_state = ground_state
 		combo = false
