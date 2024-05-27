@@ -22,7 +22,7 @@ var _state := State.WALKING
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
 
-var direction=1
+var direction=0
 			
 func _physics_process(delta: float) -> void:
 	

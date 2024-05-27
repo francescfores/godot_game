@@ -1,10 +1,10 @@
+Node
 CollisionShape2D
 Area2D
 Node2D
 Control
 ColorRect
 CanvasLayer
-Node
 CanvasGroup
 VBoxContainer
 HBoxContainer

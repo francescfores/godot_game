@@ -1,12 +1,9 @@
 class_name PlayerKnight extends CharacterBody2D
 
+@export var machine_state: MachineState
 signal coin_collected()
 
-const WALK_SPEED = 300.0
-const ACCELERATION_SPEED = WALK_SPEED * 6.0
-const JUMP_VELOCITY = -725.0
-## Maximum speed at which the player can fall.
-const TERMINAL_VELOCITY = 700
+
 
 ## The player listens for input actions appended with this suffix.[br]
 ## Used to separate controls for multiple players in splitscreen.
@@ -15,14 +12,13 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var platform_detector := $PlatformDetector as RayCast2D
 @onready var animation_player := $AnimationPlayer_wario as AnimationPlayer
 @onready var animation_player2 := $AnimatedSprite2D as AnimatedSprite2D
-@onready var sprite := $Sprite2D_wario as Sprite2D
-@onready var sword := $Sprite2D_wario/Sword2D as Area2D
+@onready var sprite := $Sprite2D as Sprite2D
+@onready var sword := $Sprite2D/Sword2D as Area2D
 @onready var shoot_timer := $ShootAnimation as Timer
 
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
 @onready var gun = sprite.get_node(^"Gun") as Gun
 @onready var camera := $Camera as Camera2D
-var _double_jump_charged := false
 @export var wall_slide_gravity = 100
 @export var wall_push_back = 200
 var is_wall_slide = false
@@ -82,22 +78,15 @@ enum State {
 var _state := State.IDLE
 func handle_input(delta):
 	#walk
-	var direction := Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * WALK_SPEED
+	var direction=0
+	if machine_state.current_state.can_move:
+		direction= Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * machine_state.current_state.WALK_SPEED
 	#if _state!=State.ATTACK and !is_hanging and !is_wall_slide and  combo_timer>COMBO_MAX_TIME:
 	if _state!=State.HURT and _state!=State.ATTACK and !is_hanging and !is_wall_slide :# and  combo_timer>COMBO_MAX_TIME:
-		velocity.x = move_toward(velocity.x, direction,ACCELERATION_SPEED * delta)
+		velocity.x = move_toward(velocity.x, direction,machine_state.current_state.ACCELERATION_SPEED * delta)
 		
 	#jump
-	if _state!=State.SLIDE:
-		if Input.is_action_just_pressed("jump" + action_suffix):
-			if _state==State.HURT:
-				_state=State.WALKING
 
-			try_jump()
-		elif Input.is_action_just_released("jump" + action_suffix) and velocity.y < 0.0:
-			# The player let go of jump early, reduce vertical momentum.
-			velocity.y *= 0.6
-			
 		
 	#slide
 	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
@@ -115,7 +104,7 @@ func handle_input(delta):
 		velocity.x=velocity.x/4
 		combo_timer = 0.0
 		is_attack_jump_down=true
-		animation_player.play("jump_attack_down_1")
+		#animation_player.play("jump_attack_down_1")
 			
 	if Input.is_action_pressed("move_left" + action_suffix) :
 		direction = -1
@@ -135,8 +124,8 @@ func handle_input(delta):
 		timer=0.2
 		is_wall_slide = true;
 		velocity.x = (wall_push_back*3) * direction
-		velocity.y = JUMP_VELOCITY*1.5
-		_double_jump_charged = false
+		velocity.y = machine_state.current_state.JUMP_VELOCITY*1.5
+		#_double_jump_charged = false
 	if is_wall_slide and timer>wall_slide_timer:
 		is_wall_slide = false;
 				
@@ -148,39 +137,40 @@ func handle_input(delta):
 		is_pray=false
 	
 func _physics_process(delta: float) -> void:
-	print(_state)		
 	handle_input(delta)
 	
+	refactor(delta)
+	move_and_slide()
+
+	
+func refactor(delta):
 	if _state==State.SLIDE and !is_on_floor():
 		_state=State.IDLE
 		combo_timer = COMBO_MAX_TIME
 	if _state==State.HURT:
-		print('eeeeeeeeeeeee')		
 		#_state=State.HURT
-		animation_player.play("hurt")
+		#animation_player.play("hurt")
 		velocity.y=0
 		velocity.x=0
 	elif abs(velocity.x) == 0 :
 		_state=State.IDLE
-		animation_player.play("idle")
+		#animation_player.play("idle")
 
 	if abs(velocity.x) != 0 :
 		_state=State.WALKING
-		animation_player.play("waling")
+		#animation_player.play("waling")
 	if velocity.y > 0.0:
 		_state=State.FALLING
-		animation_player.play("falling")
+		#animation_player.play("falling")
 		
 	#else:
 	#	_state=State.JUMP
 				
-
-	update_combo_timer(delta)
-
-	if is_on_floor():
-		_double_jump_charged = true
+		
+	#if is_on_floor():
+		#_double_jump_charged = true
 	#fall
-	velocity.y = minf(TERMINAL_VELOCITY, velocity.y + gravity * delta)
+	velocity.y = minf(machine_state.current_state.TERMINAL_VELOCITY, velocity.y + gravity * delta)
 	#flipsprite
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
@@ -190,14 +180,13 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.flip_h = true
 			sprite.scale.x = -2.5 
 	floor_stop_on_slope = not platform_detector.is_colliding()
-	move_and_slide()
-
+	update_combo_timer(delta)
 	#shoot
 	var is_shooting := false
 	#if Input.is_action_just_pressed("shoot" + action_suffix):
 		#is_shooting = gun.shoot(sprite.scale.x)
 
-	var animation := get_new_animation()
+	#var animation := get_new_animation()
 		#if is_shooting:
 			#shoot_timer.start()
 	
@@ -205,14 +194,13 @@ func _physics_process(delta: float) -> void:
 		is_attack_jump_down=false
 		combo_timer = 0.6
 		
-	if !is_wall_slide and combo_timer>COMBO_MAX_TIME and !is_hanging and _state!=State.ATTACK and _state!=State.SLIDE and !is_attack_jump_down and !is_pray:
+	#if !is_wall_slide and combo_timer>COMBO_MAX_TIME and !is_hanging and _state!=State.ATTACK and _state!=State.SLIDE and !is_attack_jump_down and !is_pray:
 		#if is_shooting:
 		#	shoot_timer.start()
-		animation_player.play(animation)
+	#	animation_player.play(animation)
 	
 	if is_hanging:
 		if Input.is_action_just_pressed("jump"):
-			print_debug('is_hanging false')
 			is_hanging = false
 			#velocity.y = JUMP_FORCE
 		return
@@ -224,8 +212,7 @@ func _physics_process(delta: float) -> void:
 		# Si el punto de colisión está a la derecha del jugador
 
 			
-		_double_jump_charged = true
-		print_debug('can_hang true')
+		#_double_jump_charged = true
 		#get_tree().change_scene_to_file("res://src/scenes/main.tscn")
 		is_hanging = true
 		velocity = Vector2()
@@ -233,14 +220,10 @@ func _physics_process(delta: float) -> void:
 		#global_position = hang_position
 		var collision_shape_node = $CollisionShape2D
 		var shape = collision_shape_node.shape
-		print("Tamaño del RectangleShape2D:", shape)
 		#global_position=hang_position
 		if shape is CapsuleShape2D:
 			var radius = shape.radius
 			var height = shape.height
-			print("Radio del CapsuleShape2D:", radius)
-			print("Altura del CapsuleShape2D:", height)
-			print("Altura del hang_position:", hang_position)
 			var direction_to_hang = hang_position - player_position
 			
 			if direction_to_hang.x > 0:
@@ -256,14 +239,13 @@ func _physics_process(delta: float) -> void:
 				global_position = Vector2(hang_position.x+offset, hang_position.y + height/2+10)
 		if shape is RectangleShape2D:
 			var size = shape.extents * 2 # extents es la mitad del tamaño total
-			print("Tamaño del RectangleShape2D:", size)
 		elif shape is CircleShape2D:
 			var radius = shape.radius
-			print("Radio del CircleShape2D:", radius)
 		# Puedes agregar más condiciones para otros tipos de formas si las necesitas
 	else:
 		gravity = ProjectSettings.get("physics/2d/default_gravity")
 		return
+
 func get_new_animation() -> String:
 	var animation_new: String
 	if _state==State.IDLE:
@@ -308,8 +290,6 @@ func get_new_animation() -> String:
 		animation_new = "pray"
 	if _state==State.ROLL:
 		animation_new = "roll"						
-	print('eeeeeeeeeeeee')		
-	print(_state)		
 		
 	if is_on_floor():
 		if absf(velocity.x) > 0.1:
@@ -326,17 +306,6 @@ func get_new_animation() -> String:
 			animation_new = "jumping"
 	return animation_new
 
-func try_jump() -> void:
-	if is_on_floor():
-		jump_sound.pitch_scale = 1.0
-	elif _double_jump_charged :
-		_double_jump_charged = false			
-		velocity.x *= 2.5
-		jump_sound.pitch_scale = 4
-	else:
-		return
-	velocity.y = JUMP_VELOCITY
-	jump_sound.play()
 var test=false
 var wait_attack=0.4
 var blink_timer: Timer
@@ -345,7 +314,6 @@ var should_blink: bool = false
 @onready var auroa_material = sprite.material as ShaderMaterial
 
 func _process(delta):
-	print(test)
 	if current_attack_state != AttackState.ATTACK_4 and combo_timer<COMBO_MAX_TIME and combo_timer>wait_attack:
 		start_blinking()
 		is_auroa_active=true
@@ -410,8 +378,9 @@ func handle_attack():
 
 func perform_attack(attack_number):
 	# Aquí es donde realizas la lógica de ataque real, como animaciones y detección de colisiones
-	animation_player.play("idle_attack_%d"% attack_number)
-
+	#animation_player.play("idle_attack_%d"% attack_number)
+	attack_number=attack_number
+	
 func update_combo_timer(delta):
 	timer += delta
 

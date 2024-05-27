@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=190 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Script" path="res://src/players/player_knight/player_knight.gd" id="1_u24k8"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/players/player_knight/jump.wav" id="2_arex7"]
@@ -24,6 +24,12 @@
 [ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://src/players/player_knight/shoot.wav" id="22_bv7td"]
 [ext_resource type="Shader" path="res://shaders/aura.gdshader" id="23_bv4vj"]
 [ext_resource type="Texture2D" uid="uid://e8aamnpkm7tv" path="res://src/players/player_knight/move_set.png" id="24_l0tvr"]
+[ext_resource type="Script" path="res://src/players/player_knight/machine_state.gd" id="25_wrfe3"]
+[ext_resource type="Script" path="res://src/players/player_knight/idle_state.gd" id="26_j8l6t"]
+[ext_resource type="Script" path="res://src/players/player_knight/jump_state.gd" id="27_hj1tp"]
+[ext_resource type="Script" path="res://src/players/player_knight/spawn_state.gd" id="28_aqd4x"]
+[ext_resource type="Script" path="res://src/players/player_knight/doble_jump_state.gd" id="29_ospd0"]
+[ext_resource type="Script" path="res://src/players/player_knight/attack_state.gd" id="30_32imw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o141g"]
 radius = 13.75
@@ -1330,7 +1336,6 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_xpwj3"]
 resource_name = "punch"
 length = 0.8
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1590,7 +1595,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_mcxts"]
 resource_name = "look"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1679,13 +1683,14 @@ _data = {
 "slide": SubResource("Animation_g68ec")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("machine_state")]
 position = Vector2(10, -4)
 scale = Vector2(0.8, 0.8)
 collision_mask = 30
 floor_constant_speed = true
 platform_on_leave = 2
 script = ExtResource("1_u24k8")
+machine_state = NodePath("machine_state")
 
 [node name="ShootAnimation" type="Timer" parent="."]
 one_shot = true
@@ -1769,7 +1774,7 @@ stream = ExtResource("22_bv7td")
 wait_time = 0.3
 one_shot = true
 
-[node name="Sprite2D_wario" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_j7t82")
 position = Vector2(0, -21)
@@ -1777,7 +1782,6 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("24_l0tvr")
 hframes = 8
 vframes = 48
-frame = 336
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 0,
 "keep_anim_length": false,
@@ -1795,21 +1799,21 @@ metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": true
 }
 
-[node name="Gun" type="Marker2D" parent="Sprite2D_wario"]
+[node name="Gun" type="Marker2D" parent="Sprite2D"]
 position = Vector2(14, 1)
 script = ExtResource("21_o55tq")
 
-[node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D_wario/Gun"]
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D/Gun"]
 position = Vector2(-30.6589, -6.13176)
 stream = ExtResource("22_bv7td")
 
-[node name="Cooldown" type="Timer" parent="Sprite2D_wario/Gun"]
+[node name="Cooldown" type="Timer" parent="Sprite2D/Gun"]
 wait_time = 0.3
 one_shot = true
 
-[node name="Sword2D" type="Area2D" parent="Sprite2D_wario"]
+[node name="Sword2D" type="Area2D" parent="Sprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D_wario/Sword2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Sword2D"]
 texture_filter = 2
 material = SubResource("ShaderMaterial_8a6ws")
 use_parent_material = true
@@ -1819,7 +1823,37 @@ shape = SubResource("CapsuleShape2D_s6hhf")
 disabled = true
 
 [node name="AnimationPlayer_wario" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Sprite2D_wario")
+root_node = NodePath("../Sprite2D")
 libraries = {
 "": SubResource("AnimationLibrary_va7ae")
 }
+
+[node name="machine_state" type="Node" parent="." node_paths=PackedStringArray("character", "animationPlayer", "current_state")]
+script = ExtResource("25_wrfe3")
+character = NodePath("..")
+animationPlayer = NodePath("../AnimationPlayer_wario")
+current_state = NodePath("spawn_state")
+
+[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state")]
+script = ExtResource("26_j8l6t")
+jump_state = NodePath("../air_state")
+attack_state = NodePath("../attack_state")
+
+[node name="air_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state", "doble_jump_state")]
+script = ExtResource("27_hj1tp")
+ground_state = NodePath("../ground_state")
+doble_jump_state = NodePath("../doble_jump_state")
+
+[node name="spawn_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+script = ExtResource("28_aqd4x")
+ground_state = NodePath("../ground_state")
+
+[node name="doble_jump_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+script = ExtResource("29_ospd0")
+ground_state = NodePath("../ground_state")
+
+[node name="attack_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
+script = ExtResource("30_32imw")
+ground_state = NodePath("../ground_state")
+
+[connection signal="animation_finished" from="AnimationPlayer_wario" to="machine_state" method="_on_animation_finished_player_"]
