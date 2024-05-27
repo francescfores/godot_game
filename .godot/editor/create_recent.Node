@@ -1,3 +1,5 @@
+AnimationPlayer
+Sprite2D
 Node
 CollisionShape2D
 Area2D
@@ -11,4 +13,3 @@ CanvasGroup
 VBoxContainer
 HBoxContainer
 TextureRect
-BoxContainer

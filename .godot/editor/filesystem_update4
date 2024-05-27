@@ -17,3 +17,10 @@ res://src/players/player_knight/idle_attack_3_state.gd
 res://src/players/player_knight/idle_attack_4_state.gd
 res://src/players/player_knight/jump_state.gd
 res://src/players/player_knight/idle_state.gd
+res://src/players/player_knight/machine_state.gd
+res://src/players/player_knight/player_knight.gd
+res://src/enemies/demon_slime/demonslime.gd
+res://src/players/player_knight/death_state.gd
+res://src/players/player_knight/spawn_state.gd
+res://src/player/player.tscn
+res://src/players/player_knight/slide_state.gd

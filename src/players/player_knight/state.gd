@@ -29,13 +29,15 @@ func _ready():
 	
 # Called when the node enters the scene tree for the first time.
 func _on_enter():
-	print('State enterdsdsd:', self.name)
-
+	#print('State enterdsdsd:', self.name)
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _on_exit():
-	print('State enter:', self.name)
+	#print('State enter:', self.name)
+	pass
 
 
 func _on_animation_finished_player_(anim_name):
-	print('_on_animation_finished_player__on_animation_finished_player__on_animation_finished_player_')
+	#print('_on_animation_finished_player__on_animation_finished_player_')
+	pass

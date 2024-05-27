@@ -3,6 +3,7 @@ extends StateMachine
 
 @export var jump_state:StateMachine
 @export var attack_state:StateMachine
+@export var slide_state:StateMachine
 @export var coyote_timer:Timer
 
 func _on_enter():
@@ -34,9 +35,15 @@ func state_input(event:InputEvent):
 		animationPlayer.play('jumping')
 		jump_state._double_jump_charged = true
 		try_jump()
-	elif event.is_action_pressed("shoot" +  character.action_suffix):
+	if event.is_action_pressed('move_down'+  character.action_suffix):
+		animationPlayer.play('slide')
+		next_state=slide_state
+		
+		character.velocity.x = character.velocity.x*2.5	
+	if event.is_action_pressed("shoot" +  character.action_suffix):
 		next_state=attack_state
 		
+	
 	#elif event.is_action_released("jump" +  character.action_suffix) and character.velocity.y < 0.0:
 			# The player let go of jump early, reduce vertical momentum.
 	#	character.velocity.y *= 0.6

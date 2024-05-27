@@ -3,8 +3,6 @@ class_name PlayerKnight extends CharacterBody2D
 @export var machine_state: MachineState
 signal coin_collected()
 
-
-
 ## The player listens for input actions appended with this suffix.[br]
 ## Used to separate controls for multiple players in splitscreen.
 @export var action_suffix := ""
@@ -15,6 +13,8 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")/2
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var sword := $Sprite2D/Sword2D as Area2D
 @onready var shoot_timer := $ShootAnimation as Timer
+@onready var blood_animation_player := $damage_zone/AnimationPlayer as AnimationPlayer
+@onready var blood_sprite := $damage_zone/Sprite2D as Sprite2D
 
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
 @onready var gun = sprite.get_node(^"Gun") as Gun
@@ -74,6 +74,8 @@ enum State {
 	RUN
 }
 
+#new
+#en new
 var _state := State.IDLE
 func handle_input(delta):
 	#walk
@@ -85,13 +87,7 @@ func handle_input(delta):
 		velocity.x = move_toward(velocity.x, direction,machine_state.current_state.ACCELERATION_SPEED * delta)
 		
 	#slide
-	if velocity.x!=0 and Input.is_action_just_pressed(attack_input) and is_on_floor() and Input.is_action_pressed('move_down'):
-		current_attack_state = AttackState.ATTACK_1
-		_state=State.SLIDE
-		COMBO_MAX_TIME = 2
-		combo_timer = 0.0
-		#is_slide=true
-		velocity.x = velocity.x*2.5
+	
 	#if Input.is_action_just_pressed(attack_input):
 	#	_state=State.ATTACK
 	#	handle_attack()
@@ -134,7 +130,7 @@ func handle_input(delta):
 func _physics_process(delta: float) -> void:
 	velocity.y = minf(machine_state.current_state.TERMINAL_VELOCITY, velocity.y + gravity * delta)
 	
-	handle_input(delta)
+	handle_input(delta)	
 	
 	refactor(delta)
 	move_and_slide()
@@ -295,13 +291,7 @@ var should_blink: bool = false
 @onready var auroa_material = sprite.material as ShaderMaterial
 
 func _process(delta):
-	if current_attack_state != AttackState.ATTACK_4 and combo_timer<COMBO_MAX_TIME and combo_timer>wait_attack:
-		start_blinking()
-		is_auroa_active=true
-	else:
-		stop_blinking()
-		is_auroa_active=false
-		
+	pass
 	# Aquí puedes poner la condición bajo la cual se activa/desactiva el material
 	#if is_auroa_active:
 	#	_activate_auroa_material()
@@ -376,8 +366,10 @@ func update_combo_timer(delta):
 		#if combo_timer > COMBO_MAX_TIME:
 			#current_attack_state = AttackState.IDLE
 			#stop_blinking() 
+var initial_position = Vector2()
 func _ready():
 	_deactivate_auroa_material()
+	initial_position = sprite.global_position
 	# Obtener una referencia al nodo Level
 	level_node = get_tree().get_root().get_node("Level")
 	# Asegúrate de que `level_node` tiene un nodo `Hangables`
@@ -388,33 +380,13 @@ func _ready():
 				if saliente is Area2D:
 					saliente.connect("player_can_hang", Callable(self, "_on_player_can_hang"))
 					saliente.connect("player_cannot_hang",  Callable(self, "_on_player_cannot_hang"))
-					
-	blink_timer = Timer.new()
-	blink_timer.wait_time = blink_interval
-	blink_timer.connect("timeout",Callable(self, "_on_blink_timer_timeout"))
-	add_child(blink_timer)
 
-func start_blinking():
-	should_blink = true
-	if blink_timer.is_stopped():
-		blink_timer.start()
-# Referencias a los nodos de la barra de vida
 @onready var barra_vida = $Node2D/BarraVidas
 @onready var barra_fondo = barra_vida.get_node("Fondo")
 @onready var barra_actual = barra_vida.get_node("VidaActual")
-
-func stop_blinking():
-	should_blink = false
-	sword.visible = false
-	blink_timer.stop()
-
-func _on_blink_timer_timeout():
-	if should_blink:
-		sword.visible = not sword.visible
-	else:
-		sword.visible = true
-		blink_timer.stop()
-		
+var vida_maxima = 100
+var vida_actual = 100
+var damage =30
 func _on_player_can_hang(position):
 	can_hang = true
 	hang_position = position

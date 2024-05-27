@@ -484,7 +484,6 @@ libraries = {
 position = Vector2(0.181812, 0.909096)
 rotation = -1.5708
 shape = SubResource("5")
-disabled = true
 
 [node name="Explosion" type="CPUParticles2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.12)

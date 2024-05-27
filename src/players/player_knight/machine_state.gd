@@ -7,6 +7,7 @@ class_name MachineState
 @export var auroa_material : ShaderMaterial
 @export var current_state : StateMachine
 @export var hurt_state : StateMachine
+@export var death_state : StateMachine
 @export var action_suffix := ""
 var ArrayStates: Array[StateMachine]
 func _ready():
@@ -44,24 +45,52 @@ func _on_animation_finished_player_(anim_name):
 
 func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
 	if area.has_meta("owner"):
-		var enemy = area.get_meta("owner")
-		recibir_dano(10)
-		current_state.next_state = hurt_state
+		var enemy = area.get_meta("owner")		
+		recibir_dano(enemy.damage)
+		
+		if character.vida_actual==0:
+			#character.global_position.x = character.initial_position.x
+			#character.global_position.y = character.initial_position.y	
+			current_state.next_state = death_state
+		else:	
+			current_state.next_state = hurt_state
+			character.blood_animation_player.play('blood_1')
+			if enemy.global_position.x < character.global_position.x:
+				character.blood_sprite.flip_h = false
+				character.blood_sprite.offset.x = 50
+			else:
+				character.blood_sprite.flip_h = true
+				character.blood_sprite.offset.x = -50
+		
+		
 	else:
 		pass
 		#print('Area entered by unknown entity')
 
 
 # Variables de salud
-var vida_maxima = 100
-var vida_actual = 100
+
 #func _on_area_2d_area_entered(area):
 #	print('areaaaaaaaaaaaaaaaaa')
 func recibir_dano(cantidad):
-	vida_actual -= cantidad
-	vida_actual = clamp(vida_actual, 0, vida_maxima)
+	character.vida_actual -= cantidad
+	character.vida_actual = clamp(character.vida_actual, 0, character.vida_maxima)
 	actualizar_barra_vida()
  
 func actualizar_barra_vida():
-	var proporción_vida = float(vida_actual) / vida_maxima
+	var proporción_vida = float(character.vida_actual) / character.vida_maxima
 	character.barra_actual.size.x = proporción_vida * character.barra_fondo.size.x
+	
+func _on_sword_2d_area_entered(area):
+	print('eeeeeeee')
+	print(area.name)
+	if area.name == "EnemyDemon":
+		area.recibir_dano(character.damage)
+
+func _on_sword_2d_body_entered(body):
+	print('_on_sword_2d_body_entered')
+	print(body.name)
+	if body.name == "EnemyDemon":
+		body.recibir_dano(character.damage)
+
+

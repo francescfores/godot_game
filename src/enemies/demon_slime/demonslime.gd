@@ -104,6 +104,14 @@ func mover_hacia_objetivo(delta):
 func recibir_dano(cantidad):
 	vida_actual -= cantidad
 	vida_actual = clamp(vida_actual, 0, vida_maxima)
+	print(vida_actual)
+	
+	if vida_actual<=0:
+		_state=State.IDLE
+		is_combo=false
+		animation_player.play('dead')
+		destroy()
+		print('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
 	actualizar_barra_vida()
 var is_combo=false
 func actualizar_barra_vida():
@@ -218,11 +226,13 @@ class ComboAction:
 		self.state = state
 		
 var combo_actions = [
+	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
+	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
+	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
 	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
 	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
 	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
 	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
-	ComboAction.new("attack_1", 1, "attack_1", State.ATTACK),
 ]
 
 var current_combo_index = 0
