@@ -1,8 +1,8 @@
-AnimationPlayer
-Sprite2D
-Node
 CollisionShape2D
 Area2D
+Node
+AnimationPlayer
+Sprite2D
 Timer
 Label
 Node2D
@@ -12,4 +12,3 @@ CanvasLayer
 CanvasGroup
 VBoxContainer
 HBoxContainer
-TextureRect

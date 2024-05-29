@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bfhhpjh7vt2uo"
+path="res://.godot/imported/Elementals_leaf_ranger_free_v1.0.aseprite-b95d69485e4d9d36f18234687557986d.res"
+
+[deps]
+
+source_file="res://src/players/leaf_ranger/aseprite/Elementals_leaf_ranger_free_v1.0.aseprite"
+dest_files=["res://.godot/imported/Elementals_leaf_ranger_free_v1.0.aseprite-b95d69485e4d9d36f18234687557986d.res"]
+
+[params]
+

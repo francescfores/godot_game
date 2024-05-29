@@ -261,7 +261,7 @@ var i =0
 func _on_sword_2d_area_entered(area):
 		if area.name == "Player":
 			i=1+i
-			area._state = area.State.DEAD
-			area.animation_player.play("idle_attack_1")
+			#area._state = area.State.DEAD
+			#area.animation_player.play("idle_attack_1")
 			print_debug(i)
 			print_debug('atttack _on_sword_2d_area_entered')

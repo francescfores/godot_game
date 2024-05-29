@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://src/scenes/scene_levels/level_2/level.gd" id="1_ud261"]
 [ext_resource type="PackedScene" uid="uid://dlnm83nen2cjv" path="res://src/scenes/scene_levels/level_2/level_map/level_map.tscn" id="2_dhfg6"]
-[ext_resource type="PackedScene" uid="uid://vh7pmputa7r3" path="res://src/player_knight.tscn" id="3_mnrpn"]
 [ext_resource type="Script" path="res://next_level.gd" id="4_3cu1w"]
 [ext_resource type="PackedScene" uid="uid://bbooeo7pgtu35" path="res://gui/pause_menu_singleplayer.tscn" id="5_gox1p"]
+[ext_resource type="PackedScene" uid="uid://b2tsu3ov2cwj5" path="res://src/players/leaf_ranger/leaf_ranger.tscn" id="6_2r6dw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7oiwc"]
 size = Vector2(118, 196)
@@ -28,7 +28,6 @@ escena = "3"
 position = Vector2(-96, 393)
 shape = SubResource("RectangleShape2D_7oiwc")
 
-[node name="Player" parent="Level" instance=ExtResource("3_mnrpn")]
-position = Vector2(-2127, 203)
+[node name="Player3" parent="Level" instance=ExtResource("6_2r6dw")]
 
 [connection signal="body_entered" from="Level/next_level" to="Level/next_level" method="_on_body_entered"]

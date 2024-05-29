@@ -104,13 +104,13 @@ func mover_hacia_objetivo(delta):
 func recibir_dano(cantidad):
 	vida_actual -= cantidad
 	vida_actual = clamp(vida_actual, 0, vida_maxima)
+	print('vida_actual')
 	print(vida_actual)
 	
 	if vida_actual<=0:
 		_state=State.IDLE
 		is_combo=false
 		animation_player.play('dead')
-		destroy()
 		print('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
 	actualizar_barra_vida()
 var is_combo=false
@@ -273,3 +273,9 @@ func _on_sword_2d_area_entered(area):
 			#area.combo_timer = 0.0
 			#area.animation_player.play("idle_attack_1")
 			#print_debug(area._state)
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "dead":
+		queue_free()
+	

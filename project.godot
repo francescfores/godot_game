@@ -208,7 +208,7 @@ pointing/emulate_touch_from_mouse=true
 [physics]
 
 common/physics_ticks_per_second=120
-2d/default_gravity=2100
+2d/default_gravity=2000
 
 [rendering]
 
