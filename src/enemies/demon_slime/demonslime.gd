@@ -8,6 +8,7 @@ enum State {
 	ATTACK,
 	SPAWN,
 	IDLE,
+	HURT,
 	COMBO
 }
 
@@ -21,11 +22,9 @@ var _state := State.WALKING
 @onready var floor_detector_right := $FloorDetectorRight as RayCast2D
 @onready var sprite := $Sprite2D as Sprite2D
 @onready var animation_player := $AnimationPlayer as AnimationPlayer
-
 var direction=1
 			
 func _physics_process(delta: float) -> void:
-	
 	if  _state == State.WALKING and velocity.is_zero_approx():
 		velocity.x = WALK_SPEED * direction
 	velocity.y += gravity * delta
@@ -56,7 +55,6 @@ func destroy() -> void:
 	_state = State.DEAD
 	velocity = Vector2.ZERO
 
-
 func get_new_animation() -> StringName:
 	var animation_new: StringName
 	if _state == State.WALKING:
@@ -68,7 +66,6 @@ func get_new_animation() -> StringName:
 		animation_new = &"destroy"
 	return animation_new
 
-
 # Variables de salud
 var vida_maxima = 100
 var vida_actual = 100
@@ -77,7 +74,6 @@ var velocidad = 100
 var jugador_visto = false
 var objetivo = null
 
-
 # Referencias a los nodos de la barra de vida
 @onready var barra_vida = $Node2D/BarraVidas
 @onready var barra_fondo = barra_vida.get_node("Fondo")
@@ -85,8 +81,7 @@ var objetivo = null
 @onready var area_vision = $Area2D
 @onready var area_attack = $AttackArea2D
 @onready var area_sword = $Sprite2D/Sword2D
-var damage =30
-
+var damage =18	
 	
 func _ready():
 	area_sword.set_meta("owner", self)
@@ -103,12 +98,15 @@ func mover_hacia_objetivo(delta):
 	
 func recibir_dano(cantidad):
 	vida_actual -= cantidad
+	create_label_damage(cantidad)
 	vida_actual = clamp(vida_actual, 0, vida_maxima)
 	print('vida_actual')
 	print(vida_actual)
-	
+	_state=State.HURT
+	animation_player.play('hurt')
+	is_combo=false
 	if vida_actual<=0:
-		_state=State.IDLE
+		_state=State.DEAD
 		is_combo=false
 		animation_player.play('dead')
 		print('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
@@ -225,14 +223,18 @@ class ComboAction:
 		self.animation = animation
 		self.state = state
 		
-var combo_actions = [
-	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 0.7, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
-	ComboAction.new("attack_2", 1, "attack_2", State.ATTACK),
+var combo_actions = [ 
+	ComboAction.new("attack_2", 0.6, "attack_2", State.ATTACK),
+	ComboAction.new("spawn", 0.1, "spawn", State.SPAWN),
+	ComboAction.new("attack_2", 0.5, "attack_2", State.ATTACK),
+	ComboAction.new("spawn", 0.1, "spawn", State.SPAWN),
+	ComboAction.new("attack_2", 0.5, "attack_2", State.ATTACK),
+	ComboAction.new("spawn", 0.3, "spawn", State.SPAWN),
+	ComboAction.new("attack_2", 0.6, "attack_2", State.ATTACK),
+	ComboAction.new("spawn", 0.3, "spawn", State.SPAWN),
+	ComboAction.new("attack_2", 0.6, "attack_2", State.ATTACK),
+	ComboAction.new("attack_2", 0.6, "attack_2", State.ATTACK),
+	ComboAction.new("idle", 0.6, "idle", State.IDLE),
 ]
 
 var current_combo_index = 0
@@ -278,4 +280,55 @@ func _on_sword_2d_area_entered(area):
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "dead":
 		queue_free()
-	
+	if anim_name == "hurt":
+		is_combo=true
+		_state=State.ATTACK
+
+@onready var blood_animation_player := $damage_zone/AnimationPlayer as AnimationPlayer
+@onready var blood_sprite := $damage_zone/Sprite2D as Sprite2D
+
+func _on_damage_zone_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if area.has_meta("player"):
+		var player = area.get_meta("player")		
+		recibir_dano(player.damage)
+		blood_animation_player.play('blood_1')
+		if player.global_position.x < global_position.x:
+			blood_sprite.flip_h = false
+			blood_sprite.offset.x = 50
+		else:
+			blood_sprite.flip_h = true
+			blood_sprite.offset.x = -50
+		
+		
+	else:
+		pass	
+
+var label_damage_timer: Timer
+var label_damage_interval: float = 1.5
+@onready var damage_zone := $damage_zone as Area2D		
+func create_label_damage(damage_label):
+	var new_vbox = damage_zone.get_node("damage_label").duplicate()  # Clonar el VBoxContainer template
+	# Configurar el Label del nuevo VBoxContainer
+	var label = new_vbox.get_node("label")
+	if label:
+		label.text = str(damage_label)
+	else:
+		print("Error: Label node not found in VBoxContainer template!")
+	label.visible=true
+	damage_zone.add_child(new_vbox) 
+	label_damage_timer = Timer.new()
+	label_damage_timer.connect("timeout",Callable(self, "_on_timer_timeout").bind(new_vbox) )
+	label_damage_timer.one_shot = true
+	label_damage_timer.wait_time = label_damage_interval
+	add_child(label_damage_timer)
+	label_damage_timer.start(label_damage_timer.wait_time)	
+
+# Crear un Tween para animar el label
+	var tween = get_tree().create_tween()
+	tween.tween_property(new_vbox, "modulate", Color.RED, 0.3)
+	#tween.tween_property(new_vbox, "position:x", 200.0, 1).as_relative()
+	tween.tween_property(new_vbox, "position:y", -60.0, 1).as_relative()
+	tween.tween_property(new_vbox, "scale", Vector2(label.global_position.x, label.global_position.y-100), 0.5)
+	tween.tween_callback(new_vbox.queue_free)
+	# Conectar la señal de finalización del tween para eliminar el VBoxContainer
+	tween.connect("finished", Callable(self, "_on_tween_finished").bind(new_vbox))

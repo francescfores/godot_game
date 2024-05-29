@@ -15,6 +15,7 @@ var gravity: int = ProjectSettings.get("physics/2d/default_gravity")
 @onready var shoot_timer := $ShootAnimation as Timer
 @onready var blood_animation_player := $damage_zone/AnimationPlayer as AnimationPlayer
 @onready var blood_sprite := $damage_zone/Sprite2D as Sprite2D
+@onready var damage_zone := $damage_zone as Area2D
 
 @onready var jump_sound := $Jump as AudioStreamPlayer2D
 @onready var gun = sprite.get_node(^"Gun") as Gun
@@ -70,9 +71,10 @@ func _physics_process(delta: float) -> void:
 			sprite.scale.x = -2.5 
 	#refactor(delta)
 	move_and_slide()
-
+@onready var area_sword = $Sprite2D/Sword2D
 var initial_position = Vector2()
 func _ready():
+	area_sword.set_meta("player", self)
 	initial_position = sprite.global_position
 	# Obtener una referencia al nodo Level
 	level_node = get_tree().get_root().get_node("Level")
@@ -91,4 +93,4 @@ func _ready():
 @onready var barra_actual = barra_vida.get_node("VidaActual")
 var vida_maxima = 100
 var vida_actual = 100
-var damage =30
+var damage =5

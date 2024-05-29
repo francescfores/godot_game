@@ -7,4 +7,5 @@ class_name Coin extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	animation_player.play(&"picked")
-	(body as PlayerKnight).coin_collected.emit()
+	(body).coin_collected.emit()
+	#(body as PlayerKnight).coin_collected.emit()

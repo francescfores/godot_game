@@ -64,6 +64,7 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 		else:	
 			current_state.next_state = hurt_state
 			character.blood_animation_player.play('blood_1')
+			create_label_damage()
 			if enemy.global_position.x < character.global_position.x:
 				character.blood_sprite.flip_h = false
 				character.blood_sprite.offset.x = 50
@@ -75,6 +76,38 @@ func _on_area_2d_area_shape_entered(area_rid, area, area_shape_index, local_shap
 	else:
 		pass
 		#print('Area entered by unknown entity')
+
+
+var label_damage_timer: Timer
+var label_damage_interval: float = 1.5
+		
+func create_label_damage():
+	var new_vbox = character.damage_zone.get_node("damage_label").duplicate()  # Clonar el VBoxContainer template
+	# Configurar el Label del nuevo VBoxContainer
+	var label = new_vbox.get_node("label")
+	if label:
+		label.text = '10'
+	else:
+		print("Error: Label node not found in VBoxContainer template!")
+	label.visible=true
+	character.damage_zone.add_child(new_vbox) 
+	label_damage_timer = Timer.new()
+	label_damage_timer.connect("timeout",Callable(self, "_on_timer_timeout").bind(new_vbox) )
+	label_damage_timer.one_shot = true
+	label_damage_timer.wait_time = label_damage_interval
+	add_child(label_damage_timer)
+	label_damage_timer.start(label_damage_timer.wait_time)	
+
+# Crear un Tween para animar el label
+	var tween = get_tree().create_tween()
+	tween.tween_property(new_vbox, "modulate", Color.RED, 0.3)
+	#tween.tween_property(new_vbox, "position:x", 200.0, 1).as_relative()
+	tween.tween_property(new_vbox, "position:y", -60.0, 1).as_relative()
+	tween.tween_property(new_vbox, "scale", Vector2(label.global_position.x, label.global_position.y-100), 0.5)
+	tween.tween_callback(new_vbox.queue_free)
+	# Conectar la señal de finalización del tween para eliminar el VBoxContainer
+	tween.connect("finished", Callable(self, "_on_tween_finished").bind(new_vbox))
+
 func recibir_dano(cantidad):
 	character.vida_actual -= cantidad
 	character.vida_actual = clamp(character.vida_actual, 0, character.vida_maxima)
@@ -87,6 +120,7 @@ func _on_sword_2d_area_entered(area):
 	print(area.name)
 	if area.name == "EnemyDemon":
 		area.recibir_dano(character.damage)
+		area.animationPlayer('hurt')
 func _on_sword_2d_body_entered(body):
 	print('_on_sword_2d_body_entered')
 	print(body.name)

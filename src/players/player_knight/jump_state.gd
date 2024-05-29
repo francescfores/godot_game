@@ -14,6 +14,7 @@ var _double_jump_charged =false
 func _on_enter():
 	WALK_SPEED = 300.0
 	can_climb=false
+	character.gravity = ProjectSettings.get("physics/2d/default_gravity")
 	#animationPlayer.play('jumping')
 	pass # Replace with function body.
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=211 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=216 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Script" path="res://src/players/player_knight/player_knight.gd" id="1_u24k8"]
 [ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/players/player_knight/jump.wav" id="2_arex7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3frwb2tyw2r7" path="res://gui/touch_button_right.webp" id="4_tpffl"]
 [ext_resource type="Texture2D" uid="uid://c6rum08i3ntoo" path="res://gui/touch_button_jump.webp" id="5_uf2ho"]
 [ext_resource type="Texture2D" uid="uid://tgw4f8fu0btj" path="res://gui/touch_button_fire.webp" id="6_1jwlb"]
+[ext_resource type="FontFile" uid="uid://c7cw2kl16m035" path="res://assets/ui/ThaleahFat.ttf" id="7_r203t"]
 [ext_resource type="Texture2D" uid="uid://b7bd74yj30p2u" path="res://src/players/player_knight/Climb.png" id="7_wq1yr"]
 [ext_resource type="Texture2D" uid="uid://dr5nm4j5n3hyg" path="res://src/players/player_knight/crouch_idle.png" id="8_ejf32"]
 [ext_resource type="Texture2D" uid="uid://du0og81fg77aa" path="res://src/players/player_knight/crouch_attacks.png" id="9_8nqjh"]
@@ -45,6 +46,10 @@
 [ext_resource type="Script" path="res://src/players/player_knight/crouch_attack_1_state.gd" id="42_tatbt"]
 [ext_resource type="Script" path="res://src/players/player_knight/pray_state.gd" id="42_yqs2i"]
 [ext_resource type="Script" path="res://src/players/player_knight/climb_state.gd" id="43_6x1b6"]
+[ext_resource type="Script" path="res://src/players/player_knight/crouch_attack_2_state.gd" id="43_383fh"]
+[ext_resource type="Script" path="res://src/players/player_knight/roll_state.gd" id="45_n58a2"]
+[ext_resource type="Script" path="res://src/players/player_knight/health_state.gd" id="48_0l8k1"]
+[ext_resource type="Script" path="res://src/players/player_knight/dash_state.gd" id="49_fue0l"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j7t82"]
 shader = ExtResource("23_bv4vj")
@@ -178,8 +183,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_erhl4"]
 resource_name = "dash"
-length = 1.1
-loop_mode = 1
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -447,7 +451,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id="Animation_h4k5g"]
 resource_name = "idle_attack_3"
-length = 0.3
+length = 0.4
 step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -480,10 +484,10 @@ tracks/2/path = NodePath("Sword2D/CollisionShape2D:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.0003, 0.0004, 0.1, 0.15, 0.2, 0.25, 0.4, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.0003, 0.0004, 0.1, 0.15, 0.2, 0.25, 0.35, 0.4, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-12, 16.4), Vector2(-12, 16.4), Vector2(-0.755628, 13.9013), Vector2(-0.755628, 13.9013), Vector2(-0.755628, 13.9013), Vector2(-11.5, 17.9), Vector2(19, 5), Vector2(24.5, 3.5), Vector2(31, 2.5), Vector2(36.5, 6.4), Vector2(36.5, 6.4)]
+"values": [Vector2(-12, 16.4), Vector2(-12, 16.4), Vector2(-0.755628, 13.9013), Vector2(-0.755628, 13.9013), Vector2(-0.755628, 13.9013), Vector2(-11.5, 17.9), Vector2(19, 5), Vector2(24.5, 3.5), Vector2(31, 2.5), Vector2(39.5, 3), Vector2(36.5, 6.4), Vector2(36.5, 6.4)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -492,7 +496,7 @@ tracks/3/path = NodePath("Sword2D/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [true, false]
@@ -619,6 +623,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_0urul"]
 resource_name = "roll"
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1754,7 +1759,6 @@ shader_parameter/aura_color = Color(0, 0.780392, 0, 1)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("machine_state")]
 position = Vector2(1.43051e-06, -5.96046e-08)
-scale = Vector2(0.8, 0.8)
 collision_mask = 30
 floor_constant_speed = true
 platform_on_leave = 2
@@ -1774,7 +1778,7 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("24_l0tvr")
 hframes = 8
 vframes = 48
-frame = 128
+frame = 13
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 0,
 "keep_anim_length": false,
@@ -1829,7 +1833,7 @@ position = Vector2(12.5, 11.25)
 shape = SubResource("CapsuleShape2D_450o8")
 
 [node name="Sprite2D" type="Sprite2D" parent="damage_zone"]
-position = Vector2(-54.3175, -4.86376)
+position = Vector2(11.9325, -4.86376)
 rotation = -0.471239
 texture = ExtResource("37_dh54g")
 flip_h = true
@@ -1854,10 +1858,28 @@ libraries = {
 "": SubResource("AnimationLibrary_gw71f")
 }
 
+[node name="damage_label3" type="Node" parent="damage_zone"]
+
+[node name="damage_label" type="Node2D" parent="damage_zone"]
+visibility_layer = 1023
+
+[node name="label" type="Label" parent="damage_zone/damage_label"]
+visible = false
+offset_left = 65.0
+offset_top = -40.0
+offset_right = 89.0
+offset_bottom = -25.0
+theme_override_fonts/font = ExtResource("7_r203t")
+theme_override_font_sizes/font_size = 16
+text = "10"
+
+[node name="timer" type="Timer" parent="damage_zone/damage_label"]
+wait_time = 0.1
+
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(1.90735e-06, -3.8147e-06)
 offset = Vector2(0, 50)
-zoom = Vector2(0.8, 0.8)
+zoom = Vector2(0.6, 0.6)
 limit_left = -7000
 limit_top = -500
 limit_right = 5000
@@ -1940,9 +1962,8 @@ auroa_material = SubResource("ShaderMaterial_amixm")
 current_state = NodePath("spawn_state")
 hurt_state = NodePath("hurt_state")
 death_state = NodePath("death_state")
-action_suffix = null
 
-[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state", "pray_state", "crouch_state", "slide_state", "coyote_timer", "climb_state")]
+[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state", "pray_state", "crouch_state", "slide_state", "coyote_timer", "climb_state", "roll_state", "health_state", "dash_state")]
 script = ExtResource("26_j8l6t")
 jump_state = NodePath("../air_state")
 attack_state = NodePath("../attack_state")
@@ -1951,6 +1972,9 @@ crouch_state = NodePath("../crouch_state")
 slide_state = NodePath("../slide_state")
 coyote_timer = NodePath("coyote_timer")
 climb_state = NodePath("../climb_state")
+roll_state = NodePath("../roll_state")
+health_state = NodePath("../health_state")
+dash_state = NodePath("../dash_state")
 
 [node name="coyote_timer" type="Timer" parent="machine_state/ground_state"]
 wait_time = 0.2
@@ -1982,8 +2006,10 @@ ground_state = NodePath("../ground_state")
 idle_attack_3_state = NodePath("../idle_attack_2_state")
 can_move = false
 
-[node name="hurt_state" type="Node" parent="machine_state"]
+[node name="hurt_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
 script = ExtResource("31_vvnl0")
+air_state = NodePath("../ground_state")
+can_move = false
 
 [node name="slide_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("32_rgvnd")
@@ -2037,33 +2063,38 @@ script = ExtResource("42_tatbt")
 ground_state = NodePath("../ground_state")
 crouch_attack_2_state = NodePath("../crouch_attack_2_state")
 
-[node name="crouch_attack_2_state" type="Node" parent="machine_state"]
-script = ExtResource("31_vvnl0")
+[node name="crouch_attack_2_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("43_383fh")
+air_state = NodePath("../ground_state")
 
 [node name="climb_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("43_6x1b6")
 ground_state = NodePath("../air_state")
 can_climb = true
 
-[node name="roll_state" type="Node" parent="machine_state"]
-script = ExtResource("31_vvnl0")
+[node name="roll_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("45_n58a2")
+air_state = NodePath("../ground_state")
 
 [node name="pray_state" type="Node" parent="machine_state" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("42_yqs2i")
 ground_state = NodePath("../ground_state")
 can_move = false
 
-[node name="health_state" type="Node" parent="machine_state"]
-script = ExtResource("31_vvnl0")
+[node name="health_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("48_0l8k1")
+air_state = NodePath("../ground_state")
+can_move = false
 
-[node name="dash_state" type="Node" parent="machine_state"]
-script = ExtResource("31_vvnl0")
+[node name="dash_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("49_fue0l")
+air_state = NodePath("../ground_state")
 
 [node name="debug_state" type="Label" parent="." node_paths=PackedStringArray("machine_state")]
-offset_left = -31.25
-offset_top = -125.0
-offset_right = 8.75
-offset_bottom = -102.0
+offset_left = -105.0
+offset_top = -87.5
+offset_right = -65.0
+offset_bottom = -64.5
 theme_override_styles/normal = SubResource("StyleBoxFlat_dnhvo")
 text = "state"
 script = ExtResource("31_5eeou")

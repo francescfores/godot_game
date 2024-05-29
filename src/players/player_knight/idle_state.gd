@@ -8,6 +8,9 @@ extends StateMachine
 @export var slide_state:StateMachine
 @export var coyote_timer:Timer
 @export var climb_state:StateMachine
+@export var roll_state:StateMachine
+@export var health_state:StateMachine
+@export var dash_state:StateMachine
 func _on_enter():
 	print('State sssssssssssenter:', self.name)
 	can_climb=false
@@ -50,13 +53,19 @@ func state_input(event:InputEvent):
 		character.velocity.x = character.velocity.x*2.5
 		slide_state.speed = character.velocity.x
 		next_state=slide_state
+	if event.is_action_pressed('roll'+  character.action_suffix):
+		character.velocity.x = character.velocity.x*2.5
+		slide_state.speed = character.velocity.x
+		next_state=roll_state
 	if event.is_action_pressed("shoot" +  character.action_suffix):
 		next_state=attack_state
 		
-	if can_climb and event.is_action_pressed("ui_up"):
-		print(climb_position)	
-		climb_state.climb_position=climb_position
-		next_state=climb_state
+	if event.is_action_pressed("health"):
+		print('health')	
+		next_state=health_state
+	if event.is_action_pressed("dash"):
+		print('health')	
+		next_state=dash_state
 	#elif event.is_action_released("jump" +  character.action_suffix) and character.velocity.y < 0.0:
 			# The player let go of jump early, reduce vertical momentum.
 	#	character.velocity.y *= 0.6
