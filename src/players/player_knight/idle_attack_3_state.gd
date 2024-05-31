@@ -10,7 +10,12 @@ var anim_length
 func _on_enter():
 	_deactivate_auroa_material()
 	print('State doooooooooooooooooo:', self.name)
-	animationPlayer.play('idle_attack_3')
+	if character.is_on_floor():
+		animationPlayer.play('idle_attack_3')
+	else:
+		animationPlayer.play('jump_attack_3')
+		character.gravity=0
+		character.velocity.y=0
 
 	timer = Timer.new()
 	timer.connect("timeout",Callable(self, "_on_timer_timeout"))
@@ -48,7 +53,7 @@ func state_input(event:InputEvent):
 		
 func _on_animation_finished_player_(anim_name):
 	print(anim_name)
-	if anim_name == 'idle_attack_3':
+	if anim_name == 'idle_attack_3' or anim_name == 'jump_attack_3':
 		#stop_blinking()
 		is_auroa_active=false
 		_deactivate_auroa_material()

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://df032r0fwgxd7"
+path="res://.godot/imported/Retro Scream 01.wav-72117aa56cf728a0f8f3794f3a032c87.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/GameSFX/z_Various/Retro Scream 01.wav"
+dest_files=["res://.godot/imported/Retro Scream 01.wav-72117aa56cf728a0f8f3794f3a032c87.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

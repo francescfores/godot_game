@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://rlmia46k5j04"
+path="res://.godot/imported/Retro Cinematic Long 05.wav-e1f53cae74ecefd2068af56314031f12.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/GameSFX/Cinematic/Retro Cinematic Long 05.wav"
+dest_files=["res://.godot/imported/Retro Cinematic Long 05.wav-e1f53cae74ecefd2068af56314031f12.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

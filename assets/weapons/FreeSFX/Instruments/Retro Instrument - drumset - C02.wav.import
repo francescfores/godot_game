@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bypm470xxhpku"
+path="res://.godot/imported/Retro Instrument - drumset - C02.wav-13d3cf9dc661c47a35cc13f16166ffb1.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/Instruments/Retro Instrument - drumset - C02.wav"
+dest_files=["res://.godot/imported/Retro Instrument - drumset - C02.wav-13d3cf9dc661c47a35cc13f16166ffb1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

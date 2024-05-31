@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxxa5b7h1armf"
+path="res://.godot/imported/Retro Granade Launcher 03.wav-8f4325dc2bf4bbbb1e61ac5aea8f3fab.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/GameSFX/Weapon/various/Retro Granade Launcher 03.wav"
+dest_files=["res://.godot/imported/Retro Granade Launcher 03.wav-8f4325dc2bf4bbbb1e61ac5aea8f3fab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

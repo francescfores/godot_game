@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b6wi4edlwn6nl"
+path="res://.godot/imported/sword_1.ase-880b40d7af98eda408e3283ac0d6c2cd.res"
+
+[deps]
+
+source_file="res://assets/sprites/animated_player_sword/sword_1.ase"
+dest_files=["res://.godot/imported/sword_1.ase-880b40d7af98eda408e3283ac0d6c2cd.res"]
+
+[params]
+

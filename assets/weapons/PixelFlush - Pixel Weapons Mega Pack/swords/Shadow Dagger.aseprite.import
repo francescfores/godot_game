@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://fxan5ej3oeob"
+path="res://.godot/imported/Shadow Dagger.aseprite-fd7233bcb8c4c80155748872db138da1.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/swords/Shadow Dagger.aseprite"
+dest_files=["res://.godot/imported/Shadow Dagger.aseprite-fd7233bcb8c4c80155748872db138da1.res"]
+
+[params]
+

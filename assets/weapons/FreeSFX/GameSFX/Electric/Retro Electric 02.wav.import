@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jtceslrdf6h2"
+path="res://.godot/imported/Retro Electric 02.wav-20e804c4d27ff8492e6c3f2582a6592e.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/GameSFX/Electric/Retro Electric 02.wav"
+dest_files=["res://.godot/imported/Retro Electric 02.wav-20e804c4d27ff8492e6c3f2582a6592e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bt3xrjgpxdhoy"
+path="res://.godot/imported/Level Completed.wav-04f972f37f11a8f5a62a37c6a37532bd.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/Voices/Level Completed.wav"
+dest_files=["res://.godot/imported/Level Completed.wav-04f972f37f11a8f5a62a37c6a37532bd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

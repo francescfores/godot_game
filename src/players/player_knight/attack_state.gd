@@ -5,15 +5,19 @@ extends StateMachine
 var is_auroa_active
 
 var timer: Timer
-var interval: float = 0.15
+var interval: float = 0.35
 var anim_length 
 func _on_enter():
-	_deactivate_auroa_material()
+	is_auroa_active=true
 	print('State doooooooooooooooooo:', self.name)
-	animationPlayer.play('idle_attack_1')
-
+	if character.is_on_floor():
+		animationPlayer.play('idle_attack_1')
+	else:
+		animationPlayer.play('jump_attack_1')
+		character.gravity=0
+		character.velocity.y=0
+		
 	timer = Timer.new()
-	
 	timer.connect("timeout",Callable(self, "_on_timer_timeout"))
 	timer.one_shot = true
 	anim_length = animationPlayer.current_animation_length
@@ -31,7 +35,7 @@ func _on_enter():
 func _on_timer_timeout():
 	print("0.3 seconds before ddddddddddddthe animation ends")
 	#animationPlayer.play('idle_attack_2')
-	is_auroa_active=true
+	is_auroa_active=false
 	
 func state_process(delta):
 
@@ -43,13 +47,13 @@ func state_process(delta):
 var combo = false
 func state_input(event:InputEvent):
 	if event.is_action_pressed("shoot" +  character.action_suffix) and is_auroa_active:
-		combo = true
-		pass
+		if auroa_material:
+			combo = true
 		#is_auroa_active=false
 		
 func _on_animation_finished_player_(anim_name):
 	print(anim_name)
-	if anim_name == 'idle_attack_1':
+	if anim_name == 'idle_attack_1' or anim_name == 'jump_attack_1':
 		#stop_blinking()
 		is_auroa_active=false
 		_deactivate_auroa_material()

@@ -51,6 +51,7 @@ func state_input(event:InputEvent):
 	if  event.is_action_pressed('move_down'+  character.action_suffix):
 		next_state=jump_attack_down_1_state
 	if event.is_action_pressed("shoot" +  character.action_suffix):
+
 		next_state=attack_state
 	if can_hang and event.is_action_pressed("ui_up"):	
 		jump_hang_state.hang_position=hang_position

@@ -65,6 +65,8 @@ func state_input(event:InputEvent):
 		next_state=health_state
 	if event.is_action_pressed("dash"):
 		print('health')	
+		character.velocity.x = dash_state.WALK_SPEED*4 * character.direction
+		dash_state.speed = character.velocity.x
 		next_state=dash_state
 	#elif event.is_action_released("jump" +  character.action_suffix) and character.velocity.y < 0.0:
 			# The player let go of jump early, reduce vertical momentum.

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cxdgcyr33pcso"
+path="res://.godot/imported/Ice Sword.aseprite-e021cb708a24c7a04e74846202df5ba0.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/swords/Ice Sword.aseprite"
+dest_files=["res://.godot/imported/Ice Sword.aseprite-e021cb708a24c7a04e74846202df5ba0.res"]
+
+[params]
+

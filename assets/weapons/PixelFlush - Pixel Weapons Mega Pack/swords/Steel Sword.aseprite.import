@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dh0qejmmqgp7m"
+path="res://.godot/imported/Steel Sword.aseprite-b80ae325a220e885cfba4651e40b800c.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/swords/Steel Sword.aseprite"
+dest_files=["res://.godot/imported/Steel Sword.aseprite-b80ae325a220e885cfba4651e40b800c.res"]
+
+[params]
+

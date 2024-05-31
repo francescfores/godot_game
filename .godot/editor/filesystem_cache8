@@ -1,5 +1,5 @@
 f2ca747bc66a24bbdfe24890ad44a30a
-::res://::1716992000
+::res://::1717125421
 default_bus_layout.tres::AudioBusLayout::6419567431398995635::1716075407::0::1::::<><>::
 export_presets.cfg::TextFile::-1::1715890437::0::1::::<><>::
 icon.svg::CompressedTexture2D::437051315452664980::1715890437::1715890437::1::::<><>::
@@ -138,7 +138,7 @@ test.tscn::PackedScene::3566301953465693758::1715890437::0::1::::<><>::uid://dmr
 joystick_base_outline.png::CompressedTexture2D::3288008411285325467::1715890437::1715890437::1::::<><>::
 joystick_tip.png::CompressedTexture2D::3132432681801126628::1715890437::1715890437::1::::<><>::
 joystick_tip_arrows.png::CompressedTexture2D::8548255698028078709::1715890437::1715890437::1::::<><>::
-::res://assets/::1716991028
+::res://assets/::1717022071
 ::res://assets/aseprites/::1715890437
 ::res://assets/aseprites/aseprite/::1715890437
 02_Char_Eadal_Paladin2.json::JSON::-1::1715890437::0::1::::<><>::
@@ -236,7 +236,23 @@ platformer.webp::CompressedTexture2D::4310864821899615993::1715974763::171597481
 Door-Bell-Ding-A1-www.fesliyanstudios.com.wav::AudioStreamWAV::2969224324437578440::1715944493::1715944493::1::::<><>::
 E-Ville - Sonic Animation_XM3bB7FMHhc.mp3::AudioStreamMP3::2593544217686342938::1716990223::1716991048::1::::<><>::
 Killing Joke - The Death & Resurrection Show (HD)__Y-a7T7S9eE.mp3::AudioStreamMP3::4336596852474319464::1716990289::1716991048::1::::<><>::
-::res://assets/sprites/::1716837856
+::res://assets/sprites/::1717118411
+Sprite_no_arm.ase::PackedDataContainer::7327705236804544152::1717118656::1717118373::1::::<><>::
+Sprite_no_arm.png::CompressedTexture2D::1122079631392547454::1717118408::1717118411::1::::<><>::
+::res://assets/sprites/animated_player_sword/::1717118373
+animation_sword_1.ase::PackedDataContainer::170568356772349748::1717099156::1717100775::1::::<><>::
+player_defead.ase::PackedDataContainer::4055694232210337768::1717098265::1717100775::1::::<><>::
+player_defead.png::CompressedTexture2D::1691161291481596664::1717098299::1717100775::1::::<><>::
+player_defead_sword.ase::PackedDataContainer::5449342491883520590::1717100699::1717100775::1::::<><>::
+Sprite-0001.png::CompressedTexture2D::6007346960670658518::1717012782::1717100775::1::::<><>::
+Sprite-0002.ase::PackedDataContainer::1766082470478182408::1717017221::1717100775::1::::<><>::
+Sprite-0002.png::CompressedTexture2D::7194650216875653626::1717026916::1717100775::1::::<><>::
+Sprite-0003.ase::PackedDataContainer::5481630770028699164::1717028614::1717100775::1::::<><>::
+Sprite_no_arm-sheet.png::CompressedTexture2D::8923381360063659034::1717029194::1717100775::1::::<><>::
+Sprite_no_arm.ase::PackedDataContainer::1102218286509488245::1717024354::1717100775::1::::<><>::
+Sprite_no_arm.png::CompressedTexture2D::6977766769203007858::1717118368::1717118373::1::::<><>::
+sword_1.ase::PackedDataContainer::4608228886284343849::1717104349::1717104375::1::::<><>::
+sword_1.png::CompressedTexture2D::8483229183022264155::1717104515::1717104517::1::::<><>::
 ::res://assets/sprites/Dark VFX 01 - 02/::1716599346
 ::res://assets/sprites/Dark VFX 01 - 02/Dark VFX 1/::1716599724
 Dark VFX 1 (40x32).png::CompressedTexture2D::3866216067467393995::1643496081::1716599724::1::::<><>::
@@ -843,10 +859,10 @@ Thank You for Purchasing!.txt::TextFile::-1::1658348442::0::1::::<><>::
 ::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/::1674239000
 ::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/::1674239014
 desktop.ini::TextFile::-1::1672470268::0::1::::<><>::
-::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Aseprite/::1674239014
+::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Aseprite/::1716993705
 UI_Animation_Flat.aseprite::PackedDataContainer::5105584501021092117::1674162200::1716993705::1::::<><>::
 UI_Flat.aseprite::PackedDataContainer::7308024841140177289::1672356076::1716993705::1::::<><>::
-::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/::1674239014
+::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/::1716993705
 UI_Flat_Banner_01_Downward.png::CompressedTexture2D::7867641325273573456::1671961912::1716993705::1::::<><>::
 UI_Flat_Banner_01_Upward.png::CompressedTexture2D::7656598554002617393::1671961898::1716993705::1::::<><>::
 UI_Flat_Banner_02_Downward.png::CompressedTexture2D::5548717641707397695::1671961976::1716993705::1::::<><>::
@@ -978,7 +994,7 @@ UI_Flat_Slot_02_Selected.png::CompressedTexture2D::5525720928178814128::16719614
 UI_Flat_Slot_02_Unavailable.png::CompressedTexture2D::7669292685512634147::1671961496::1716993705::1::::<><>::
 UI_Flat_Textfield_01.png::CompressedTexture2D::1917828841015474236::1671968476::1716993705::1::::<><>::
 UI_Flat_Textfield_02.png::CompressedTexture2D::9006375840029883544::1671968486::1716993705::1::::<><>::
-::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Spritesheets/::1674239014
+::res://assets/ui/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Spritesheets/::1716993705
 Spritesheet_UI_Flat.png::CompressedTexture2D::3704664931250453767::1671968782::1716993705::1::::<><>::
 Spritesheet_UI_Flat_Button_01.png::CompressedTexture2D::282595415603445141::1658329416::1716993705::1::::<><>::
 Spritesheet_UI_Flat_Button_02.png::CompressedTexture2D::8502171160480187238::1658329428::1716993705::1::::<><>::
@@ -1317,7 +1333,13 @@ Symbol Quote.png::CompressedTexture2D::5023418253700376527::1706229416::17169936
 Symbol Semicolon.png::CompressedTexture2D::8340603714135233722::1706229416::1716993600::1::::<><>::
 Symbol Slash.png::CompressedTexture2D::4261418978179925410::1706229416::1716993600::1::::<><>::
 Symbol Underscore.png::CompressedTexture2D::2249994960222829040::1706229416::1716993600::1::::<><>::
-::res://assets/vfx/::1716836794
+::res://assets/vfx/::1717030059
+::res://assets/vfx/ATTACK FREE/::1717111142
+BigSlashV.png::CompressedTexture2D::8132703591902410168::1672040782::1717030113::1::::<><>::
+Hslash1.png::CompressedTexture2D::5466685254699475337::1672040676::1717030113::1::::<><>::
+PunchImp1.png::CompressedTexture2D::6940111298699221763::1672040825::1717030113::1::::<><>::
+vSlash1.png::CompressedTexture2D::1208840931496940089::1717111132::1717111142::1::::<><>::
+VslashSmall1.png::CompressedTexture2D::7394597318000019390::1672040754::1717030113::1::::<><>::
 ::res://assets/vfx/BloodFX Batch 1/::1716836887
 VFX Blood Batch 1.ase::PackedDataContainer::7726402585572048058::1704392880::1716836887::1::::<><>::
 VFX Blood Batch 1_SpriteSheetColumns.png::CompressedTexture2D::2873448720359167939::1704393441::1716836887::1::::<><>::
@@ -1390,6 +1412,11 @@ Fire_3_256-sheet.png::CompressedTexture2D::4325773145884568607::1707262286::1716
 Fire_1_512-sheet.png::CompressedTexture2D::8261163075070364096::1707261868::1716836886::1::::<><>::
 Fire_2_512-sheet.png::CompressedTexture2D::8031063396319931715::1707262012::1716836886::1::::<><>::
 Fire_3_512-sheet.png::CompressedTexture2D::3482616089809952265::1707262306::1716836885::1::::<><>::
+::res://assets/vfx/Hit Effect 01/::1717030113
+Hit Effect 01 1.png::CompressedTexture2D::5272545577985716176::1658518250::1717030113::1::::<><>::
+Hit Effect 01 2.png::CompressedTexture2D::2571652927813246199::1658518274::1717030113::1::::<><>::
+Hit Effect 01 3.png::CompressedTexture2D::1436517977272768104::1658518291::1717030113::1::::<><>::
+Hit Effect 1.aseprite::PackedDataContainer::2063457637741882100::1653062080::1717030113::1::::<><>::
 ::res://assets/vfx/LightningFreePack/::1716813908
 ::res://assets/vfx/LightningFreePack/128/::1716836881
 Lightning_1_128-sheet.png::CompressedTexture2D::5676493883362817068::1706559498::1716836881::1::::<><>::
@@ -1423,6 +1450,853 @@ Spark1-Sheet.png::CompressedTexture2D::7136569575162318039::1715879963::17168379
 Sparks-Sheet.png::CompressedTexture2D::598514262378371009::1692215184::1716837935::1::::<><>::
 Splatter-Sheet.png::CompressedTexture2D::2860710939494343044::1715807162::1716837935::1::::<><>::
 Water Vortex Splash-Sheet.png::CompressedTexture2D::6603757604615257584::1715808350::1716837935::1::::<><>::
+::res://assets/weapons/::1717129664
+1.png::CompressedTexture2D::8695619518914223907::1717021604::1717022273::1::::<><>::
+Ak47.png::CompressedTexture2D::187500800128987127::1717021556::1717022273::1::::<><>::
+arco e flecha-sheet_no_arm.png::CompressedTexture2D::6009561528358463216::1717129672::1717129673::1::::<><>::
+arco e flecha.png::CompressedTexture2D::6114958364294937617::1717129662::1717129664::1::::<><>::
+awm.png::CompressedTexture2D::3385628208649579275::1717021556::1717022273::1::::<><>::
+Diana Raptor 4.png::CompressedTexture2D::962478901585305642::1717021552::1717022273::1::::<><>::
+Germany.png::CompressedTexture2D::5085864370226341784::1717021492::1717022273::1::::<><>::
+Kar98k.png::CompressedTexture2D::685865381289941473::1717021554::1717022273::1::::<><>::
+M1A1 Thompson.png::CompressedTexture2D::1443966874043443414::1717021554::1717022273::1::::<><>::
+Shotgun.png::CompressedTexture2D::5173679443186916329::1717021555::1717022273::1::::<><>::
+UK.png::CompressedTexture2D::3206587158119612438::1717021494::1717022273::1::::<><>::
+US.png::CompressedTexture2D::1005481881705811576::1717021489::1717022273::1::::<><>::
+USSR.png::CompressedTexture2D::5860522859450727763::1717021491::1717022273::1::::<><>::
+::res://assets/weapons/32 Free Weapon Icons/::1688390200
+::res://assets/weapons/32 Free Weapon Icons/Icons/::1717022273
+Iicon_32_01.png::CompressedTexture2D::1926272575916555188::1688390514::1717022273::1::::<><>::
+Iicon_32_02.png::CompressedTexture2D::7147271609375702787::1688390514::1717022273::1::::<><>::
+Iicon_32_03.png::CompressedTexture2D::3149385491455701658::1688390514::1717022273::1::::<><>::
+Iicon_32_04.png::CompressedTexture2D::2216373436933686511::1688390514::1717022273::1::::<><>::
+Iicon_32_05.png::CompressedTexture2D::1952718222685193679::1688390514::1717022273::1::::<><>::
+Iicon_32_06.png::CompressedTexture2D::6138449923536421352::1688390514::1717022273::1::::<><>::
+Iicon_32_07.png::CompressedTexture2D::8689689581290112646::1688390514::1717022273::1::::<><>::
+Iicon_32_08.png::CompressedTexture2D::1922732584197150809::1688390514::1717022273::1::::<><>::
+Iicon_32_09.png::CompressedTexture2D::2355488741097252761::1688390514::1717022273::1::::<><>::
+Iicon_32_10.png::CompressedTexture2D::1420673842979179929::1688390514::1717022273::1::::<><>::
+Iicon_32_11.png::CompressedTexture2D::5276552151072348744::1688390514::1717022273::1::::<><>::
+Iicon_32_12.png::CompressedTexture2D::1475663860799183451::1688390514::1717022273::1::::<><>::
+Iicon_32_13.png::CompressedTexture2D::342092930496849274::1688390514::1717022273::1::::<><>::
+Iicon_32_14.png::CompressedTexture2D::538367236362369497::1688390514::1717022273::1::::<><>::
+Iicon_32_15.png::CompressedTexture2D::2858698235610230845::1688390514::1717022273::1::::<><>::
+Iicon_32_16.png::CompressedTexture2D::7973560359118916868::1688390514::1717022273::1::::<><>::
+Iicon_32_17.png::CompressedTexture2D::2564620878999438788::1688390514::1717022273::1::::<><>::
+Iicon_32_18.png::CompressedTexture2D::5998107029124687113::1688390514::1717022273::1::::<><>::
+Iicon_32_19.png::CompressedTexture2D::1713538276626544443::1688390514::1717022273::1::::<><>::
+Iicon_32_20.png::CompressedTexture2D::5406594270705557945::1688390514::1717022273::1::::<><>::
+Iicon_32_21.png::CompressedTexture2D::747836050477258147::1688390514::1717022273::1::::<><>::
+Iicon_32_22.png::CompressedTexture2D::8469601005258695795::1688390514::1717022273::1::::<><>::
+Iicon_32_23.png::CompressedTexture2D::3568340421455070618::1688390514::1717022273::1::::<><>::
+Iicon_32_24.png::CompressedTexture2D::6246748876741574036::1688390514::1717022273::1::::<><>::
+Iicon_32_25.png::CompressedTexture2D::3491583066958276240::1688390514::1717022273::1::::<><>::
+Iicon_32_26.png::CompressedTexture2D::6524660664873408137::1688390514::1717022273::1::::<><>::
+Iicon_32_27.png::CompressedTexture2D::7078915238478724955::1688390514::1717022273::1::::<><>::
+Iicon_32_28.png::CompressedTexture2D::4004245849715458860::1688390514::1717022273::1::::<><>::
+Iicon_32_29.png::CompressedTexture2D::7237934671523380179::1688390514::1717022273::1::::<><>::
+Iicon_32_30.png::CompressedTexture2D::457941312165695354::1688390514::1717022273::1::::<><>::
+Iicon_32_31.png::CompressedTexture2D::1133497939217687388::1688390514::1717022273::1::::<><>::
+Iicon_32_32.png::CompressedTexture2D::3266865784213366104::1688390514::1717022273::1::::<><>::
+Iicon_32_33.png::CompressedTexture2D::1792976924209528309::1688390514::1717022273::1::::<><>::
+Iicon_32_34.png::CompressedTexture2D::8562147639415356425::1688390514::1717022273::1::::<><>::
+Iicon_32_35.png::CompressedTexture2D::6193046179834547884::1688390514::1717022273::1::::<><>::
+Iicon_32_36.png::CompressedTexture2D::4274530551198821148::1688390514::1717022273::1::::<><>::
+Iicon_32_37.png::CompressedTexture2D::2752224239472282731::1688390514::1717022273::1::::<><>::
+Iicon_32_38.png::CompressedTexture2D::538617364969536232::1688390514::1717022273::1::::<><>::
+Iicon_32_39.png::CompressedTexture2D::4553942142004501549::1688390514::1717022273::1::::<><>::
+Iicon_32_40.png::CompressedTexture2D::5707881119697224596::1688390514::1717022273::1::::<><>::
+::res://assets/weapons/32 Free Weapon Icons/PSD/::1688392896
+::res://assets/weapons/32_2 Free Weapon icons bonus/::1693850822
+::res://assets/weapons/32_2 Free Weapon icons bonus/Icons/::1717022273
+icon_32_2_01.png::CompressedTexture2D::8043781174804146463::1693850964::1717022273::1::::<><>::
+icon_32_2_02.png::CompressedTexture2D::1534510337274124302::1693850964::1717022273::1::::<><>::
+icon_32_2_03.png::CompressedTexture2D::767797471383188238::1693850964::1717022273::1::::<><>::
+icon_32_2_04.png::CompressedTexture2D::299680722713553768::1693850964::1717022273::1::::<><>::
+icon_32_2_05.png::CompressedTexture2D::4448701471977395224::1693850964::1717022273::1::::<><>::
+icon_32_2_06.png::CompressedTexture2D::742242117669613176::1693850964::1717022273::1::::<><>::
+icon_32_2_07.png::CompressedTexture2D::2807040534880173355::1693850964::1717022273::1::::<><>::
+icon_32_2_08.png::CompressedTexture2D::5914853467470872898::1693850964::1717022273::1::::<><>::
+icon_32_2_09.png::CompressedTexture2D::3583061636390418847::1693850964::1717022273::1::::<><>::
+icon_32_2_10.png::CompressedTexture2D::1954714945227823173::1693850964::1717022273::1::::<><>::
+icon_32_2_11.png::CompressedTexture2D::958713038725499320::1693850964::1717022273::1::::<><>::
+icon_32_2_12.png::CompressedTexture2D::6287849128460665910::1693850964::1717022273::1::::<><>::
+icon_32_2_13.png::CompressedTexture2D::4115056299172718667::1693850964::1717022273::1::::<><>::
+icon_32_2_14.png::CompressedTexture2D::7203026194851825463::1693850964::1717022273::1::::<><>::
+icon_32_2_15.png::CompressedTexture2D::4322016260312584162::1693850964::1717022273::1::::<><>::
+icon_32_2_16.png::CompressedTexture2D::9081217638088342478::1693850964::1717022273::1::::<><>::
+icon_32_2_17.png::CompressedTexture2D::6103697392759384462::1693850964::1717022273::1::::<><>::
+icon_32_2_18.png::CompressedTexture2D::2610407519646141341::1693850964::1717022273::1::::<><>::
+icon_32_2_19.png::CompressedTexture2D::4861128619189635692::1693850964::1717022273::1::::<><>::
+icon_32_2_20.png::CompressedTexture2D::5791211554571314168::1693850964::1717022273::1::::<><>::
+icon_32_2_21.png::CompressedTexture2D::1258778730381635890::1693850964::1717022273::1::::<><>::
+icon_32_2_22.png::CompressedTexture2D::2754486681003581642::1693850964::1717022273::1::::<><>::
+icon_32_2_23.png::CompressedTexture2D::5336155308794999394::1693850964::1717022273::1::::<><>::
+icon_32_2_24.png::CompressedTexture2D::107566288125483963::1693850966::1717022273::1::::<><>::
+icon_32_2_25.png::CompressedTexture2D::7246173421770878083::1693850966::1717022273::1::::<><>::
+icon_32_2_26.png::CompressedTexture2D::4297118095801640351::1693850966::1717022273::1::::<><>::
+icon_32_2_27.png::CompressedTexture2D::2095614469364956927::1693850966::1717022273::1::::<><>::
+icon_32_2_28.png::CompressedTexture2D::907277043515060934::1693850966::1717022273::1::::<><>::
+icon_32_2_29.png::CompressedTexture2D::1843033011841279338::1693850966::1717022273::1::::<><>::
+icon_32_2_30.png::CompressedTexture2D::687094687681762487::1693850966::1717022273::1::::<><>::
+::res://assets/weapons/32_2 Free Weapon icons bonus/PSD/::1693852416
+::res://assets/weapons/ASSETS/::1717022435
+axe.png::CompressedTexture2D::1202412688851865521::1701352016::1717022273::1::::<><>::
+blade.png::CompressedTexture2D::2093556441211865606::1701351943::1717022273::1::::<><>::
+glaive.png::CompressedTexture2D::8594159628230458463::1701352106::1717022273::1::::<><>::
+halberd.png::CompressedTexture2D::4417070914945261956::1701352090::1717022273::1::::<><>::
+hammer.png::CompressedTexture2D::6632418760886622720::1701352149::1717022273::1::::<><>::
+herosword.png::CompressedTexture2D::98020918620684725::1701351970::1717022273::1::::<><>::
+Lightsaber Green.png::CompressedTexture2D::4315375943844069794::1717022434::1717022435::1::::<><>::
+mace.png::CompressedTexture2D::4125095839538240469::1701352228::1717022273::1::::<><>::
+mayan.png::CompressedTexture2D::3725560713669652533::1701352193::1717022273::1::::<><>::
+morningstar.png::CompressedTexture2D::2904982543203794899::1701352163::1717022273::1::::<><>::
+README.txt::TextFile::-1::1701354533::0::1::::<><>::
+scimitar.png::CompressedTexture2D::7569813539505722934::1701352214::1717022273::1::::<><>::
+spear.png::CompressedTexture2D::2905140154981460042::1701352130::1717022273::1::::<><>::
+spearblade.png::CompressedTexture2D::950471283650454550::1701352069::1717022273::1::::<><>::
+spearglaive.png::CompressedTexture2D::7014134177350665938::1701352121::1717022273::1::::<><>::
+spearhalbred.png::CompressedTexture2D::7821097532635035391::1701352053::1717022273::1::::<><>::
+sword.png::CompressedTexture2D::2657062145481760171::1701351925::1717022273::1::::<><>::
+waraxe.png::CompressedTexture2D::8161468377652180871::1701352035::1717022273::1::::<><>::
+::res://assets/weapons/fantasy weapons set/::1717022080
+::res://assets/weapons/fantasy weapons set/fantasy weapons set/::1491780176
+license.txt::TextFile::-1::1491763357::0::1::::<><>::
+::res://assets/weapons/fantasy weapons set/fantasy weapons set/PNG/::1717022273
+1.png::CompressedTexture2D::3642091358233111106::1491779989::1717022273::1::::<><>::
+2.png::CompressedTexture2D::8699520890161187836::1491780017::1717022273::1::::<><>::
+3.png::CompressedTexture2D::6666342687936796570::1491780032::1717022273::1::::<><>::
+4.png::CompressedTexture2D::2934361299328206009::1491780048::1717022273::1::::<><>::
+5.png::CompressedTexture2D::9167032203908515821::1491780067::1717022273::1::::<><>::
+6.png::CompressedTexture2D::336806748646792835::1491780090::1717022273::1::::<><>::
+7.png::CompressedTexture2D::1693697815592786353::1491780103::1717022273::1::::<><>::
+8.png::CompressedTexture2D::5867164374729006807::1491780125::1717022273::1::::<><>::
+9.png::CompressedTexture2D::7693374213883034286::1491780145::1717022273::1::::<><>::
+10.png::CompressedTexture2D::3292429632066174588::1491780167::1717022273::1::::<><>::
+::res://assets/weapons/fantasy weapons set/fantasy weapons set/PSD/::1491780176
+::res://assets/weapons/fantasy weapons set/__MACOSX/::1491780220
+::res://assets/weapons/fantasy weapons set/__MACOSX/fantasy weapons set/::1491780220
+::res://assets/weapons/fantasy weapons set/__MACOSX/fantasy weapons set/PNG/::1491780220
+::res://assets/weapons/fantasy weapons set/__MACOSX/fantasy weapons set/PSD/::1491780220
+::res://assets/weapons/Free Bow and Crossbow Icons/::1717022080
+License.txt::TextFile::-1::1492237736::0::1::::<><>::
+readme.txt::TextFile::-1::1593639190::0::1::::<><>::
+::res://assets/weapons/Free Bow and Crossbow Icons/PNG/::1631126104
+::res://assets/weapons/Free Bow and Crossbow Icons/PNG/Background/::1717022273
+Icon1.png::CompressedTexture2D::4846859907542692794::1629317234::1717022273::1::::<><>::
+Icon1_no_effect.png::CompressedTexture2D::6545062891429873482::1629425568::1717022273::1::::<><>::
+Icon2.png::CompressedTexture2D::6186679041371097070::1629317246::1717022273::1::::<><>::
+Icon2_no_effect.png::CompressedTexture2D::8993518125536139552::1629425576::1717022273::1::::<><>::
+Icon3.png::CompressedTexture2D::4713083069424668709::1629317258::1717022273::1::::<><>::
+Icon3_no_effect.png::CompressedTexture2D::2687141071026975090::1629425582::1717022273::1::::<><>::
+Icon4.png::CompressedTexture2D::3541983467424435003::1629317270::1717022273::1::::<><>::
+Icon4_no_effect.png::CompressedTexture2D::4396556820083600089::1629425588::1717022273::1::::<><>::
+Icon5.png::CompressedTexture2D::2277288948337567255::1629317280::1717022273::1::::<><>::
+Icon6.png::CompressedTexture2D::6610528538948898376::1629317292::1717022273::1::::<><>::
+Icon6_no_effect.png::CompressedTexture2D::6844751501490386168::1629425596::1717022273::1::::<><>::
+Icon7.png::CompressedTexture2D::1756626900741093628::1629317304::1717022273::1::::<><>::
+Icon8.png::CompressedTexture2D::8641766873275576478::1629317322::1717022273::1::::<><>::
+Icon8_no_effect.png::CompressedTexture2D::1079062372296090282::1629425602::1717022273::1::::<><>::
+Icon9.png::CompressedTexture2D::841598660633949014::1629317334::1717022273::1::::<><>::
+Icon10.png::CompressedTexture2D::4856312478953356541::1629317348::1717022273::1::::<><>::
+Icon11.png::CompressedTexture2D::2261288963087995873::1629317360::1717022273::1::::<><>::
+Icon12.png::CompressedTexture2D::1147796052861695424::1629317376::1717022273::1::::<><>::
+Icon12_no_effect.png::CompressedTexture2D::6826939950018375196::1629425610::1717022273::1::::<><>::
+Icon13.png::CompressedTexture2D::5102797106522581310::1629317388::1717022273::1::::<><>::
+Icon13_no_effect.png::CompressedTexture2D::391030565178668434::1629425616::1717022273::1::::<><>::
+Icon14.png::CompressedTexture2D::2342347351004728830::1629317402::1717022273::1::::<><>::
+Icon14_no_effect.png::CompressedTexture2D::4841706797192228273::1629425624::1717022273::1::::<><>::
+Icon15.png::CompressedTexture2D::8732478807506650963::1629317414::1717022273::1::::<><>::
+Icon15_no_effect.png::CompressedTexture2D::7796374646712093190::1629425632::1717022273::1::::<><>::
+Icon16.png::CompressedTexture2D::5663436151433388127::1629317430::1717022273::1::::<><>::
+Icon16_no_effect.png::CompressedTexture2D::2440167781351359902::1629425640::1717022273::1::::<><>::
+Icon17.png::CompressedTexture2D::2533591043189568499::1629317444::1717022273::1::::<><>::
+Icon18.png::CompressedTexture2D::8403483735258662002::1629317458::1717022273::1::::<><>::
+Icon19.png::CompressedTexture2D::8840076678821964108::1629317472::1717022273::1::::<><>::
+Icon19_no_effect.png::CompressedTexture2D::5617003021427587186::1629425648::1717022273::1::::<><>::
+Icon20.png::CompressedTexture2D::2834855530070312639::1629317486::1717022273::1::::<><>::
+Icon20_no_effect.png::CompressedTexture2D::5851723315033106083::1629425656::1717022273::1::::<><>::
+Icon21.png::CompressedTexture2D::8255254871380973902::1629317500::1717022273::1::::<><>::
+Icon21_no_effect.png::CompressedTexture2D::8201231147083851783::1629425664::1717022273::1::::<><>::
+Icon22.png::CompressedTexture2D::2729064157502166746::1629317514::1717022273::1::::<><>::
+Icon22_no_effect.png::CompressedTexture2D::4178866455553556160::1629425674::1717022273::1::::<><>::
+Icon23.png::CompressedTexture2D::4700563545383984003::1629317528::1717022273::1::::<><>::
+Icon23_no_effect.png::CompressedTexture2D::1832881200373729113::1629425686::1717022273::1::::<><>::
+Icon24.png::CompressedTexture2D::6626444601455215396::1629317544::1717022273::1::::<><>::
+Icon25.png::CompressedTexture2D::8425317329001810315::1629317558::1717022273::1::::<><>::
+Icon25_no_effect.png::CompressedTexture2D::7870154948432101642::1629425698::1717022273::1::::<><>::
+Icon26.png::CompressedTexture2D::6796076436563053468::1629317572::1717022273::1::::<><>::
+Icon26_no_effect.png::CompressedTexture2D::7023633395881927403::1629425710::1717022273::1::::<><>::
+Icon27.png::CompressedTexture2D::6646702988132291493::1629317586::1717022273::1::::<><>::
+Icon27_no_effect.png::CompressedTexture2D::7263921580009083631::1629425726::1717022273::1::::<><>::
+Icon28.png::CompressedTexture2D::4662956245368304513::1629317602::1717022273::1::::<><>::
+Icon29.png::CompressedTexture2D::7489879966087913812::1629317616::1717022273::1::::<><>::
+Icon29_no_effect.png::CompressedTexture2D::1674230789789288220::1629425742::1717022273::1::::<><>::
+Icon30.png::CompressedTexture2D::542772767791072989::1629317630::1717022273::1::::<><>::
+Icon30_no_effect.png::CompressedTexture2D::6063275541839943108::1629425758::1717022273::1::::<><>::
+Icon31.png::CompressedTexture2D::7906912301036082763::1629317646::1717022273::1::::<><>::
+Icon32.png::CompressedTexture2D::412543278758532319::1629317662::1717022273::1::::<><>::
+Icon32_no_effect.png::CompressedTexture2D::6219734217186862957::1629425774::1717022273::1::::<><>::
+Icon33.png::CompressedTexture2D::6753772456357860960::1629317678::1717022273::1::::<><>::
+Icon34.png::CompressedTexture2D::4738659178099423827::1629317694::1717022273::1::::<><>::
+Icon35.png::CompressedTexture2D::4809061841590824521::1629317710::1717022273::1::::<><>::
+Icon36.png::CompressedTexture2D::8848517984392220958::1629317726::1717022273::1::::<><>::
+Icon37.png::CompressedTexture2D::6784669192102201277::1629317742::1717022273::1::::<><>::
+Icon37_no_effect.png::CompressedTexture2D::7123270580842101901::1629425786::1717022273::1::::<><>::
+Icon38.png::CompressedTexture2D::6771850121766398385::1629317758::1717022273::1::::<><>::
+Icon38_no_effect.png::CompressedTexture2D::5024720643326605451::1629425798::1717022273::1::::<><>::
+Icon39.png::CompressedTexture2D::56235118303105819::1629317774::1717022273::1::::<><>::
+Icon40.png::CompressedTexture2D::5901621678179294664::1629317792::1717022273::1::::<><>::
+Icon40_no_effect.png::CompressedTexture2D::5971638436434602083::1629425812::1717022273::1::::<><>::
+Icon41.png::CompressedTexture2D::6631917140725743575::1629317808::1717022273::1::::<><>::
+Icon42.png::CompressedTexture2D::3608750478563913746::1629317826::1717022273::1::::<><>::
+Icon43.png::CompressedTexture2D::3811449913627400637::1629317844::1717022273::1::::<><>::
+Icon43_no_effect.png::CompressedTexture2D::8308128634595187506::1629425824::1717022273::1::::<><>::
+Icon44.png::CompressedTexture2D::3186470935729259261::1629317864::1717022273::1::::<><>::
+Icon44_no_effect.png::CompressedTexture2D::7585136841446231700::1629425836::1717022273::1::::<><>::
+Icon45.png::CompressedTexture2D::4317234284979789574::1629317884::1717022273::1::::<><>::
+Icon45_no_effect.png::CompressedTexture2D::6685257302917162358::1629425848::1717022273::1::::<><>::
+Icon46.png::CompressedTexture2D::2495283944505911167::1629317904::1717022273::1::::<><>::
+Icon46_no_effect.png::CompressedTexture2D::2813401605443002690::1629425860::1717022273::1::::<><>::
+Icon47.png::CompressedTexture2D::2782128404682489226::1629317922::1717022273::1::::<><>::
+Icon47_no_effect.png::CompressedTexture2D::3035566570795816589::1629425874::1717022273::1::::<><>::
+Icon48.png::CompressedTexture2D::504699953769341772::1629317940::1717022273::1::::<><>::
+::res://assets/weapons/Free Bow and Crossbow Icons/PNG/Transperent/::1717022273
+Icon1.png::CompressedTexture2D::212578880825471316::1629326300::1717022273::1::::<><>::
+Icon1_no_effect.png::CompressedTexture2D::1541694447685745368::1629426548::1717022273::1::::<><>::
+Icon2.png::CompressedTexture2D::2966127497778547230::1629326308::1717022273::1::::<><>::
+Icon2_no_effect.png::CompressedTexture2D::3009028640109670630::1629426546::1717022273::1::::<><>::
+Icon3.png::CompressedTexture2D::671860364367467417::1629326316::1717022273::1::::<><>::
+Icon3_no_effect.png::CompressedTexture2D::4354970178293749155::1629426544::1717022273::1::::<><>::
+Icon4.png::CompressedTexture2D::1421151979741832046::1629326324::1717022273::1::::<><>::
+Icon4_no_effect.png::CompressedTexture2D::1085150616850873582::1629426542::1717022273::1::::<><>::
+Icon5.png::CompressedTexture2D::3037744754011474907::1629326330::1717022273::1::::<><>::
+Icon6.png::CompressedTexture2D::3194666824284472521::1629326332::1717022273::1::::<><>::
+Icon6_no_effect.png::CompressedTexture2D::428790352373136283::1629426540::1717022273::1::::<><>::
+Icon7.png::CompressedTexture2D::3925176370704461262::1629326332::1717022273::1::::<><>::
+Icon8.png::CompressedTexture2D::2251407437833186474::1629326332::1717022273::1::::<><>::
+Icon8_no_effect.png::CompressedTexture2D::4562718542760028860::1629426538::1717022273::1::::<><>::
+Icon9.png::CompressedTexture2D::6899081958323121346::1629326334::1717022273::1::::<><>::
+Icon10.png::CompressedTexture2D::3421911647660529695::1629326302::1717022273::1::::<><>::
+Icon11.png::CompressedTexture2D::6175042046951689826::1629326302::1717022273::1::::<><>::
+Icon12.png::CompressedTexture2D::8776700751642825974::1629326302::1717022273::1::::<><>::
+Icon12_no_effect.png::CompressedTexture2D::888904114107940982::1629426538::1717022273::1::::<><>::
+Icon13.png::CompressedTexture2D::8941439997824164560::1629326304::1717022273::1::::<><>::
+Icon13_no_effect.png::CompressedTexture2D::6689122451760789718::1629426536::1717022273::1::::<><>::
+Icon14.png::CompressedTexture2D::7913743940598544779::1629326304::1717022273::1::::<><>::
+Icon14_no_effect.png::CompressedTexture2D::5122165010444837431::1629426534::1717022273::1::::<><>::
+Icon15.png::CompressedTexture2D::5336738546768275012::1629326304::1717022273::1::::<><>::
+Icon15_no_effect.png::CompressedTexture2D::7437659009639718115::1629426532::1717022273::1::::<><>::
+Icon16.png::CompressedTexture2D::7564259662858617415::1629326304::1717022273::1::::<><>::
+Icon16_no_effect.png::CompressedTexture2D::82880577989245935::1629426530::1717022273::1::::<><>::
+Icon17.png::CompressedTexture2D::3139993906205100261::1629326306::1717022273::1::::<><>::
+Icon18.png::CompressedTexture2D::2651527582898869041::1629326306::1717022273::1::::<><>::
+Icon19.png::CompressedTexture2D::2866952418153820871::1629326306::1717022273::1::::<><>::
+Icon19_no_effect.png::CompressedTexture2D::5852104810263744255::1629426528::1717022273::1::::<><>::
+Icon20.png::CompressedTexture2D::920622707278968244::1629326308::1717022273::1::::<><>::
+Icon20_no_effect.png::CompressedTexture2D::405009276843607958::1629426528::1717022273::1::::<><>::
+Icon21.png::CompressedTexture2D::8785636213925319262::1629326308::1717022273::1::::<><>::
+Icon21_no_effect.png::CompressedTexture2D::8573097741748513465::1629426526::1717022273::1::::<><>::
+Icon22.png::CompressedTexture2D::6912943594156173718::1629326310::1717022273::1::::<><>::
+Icon22_no_effect.png::CompressedTexture2D::5540937723153508113::1629426524::1717022273::1::::<><>::
+Icon23.png::CompressedTexture2D::4821318328551228925::1629326310::1717022273::1::::<><>::
+Icon23_no_effect.png::CompressedTexture2D::1998396643926744429::1629426524::1717022273::1::::<><>::
+Icon24.png::CompressedTexture2D::7961136982119193714::1629326310::1717022273::1::::<><>::
+Icon25.png::CompressedTexture2D::2584309574956318317::1629326310::1717022273::1::::<><>::
+Icon25_no_effect.png::CompressedTexture2D::627493300615947723::1629426522::1717022273::1::::<><>::
+Icon26.png::CompressedTexture2D::5016123796526242313::1629326312::1717022273::1::::<><>::
+Icon26_no_effect.png::CompressedTexture2D::6377682154404183282::1629426514::1717022273::1::::<><>::
+Icon27.png::CompressedTexture2D::2114212837207230009::1629326312::1717022273::1::::<><>::
+Icon27_no_effect.png::CompressedTexture2D::4452104321363006634::1629426512::1717022273::1::::<><>::
+Icon28.png::CompressedTexture2D::5683019671283132115::1629326314::1717022273::1::::<><>::
+Icon29.png::CompressedTexture2D::16553582494777891::1629326316::1717022273::1::::<><>::
+Icon29_no_effect.png::CompressedTexture2D::2328669672806511844::1629426510::1717022273::1::::<><>::
+Icon30.png::CompressedTexture2D::7959507458056564524::1629326316::1717022273::1::::<><>::
+Icon30_no_effect.png::CompressedTexture2D::2423102124959549151::1629426510::1717022273::1::::<><>::
+Icon31.png::CompressedTexture2D::6077961179126244806::1629326318::1717022273::1::::<><>::
+Icon32.png::CompressedTexture2D::7243981849828785814::1629326318::1717022273::1::::<><>::
+Icon32_no_effect.png::CompressedTexture2D::8939143842849499197::1629426508::1717022273::1::::<><>::
+Icon33.png::CompressedTexture2D::5773294958642437243::1629326318::1717022273::1::::<><>::
+Icon34.png::CompressedTexture2D::129263442868653297::1629326318::1717022273::1::::<><>::
+Icon35.png::CompressedTexture2D::6222348037928055958::1629326320::1717022273::1::::<><>::
+Icon36.png::CompressedTexture2D::47228346330367820::1629326320::1717022273::1::::<><>::
+Icon37.png::CompressedTexture2D::9179454350754535354::1629326322::1717022273::1::::<><>::
+Icon37_no_effect.png::CompressedTexture2D::5209336880267142501::1629426508::1717022273::1::::<><>::
+Icon38.png::CompressedTexture2D::1328944828960099411::1629326322::1717022273::1::::<><>::
+Icon38_no_effect.png::CompressedTexture2D::8761043255425484030::1629426506::1717022273::1::::<><>::
+Icon39.png::CompressedTexture2D::6034674359110943444::1629326322::1717022273::1::::<><>::
+Icon40.png::CompressedTexture2D::3263592520218161221::1629326324::1717022273::1::::<><>::
+Icon40_no_effect.png::CompressedTexture2D::5807719164806482117::1629426504::1717022273::1::::<><>::
+Icon41.png::CompressedTexture2D::7937443880534522100::1629326324::1717022273::1::::<><>::
+Icon42.png::CompressedTexture2D::1433469728758129462::1629326326::1717022273::1::::<><>::
+Icon43.png::CompressedTexture2D::529958870796191179::1629326326::1717022273::1::::<><>::
+Icon43_no_effect.png::CompressedTexture2D::1596586500306028016::1629426504::1717022273::1::::<><>::
+Icon44.png::CompressedTexture2D::6957210686245866570::1629326326::1717022273::1::::<><>::
+Icon44_no_effect.png::CompressedTexture2D::4685271895352168819::1629426502::1717022273::1::::<><>::
+Icon45.png::CompressedTexture2D::8645058642456036879::1629326328::1717022273::1::::<><>::
+Icon45_no_effect.png::CompressedTexture2D::9138015792493723424::1629426500::1717022273::1::::<><>::
+Icon46.png::CompressedTexture2D::2720220850912092195::1629326328::1717022273::1::::<><>::
+Icon46_no_effect.png::CompressedTexture2D::2920894158757269701::1629426554::1717022273::1::::<><>::
+Icon47.png::CompressedTexture2D::7484831660564524623::1629326330::1717022273::1::::<><>::
+Icon47_no_effect.png::CompressedTexture2D::4200076833645516::1629426550::1717022273::1::::<><>::
+Icon48.png::CompressedTexture2D::936270879137386443::1629326330::1717022273::1::::<><>::
+::res://assets/weapons/free-guns-pixel-art/::1717022273
+Amo1.png::CompressedTexture2D::1329101938565931193::1672409510::1717022273::1::::<><>::
+Amo2.png::CompressedTexture2D::646288551621865123::1672410240::1717022273::1::::<><>::
+Amo3.png::CompressedTexture2D::6030894724553674592::1672410200::1717022273::1::::<><>::
+Amo4.png::CompressedTexture2D::6717898884468073488::1672410324::1717022273::1::::<><>::
+Amo5.png::CompressedTexture2D::454767743434017728::1672410636::1717022273::1::::<><>::
+Amo6.png::CompressedTexture2D::7930105532101587388::1682965758::1717022273::1::::<><>::
+Amo7.png::CompressedTexture2D::2760245031727725280::1687882108::1717022273::1::::<><>::
+AmoB1.png::CompressedTexture2D::2524924015208811810::1687883950::1717022273::1::::<><>::
+AmoB2.png::CompressedTexture2D::8765010511587802048::1687883934::1717022273::1::::<><>::
+Assaut-rifle-1-scoped.png::CompressedTexture2D::1446643645393739016::1672925762::1717022273::1::::<><>::
+Assaut-rifle-1.png::CompressedTexture2D::1053653878088293930::1672925014::1717022273::1::::<><>::
+Assaut-rifle-2-scoped.png::CompressedTexture2D::6101091497335980754::1672925638::1717022273::1::::<><>::
+Assaut-rifle-2.png::CompressedTexture2D::6107200310547334267::1672925024::1717022273::1::::<><>::
+Assaut-rifle-3-scoped.png::CompressedTexture2D::3691954045478194331::1672925938::1717022273::1::::<><>::
+Assaut-rifle-3.png::CompressedTexture2D::2876852306837788931::1672925942::1717022273::1::::<><>::
+Bazooka.png::CompressedTexture2D::4664085599380695655::1687883322::1717022273::1::::<><>::
+grenade launcher.png::CompressedTexture2D::2914993222548212161::1687881586::1717022273::1::::<><>::
+Grenade-1.png::CompressedTexture2D::3886874580823766564::1672925056::1717022273::1::::<><>::
+Grenade-2.png::CompressedTexture2D::7784867153691057142::1672925068::1717022273::1::::<><>::
+Grenade-3.png::CompressedTexture2D::7975587750860064855::1672925078::1717022273::1::::<><>::
+Pistol-1.png::CompressedTexture2D::8770074834776721335::1672925086::1717022273::1::::<><>::
+Pistol-2.png::CompressedTexture2D::746459643032982053::1668876560::1717022273::1::::<><>::
+Pistol-3.png::CompressedTexture2D::9218678990786696759::1670024076::1717022273::1::::<><>::
+Pistol-4.png::CompressedTexture2D::2146877395806089206::1687885164::1717022273::1::::<><>::
+RPG.png::CompressedTexture2D::7882818213663377773::1682965752::1717022273::1::::<><>::
+Shotgun-1.png::CompressedTexture2D::3552257193696311912::1672925112::1717022273::1::::<><>::
+Shotgun-2.png::CompressedTexture2D::7155435795704421589::1668875068::1717022273::1::::<><>::
+Shotgun-3.png::CompressedTexture2D::1348201898371351170::1682966904::1717022273::1::::<><>::
+SMG-1.png::CompressedTexture2D::7322673398278814789::1672925134::1717022273::1::::<><>::
+SMG-2.png::CompressedTexture2D::6170303904343326567::1672924924::1717022273::1::::<><>::
+SMG-3.png::CompressedTexture2D::3846587057798277387::1672924932::1717022273::1::::<><>::
+SMG-4.png::CompressedTexture2D::2953000936958110828::1687884760::1717022273::1::::<><>::
+Sniper-rifle-1-scoped.png::CompressedTexture2D::377126923444981727::1672925200::1717022273::1::::<><>::
+Sniper-rifle-1.png::CompressedTexture2D::8901381060856156139::1672925192::1717022273::1::::<><>::
+Sniper-rifle-2-scoped.png::CompressedTexture2D::8284209011500421298::1672925222::1717022273::1::::<><>::
+Sniper-rifle-2.png::CompressedTexture2D::5543628226490309595::1672925206::1717022273::1::::<><>::
+Sniper-rifle-3-scoped.png::CompressedTexture2D::1938599203570261213::1672925242::1717022273::1::::<><>::
+Sniper-rifle-3.png::CompressedTexture2D::7724039294155643302::1672925234::1717022273::1::::<><>::
+Spritesheet.png::CompressedTexture2D::577659813060248339::1687885806::1717022273::1::::<><>::
+::res://assets/weapons/FreeSFX/::1568710876
+::res://assets/weapons/FreeSFX/GameSFX/::1568791540
+::res://assets/weapons/FreeSFX/GameSFX/Alarms Blip Beeps/::1717022274
+Retro Alarm 02.wav::AudioStreamWAV::7692056318367731095::1566076290::1717022274::1::::<><>::
+Retro Alarm Long 02.wav::AudioStreamWAV::6738910480599631906::1566076294::1717022274::1::::<><>::
+Retro Alarmed 06.wav::AudioStreamWAV::689645309517102631::1566076296::1717022274::1::::<><>::
+Retro Alarmed 10.wav::AudioStreamWAV::4652665035348188641::1566076296::1717022274::1::::<><>::
+Retro Alarmed StereoUP 03.wav::AudioStreamWAV::8548444533069098230::1567239576::1717022274::1::::<><>::
+Retro Beeep 06.wav::AudioStreamWAV::1092283183280801817::1566076298::1717022274::1::::<><>::
+Retro Beeep 20.wav::AudioStreamWAV::9168192728367748127::1566076300::1717022274::1::::<><>::
+Retro Blip 07.wav::AudioStreamWAV::1372962427397411241::1566076302::1717022274::1::::<><>::
+Retro Blip 15.wav::AudioStreamWAV::5347792807944678183::1566076304::1717022274::1::::<><>::
+Retro Ring 01.wav::AudioStreamWAV::5458471664929313292::1566076304::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Ambience/::1717022275
+Retro Ambience 02.wav::AudioStreamWAV::1284636764929305296::1566076242::1717022275::1::::<><>::
+Retro Ambience 11.wav::AudioStreamWAV::1544259985968695166::1567266388::1717022275::1::::<><>::
+Retro Ambience Acute 01.wav::AudioStreamWAV::9019227880757550304::1567274224::1717022275::1::::<><>::
+Retro Ambience Short 09.wav::AudioStreamWAV::963896736478274787::1567264538::1717022274::1::::<><>::
+Retro Ambience Stretch Large 01.wav::AudioStreamWAV::699602379361024641::1566076248::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Animal Insects/::1717022274
+Retro Birds 07.wav::AudioStreamWAV::418988049676120503::1566076172::1717022274::1::::<><>::
+Retro Crow 01.wav::AudioStreamWAV::8624102961249606403::1566076174::1717022274::1::::<><>::
+Retro Fly 01.wav::AudioStreamWAV::2020827178246973453::1566076174::1717022274::1::::<><>::
+Retro Owl 01.wav::AudioStreamWAV::8024441653129901807::1566076176::1717022274::1::::<><>::
+Retro Wolf B 02.wav::AudioStreamWAV::1721318658678336523::1566485772::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Ascending/::1717022274
+Retro Ascending Long 06.wav::AudioStreamWAV::3733680602561771187::1566112696::1717022274::1::::<><>::
+Retro Ascending Short 20.wav::AudioStreamWAV::6865391463916615710::1566112702::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Blops/::1717022274
+Retro Blop 07.wav::AudioStreamWAV::7189444252751847112::1566069650::1717022274::1::::<><>::
+Retro Blop 18.wav::AudioStreamWAV::3103671939077100681::1566069652::1717022274::1::::<><>::
+Retro Blop 22.wav::AudioStreamWAV::8188784825154322487::1566069654::1717022274::1::::<><>::
+Retro Blop StereoUP 04.wav::AudioStreamWAV::7451408937274424147::1567237066::1717022274::1::::<><>::
+Retro Blop StereoUP 09.wav::AudioStreamWAV::6901185729904339134::1567238450::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Bounce Jump/::1717022274
+Retro Jump 01.wav::AudioStreamWAV::6634412621349585154::1566076058::1717022274::1::::<><>::
+Retro Jump Classic 08.wav::AudioStreamWAV::3439026452789326322::1566076062::1717022274::1::::<><>::
+Retro Jump Simple A 01.wav::AudioStreamWAV::1392734075315633607::1566076062::1717022274::1::::<><>::
+Retro Jump Simple B 05.wav::AudioStreamWAV::7859721607919924025::1566076064::1717022274::1::::<><>::
+Retro Jump Simple C2 02.wav::AudioStreamWAV::1335740960078135324::1566143758::1717022274::1::::<><>::
+Retro Jump StereoUP Simple 01.wav::AudioStreamWAV::9190847479605695710::1566125666::1717022274::1::::<><>::
+Retro Jump StereoUP Simple 05.wav::AudioStreamWAV::4229344157142601345::1567074900::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Charge/::1717022274
+Retro Charge 07.wav::AudioStreamWAV::1546383822854507649::1566112802::1717022274::1::::<><>::
+Retro Charge 13.wav::AudioStreamWAV::303572492282809246::1566112804::1717022274::1::::<><>::
+Retro Charge Electric Off 07.wav::AudioStreamWAV::2410323621384825962::1566132436::1717022274::1::::<><>::
+Retro Charge Electric Off StereoUP 03.wav::AudioStreamWAV::7647425525127526216::1567243412::1717022274::1::::<><>::
+Retro Charge Magic 11.wav::AudioStreamWAV::1464676093810349738::1566148428::1717022274::1::::<><>::
+Retro Charge Off 11.wav::AudioStreamWAV::5977212017846177846::1566112808::1717022274::1::::<><>::
+Retro Charge Off StereoUP 02.wav::AudioStreamWAV::6518057054443717805::1567244768::1717022274::1::::<><>::
+Retro Charge Off StereoUP 05.wav::AudioStreamWAV::2475774366149672590::1567245088::1717022274::1::::<><>::
+Retro Charge StereoUP 01.wav::AudioStreamWAV::3204276908087314360::1566112812::1717022274::1::::<><>::
+Retro Charge StereoUP 12.wav::AudioStreamWAV::8294772352836748347::1567242770::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Cinematic/::1717022274
+Retro Cinematic Drums 01.wav::AudioStreamWAV::1193774886524025792::1566075972::1717022274::1::::<><>::
+Retro Cinematic Long 04.wav::AudioStreamWAV::5255897768674512142::1566075974::1717022274::1::::<><>::
+Retro Cinematic Long 05.wav::AudioStreamWAV::1216661433628024771::1566075974::1717022274::1::::<><>::
+Retro Cinematic Long 31.wav::AudioStreamWAV::2185952545241186558::1566075980::1717022274::1::::<><>::
+Retro Cinematic Short 02.wav::AudioStreamWAV::2141181872623714880::1566075982::1717022274::1::::<><>::
+Retro Cinematic Short 07.wav::AudioStreamWAV::1878750553405656959::1566075982::1717022274::1::::<><>::
+Retro Cinematic Wind 02.wav::AudioStreamWAV::6005463233239873869::1566075984::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Descending/::1717022274
+Retro Descending Long 04.wav::AudioStreamWAV::6522557160854952550::1566112922::1717022274::1::::<><>::
+Retro Descending Short 14.wav::AudioStreamWAV::4764844679582266475::1566112926::1717022274::1::::<><>::
+Retro Descending Short 20.wav::AudioStreamWAV::5694757545638382038::1566240286::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Electric/::1717022275
+Retro Electric 02.wav::AudioStreamWAV::671052310420374717::1566132328::1717022274::1::::<><>::
+Retro Electric 21.wav::AudioStreamWAV::8350889809242549811::1566132334::1717022274::1::::<><>::
+Retro Electric 32.wav::AudioStreamWAV::8130166517288589133::1566132338::1717022274::1::::<><>::
+Retro Electric LoFi 01.wav::AudioStreamWAV::676755588893073199::1566132350::1717022274::1::::<><>::
+Retro Electric Long 09.wav::AudioStreamWAV::3735977858911701512::1566132356::1717022275::1::::<><>::
+Retro Electric Short 03.wav::AudioStreamWAV::8011747085617454756::1566132358::1717022275::1::::<><>::
+Retro Electric Short 17.wav::AudioStreamWAV::749714822749111526::1566132364::1717022275::1::::<><>::
+Retro Electric Sparks 01.wav::AudioStreamWAV::5384629817802361221::1566132368::1717022275::1::::<><>::
+Retro Electric Sparks 22.wav::AudioStreamWAV::4864897541898511680::1566132370::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Electronic Burst/::1717022275
+Retro Electronic Burst 05.wav::AudioStreamWAV::3953740656632118137::1566075432::1717022275::1::::<><>::
+Retro Electronic Burst StereoUP 04.wav::AudioStreamWAV::7869488347804668457::1567248502::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Events/::1717022275
+Retro Event 19.wav::AudioStreamWAV::7412594864002999231::1564520234::1717022275::1::::<><>::
+Retro Event 49.wav::AudioStreamWAV::6511385743778291718::1565199186::1717022274::1::::<><>::
+Retro Event Acute 08.wav::AudioStreamWAV::8830115374496193102::1563440712::1717022274::1::::<><>::
+Retro Event Acute 11.wav::AudioStreamWAV::537490995554239478::1563440264::1717022274::1::::<><>::
+Retro Event Complex 03.wav::AudioStreamWAV::3634464215900736467::1564335978::1717022275::1::::<><>::
+Retro Event Echo 12.wav::AudioStreamWAV::6198340666806479958::1565202416::1717022275::1::::<><>::
+Retro Event StereoUP 02.wav::AudioStreamWAV::5746018170287290436::1567254226::1717022275::1::::<><>::
+Retro Event UI 01.wav::AudioStreamWAV::8698706835542026865::1563440076::1717022275::1::::<><>::
+Retro Event UI 13.wav::AudioStreamWAV::2027469731321207258::1565711102::1717022275::1::::<><>::
+Retro Event UI 15.wav::AudioStreamWAV::4195417917994626757::1566057152::1717022275::1::::<><>::
+Retro Event UI StereoUP 01.wav::AudioStreamWAV::5579893005319892566::1567255036::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Events/Negative/::1717022275
+Retro Negative Long 01.wav::AudioStreamWAV::2171343713259342860::1564503910::1717022275::1::::<><>::
+Retro Negative Long 12.wav::AudioStreamWAV::3895911774138170898::1564507616::1717022275::1::::<><>::
+Retro Negative Short 07.wav::AudioStreamWAV::6912777828411350629::1564909498::1717022275::1::::<><>::
+Retro Negative Short 21.wav::AudioStreamWAV::9038145519776220210::1565189542::1717022275::1::::<><>::
+Retro Negative Short 23.wav::AudioStreamWAV::6846574996132573948::1562754920::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Events/Wrong/::1717022275
+Retro Event Wrong Echo 03.wav::AudioStreamWAV::4081040580398594331::1565196622::1717022275::1::::<><>::
+Retro Event Wrong Simple 03.wav::AudioStreamWAV::3316064715842520388::1563044194::1717022275::1::::<><>::
+Retro Event Wrong Simple 07.wav::AudioStreamWAV::3612710635041910138::1564558914::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Explosion/::1717022275
+Retro Explosion Long 02.wav::AudioStreamWAV::2006195210004460877::1566133350::1717022275::1::::<><>::
+Retro Explosion Short 01.wav::AudioStreamWAV::2238408119257967542::1566133350::1717022275::1::::<><>::
+Retro Explosion Short 15.wav::AudioStreamWAV::6577001645890168852::1566133354::1717022275::1::::<><>::
+Retro Explosion Swoshes 04.wav::AudioStreamWAV::5229333511216905298::1566133360::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/FootStep/::1717022275
+Retro FootStep 03.wav::AudioStreamWAV::73012035134511804::1566134284::1717022275::1::::<><>::
+Retro FootStep Grass 01.wav::AudioStreamWAV::8962128840532454052::1566134288::1717022275::1::::<><>::
+Retro FootStep Gravel 01.wav::AudioStreamWAV::1181727228185260009::1566134288::1717022275::1::::<><>::
+Retro FootStep Krushed Landing 01.wav::AudioStreamWAV::3464414604250122644::1566989016::1717022275::1::::<><>::
+Retro FootStep Metal 01.wav::AudioStreamWAV::8631386340578622262::1566134290::1717022275::1::::<><>::
+Retro FootStep Mud 01.wav::AudioStreamWAV::2727909261345600174::1566134290::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/HiTech/::1717022275
+Retro HiTech 08.wav::AudioStreamWAV::4439809076586827987::1566142192::1717022275::1::::<><>::
+Retro HiTech 16.wav::AudioStreamWAV::886820428440917119::1566142194::1717022275::1::::<><>::
+Retro HiTech Long 02.wav::AudioStreamWAV::7571495428443567198::1566142198::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Impact/::1717022274
+Retro Impact 20.wav::AudioStreamWAV::6558144197326003649::1566143534::1717022274::1::::<><>::
+Retro Impact LoFi 09.wav::AudioStreamWAV::1222456574209539645::1568105800::1717022274::1::::<><>::
+Retro Impact Metal 05.wav::AudioStreamWAV::6015315454076836924::1566143540::1717022274::1::::<><>::
+Retro Impact Metal 36.wav::AudioStreamWAV::2658784872115981733::1567851924::1717022274::1::::<><>::
+Retro Impact Punch 07.wav::AudioStreamWAV::885176873569759990::1566143548::1717022274::1::::<><>::
+Retro Impact Punch Hurt 01.wav::AudioStreamWAV::2929719022052792218::1567091662::1717022274::1::::<><>::
+Retro Impact Water 03.wav::AudioStreamWAV::8795096600176671269::1566143552::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Interferences/::1717022274
+Retro Interferences 02.wav::AudioStreamWAV::3072268838360996814::1565364868::1717022274::1::::<><>::
+Retro Interferences Long 08.wav::AudioStreamWAV::8260022664826094124::1565366384::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Magic/::1717022274
+Retro Magic 06.wav::AudioStreamWAV::3827683097998428003::1566144368::1717022274::1::::<><>::
+Retro Magic 11.wav::AudioStreamWAV::8981922603745075686::1566144370::1717022274::1::::<><>::
+Retro Magic 34.wav::AudioStreamWAV::371155246413364028::1566144376::1717022274::1::::<><>::
+Retro Magic 54.wav::AudioStreamWAV::6543730259006344624::1566144382::1717022274::1::::<><>::
+Retro Magic Electric 03.wav::AudioStreamWAV::5311510867261674815::1566144384::1717022274::1::::<><>::
+Retro Magic Protection 01.wav::AudioStreamWAV::787257503323786980::1566144386::1717022274::1::::<><>::
+Retro Magic Protection 25.wav::AudioStreamWAV::3911286563667595535::1566144392::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Music/::1568791174
+::res://assets/weapons/FreeSFX/GameSFX/Music/ChipWave/::1717022276
+Retro Music - ABMU - ChipWave 01.wav::AudioStreamWAV::2777729077414821658::1566502914::1717022276::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Music/Events/::1717022275
+Retro Music - WolfSynth - Tempo Normal - 02.wav::AudioStreamWAV::627487131973026065::1566410124::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Music/Negative/::1717022274
+Retro Negative Melody 01 - aCustom1.wav::AudioStreamWAV::4212990837719305167::1565433472::1717022274::1::::<><>::
+Retro Negative Melody 02 - space voice pad.wav::AudioStreamWAV::3025204229553340::1566326172::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Music/Nes Style/::1717022275
+Retro Music Loop - PV8 - NES Style 01.wav::AudioStreamWAV::2506003733474101347::1565458152::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Music/Success/::1717029104
+desktop.ini::TextFile::-1::1568791194::0::1::::<><>::
+Retro Success Melody 01 - sawtooth lead 1.wav::AudioStreamWAV::9108174500796015569::1566294794::1717029104::1::::<><>::
+Retro Success Melody 02 - choir soprano.wav::AudioStreamWAV::1056677322500828852::1566322368::1717029104::1::::<><>::
+Retro Success Melody 04 - electric piano 2.wav::AudioStreamWAV::9152870196815383772::1566322982::1717029104::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/PickUp/::1717022274
+Retro PickUp 10.wav::AudioStreamWAV::6697446416948805501::1566075914::1717022274::1::::<><>::
+Retro PickUp 18.wav::AudioStreamWAV::6800558922868278264::1567014814::1717022274::1::::<><>::
+Retro PickUp Coin 04.wav::AudioStreamWAV::5232187477990023651::1566075916::1717022274::1::::<><>::
+Retro PickUp Coin 07.wav::AudioStreamWAV::1965475700310885578::1566075916::1717022274::1::::<><>::
+Retro PickUp Coin StereoUP 04.wav::AudioStreamWAV::4520529868080737934::1567256862::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/PowerUp/::1717022274
+Retro PowerUP 09.wav::AudioStreamWAV::8160300888978935104::1566067288::1717022274::1::::<><>::
+Retro PowerUP 23.wav::AudioStreamWAV::1965120473858122791::1566067292::1717022274::1::::<><>::
+Retro PowerUP StereoUP 05.wav::AudioStreamWAV::3387540088755547026::1567263286::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Roar/::1717022274
+Retro Roar 02.wav::AudioStreamWAV::66527908903752052::1566075096::1717022274::1::::<><>::
+Retro Roar Krushed 01.wav::AudioStreamWAV::3353485089000799::1565987340::1717022274::1::::<><>::
+Retro Roar LoFi 01.wav::AudioStreamWAV::3776527941116442302::1568105042::1717022274::1::::<><>::
+Retro Roar LoFi 08.wav::AudioStreamWAV::407946848152845348::1568105522::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Swoosh/::1717022275
+Retro Swooosh 02.wav::AudioStreamWAV::7091130879566378924::1566075216::1717022275::1::::<><>::
+Retro Swooosh 07.wav::AudioStreamWAV::7872773021123117194::1564304648::1717022275::1::::<><>::
+Retro Swooosh 16.wav::AudioStreamWAV::952422735746080694::1565632428::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Vehicles/::1717022275
+Retro Passing Airplane 01.wav::AudioStreamWAV::5705073885383061391::1566149870::1717022275::1::::<><>::
+Retro Vehicle Car 03.wav::AudioStreamWAV::1332535007505670877::1566149872::1717022275::1::::<><>::
+Retro Vehicle Motor 02.wav::AudioStreamWAV::7804204737130385399::1566149872::1717022275::1::::<><>::
+Retro Vehicle SciFi 01.wav::AudioStreamWAV::8085127041568097265::1566149874::1717022275::1::::<><>::
+Retro Vehicle Sirens 03.wav::AudioStreamWAV::5887280804435145699::1566149878::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Water/::1717022275
+Retro Descending Water 01.wav::AudioStreamWAV::3124305900865444453::1566075376::1717022275::1::::<><>::
+Retro Falling Water 07.wav::AudioStreamWAV::4179266239853045538::1566075380::1717022275::1::::<><>::
+Retro Water Drop 01.wav::AudioStreamWAV::8953231391153571139::1566075380::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Weapon/::1717022275
+Retro Gun Multishots 6 Delay9 03.wav::AudioStreamWAV::1115744143207139567::1566115652::1717022275::1::::<><>::
+Retro Gun SingleShot 04.wav::AudioStreamWAV::3313185980086707395::1566115654::1717022275::1::::<><>::
+Retro Weapon Gun LoFi 03.wav::AudioStreamWAV::975883318281973341::1566115658::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Weapon/laser/::1717022275
+Retro Gun Laser SingleShot 01.wav::AudioStreamWAV::36102874669762841::1566115518::1717022275::1::::<><>::
+Retro Weapon Laser 03.wav::AudioStreamWAV::3780113166423320332::1566115520::1717022275::1::::<><>::
+Retro Weapon Laser 25.wav::AudioStreamWAV::853284863978340224::1566115526::1717022275::1::::<><>::
+Retro Weapon Laser 36.wav::AudioStreamWAV::1668266067041866398::1566115528::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Weapon/reload/::1717022275
+Retro Weapon Reload 03.wav::AudioStreamWAV::6836143002328266070::1565939228::1717022275::1::::<><>::
+Retro Weapon Reload Best A 03.wav::AudioStreamWAV::5319070043212364640::1565961444::1717022275::1::::<><>::
+Retro Weapon Reload Best Multi A 03.wav::AudioStreamWAV::7146856518790379623::1565980134::1717022275::1::::<><>::
+Retro Weapon Reload Plasma 06.wav::AudioStreamWAV::9183656292663462241::1566056316::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Weapon/various/::1717022275
+Retro Granade Launcher 03.wav::AudioStreamWAV::6434719135531372897::1566115474::1717022275::1::::<><>::
+Retro Missile Launcher 01.wav::AudioStreamWAV::7689486486761377362::1566115476::1717022275::1::::<><>::
+Retro Weapon Arrow 02.wav::AudioStreamWAV::6646930098969931100::1566497726::1717022275::1::::<><>::
+Retro Weapon Bomb 06.wav::AudioStreamWAV::2472742943641182894::1566115478::1717022275::1::::<><>::
+Retro Weapon Electric 05.wav::AudioStreamWAV::7212535799555177618::1566115480::1717022275::1::::<><>::
+Retro Weapon Electric 18.wav::AudioStreamWAV::4188720924518896635::1566115484::1717022275::1::::<><>::
+Retro Weapon Plasma Type B 03.wav::AudioStreamWAV::579883518860537346::1566115486::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/Weird/::1717022275
+Retro Weird 07.wav::AudioStreamWAV::2775621193008420847::1565199184::1717022275::1::::<><>::
+Retro Weird 15.wav::AudioStreamWAV::8227484790979101257::1568706404::1717022275::1::::<><>::
+Retro Weird Psych 18.wav::AudioStreamWAV::6997404658296244777::1565191468::1717022275::1::::<><>::
+Retro Weird Psych Long 11.wav::AudioStreamWAV::7907584525532233896::1565191732::1717022275::1::::<><>::
+Retro Weird Psych Long 16.wav::AudioStreamWAV::1487469710700404580::1565191738::1717022275::1::::<><>::
+Retro Weird Saturated 05.wav::AudioStreamWAV::5230678292559093243::1565193102::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/GameSFX/z_Various/::1717022275
+Retro Alien Transmission 02.wav::AudioStreamWAV::2815454198108727007::1566150448::1717022275::1::::<><>::
+Retro Computer 02.wav::AudioStreamWAV::6089811231065779174::1566150450::1717022275::1::::<><>::
+Retro Musicaly 03 nananana.wav::AudioStreamWAV::4478579145469427743::1566150452::1717022275::1::::<><>::
+Retro Ring 04.wav::AudioStreamWAV::4407806501340244266::1568129794::1717022275::1::::<><>::
+Retro Scream 01.wav::AudioStreamWAV::7563564937127754578::1566150452::1717022275::1::::<><>::
+Retro Turn Off 12.wav::AudioStreamWAV::8282639520505924332::1566239996::1717022275::1::::<><>::
+Retro Weird Psych 05.wav::AudioStreamWAV::8923616906122415071::1565191072::1717022275::1::::<><>::
+::res://assets/weapons/FreeSFX/Instruments/::1717022275
+Retro Instrument - choir bass - C00.wav::AudioStreamWAV::7558157067580713683::1566927910::1717022275::1::::<><>::
+Retro Instrument - choir bass - C01.wav::AudioStreamWAV::8655428633175551713::1566927896::1717022275::1::::<><>::
+Retro Instrument - choir bass - C02.wav::AudioStreamWAV::4545994836896112284::1566927882::1717022275::1::::<><>::
+Retro Instrument - choir bass - C03.wav::AudioStreamWAV::2486574286424650650::1566927866::1717022275::1::::<><>::
+Retro Instrument - choir bass - C04.wav::AudioStreamWAV::4624971560282396189::1566927852::1717022275::1::::<><>::
+Retro Instrument - choir bass - C05.wav::AudioStreamWAV::5967665757848022584::1566927838::1717022275::1::::<><>::
+Retro Instrument - choir bass - C06.wav::AudioStreamWAV::7779768979248478896::1566927782::1717022275::1::::<><>::
+Retro Instrument - choir bass - C07.wav::AudioStreamWAV::1135547692332073757::1566927770::1717022275::1::::<><>::
+Retro Instrument - choir bass - C08.wav::AudioStreamWAV::1080440184143449390::1566927752::1717022275::1::::<><>::
+Retro Instrument - choir bass - C09.wav::AudioStreamWAV::6913888425755750582::1566927720::1717022275::1::::<><>::
+Retro Instrument - choir bass - C10.wav::AudioStreamWAV::8905848024944130397::1566927704::1717022275::1::::<><>::
+Retro Instrument - choir bass - C11.wav::AudioStreamWAV::2982815194261516892::1566927668::1717022275::1::::<><>::
+Retro Instrument - choir bass - C12.wav::AudioStreamWAV::1875649844999297114::1566927530::1717022275::1::::<><>::
+Retro Instrument - crystal - C00.wav::AudioStreamWAV::3884563592821252644::1566927910::1717022275::1::::<><>::
+Retro Instrument - crystal - C01.wav::AudioStreamWAV::5702785452981624521::1566927896::1717022275::1::::<><>::
+Retro Instrument - crystal - C02.wav::AudioStreamWAV::8080429599511811359::1566927882::1717022275::1::::<><>::
+Retro Instrument - crystal - C03.wav::AudioStreamWAV::4677368587864162969::1566927866::1717022275::1::::<><>::
+Retro Instrument - crystal - C04.wav::AudioStreamWAV::4348646926088793021::1566927852::1717022275::1::::<><>::
+Retro Instrument - crystal - C05.wav::AudioStreamWAV::848257780906036710::1566927838::1717022275::1::::<><>::
+Retro Instrument - crystal - C06.wav::AudioStreamWAV::2009507597569553501::1566927782::1717022275::1::::<><>::
+Retro Instrument - crystal - C07.wav::AudioStreamWAV::4341494730874257879::1566927770::1717022275::1::::<><>::
+Retro Instrument - crystal - C08.wav::AudioStreamWAV::3754178375162006090::1566927752::1717022275::1::::<><>::
+Retro Instrument - crystal - C09.wav::AudioStreamWAV::4609247856881567936::1566927720::1717022275::1::::<><>::
+Retro Instrument - crystal - C10.wav::AudioStreamWAV::3541725503562861175::1566927704::1717022275::1::::<><>::
+Retro Instrument - crystal - C11.wav::AudioStreamWAV::6671412823404612605::1566927668::1717022275::1::::<><>::
+Retro Instrument - crystal - C12.wav::AudioStreamWAV::895926909010480008::1566927530::1717022275::1::::<><>::
+Retro Instrument - drumset - C01.wav::AudioStreamWAV::6060735523856355664::1566936554::1717022275::1::::<><>::
+Retro Instrument - drumset - C02.wav::AudioStreamWAV::4102700709696572780::1566936548::1717022275::1::::<><>::
+Retro Instrument - drumset - C03.wav::AudioStreamWAV::648798226954192913::1566936542::1717022275::1::::<><>::
+Retro Instrument - drumset - C04.wav::AudioStreamWAV::2755266637166862396::1566936536::1717022275::1::::<><>::
+Retro Instrument - drumset - C05.wav::AudioStreamWAV::7354931056129276939::1566936530::1717022275::1::::<><>::
+Retro Instrument - drumset - C06.wav::AudioStreamWAV::8193285227043577435::1566936524::1717022275::1::::<><>::
+Retro Instrument - drumset - C07.wav::AudioStreamWAV::8602522621188175368::1566936518::1717022275::1::::<><>::
+Retro Instrument - drumset - C08.wav::AudioStreamWAV::4672787202853883496::1566936510::1717022274::1::::<><>::
+Retro Instrument - drumset - C09.wav::AudioStreamWAV::4972346520590076130::1566936504::1717022274::1::::<><>::
+Retro Instrument - drumset - C10.wav::AudioStreamWAV::4583234703860826744::1566936490::1717022274::1::::<><>::
+Retro Instrument - drumset - C11.wav::AudioStreamWAV::4085566052171007208::1566936472::1717022274::1::::<><>::
+Retro Instrument - drumset - C12.wav::AudioStreamWAV::7752054870989069554::1566936432::1717022274::1::::<><>::
+::res://assets/weapons/FreeSFX/Voices/::1717022274
+Deactivated.wav::AudioStreamWAV::1312320277448969602::1568538500::1717022274::1::::<><>::
+Game Over.wav::AudioStreamWAV::5194444947033626781::1567782392::1717022274::1::::<><>::
+Last Lap.wav::AudioStreamWAV::1700457502323507408::1567848844::1717022274::1::::<><>::
+Level Completed.wav::AudioStreamWAV::3779238621950773368::1567848182::1717022274::1::::<><>::
+Malfunction.wav::AudioStreamWAV::6240416181048801280::1565034156::1717022274::1::::<><>::
+Mission Completed.wav::AudioStreamWAV::2369001185971487044::1567848846::1717022274::1::::<><>::
+Nightmare Mode.wav::AudioStreamWAV::7148358472671949865::1568538438::1717022274::1::::<><>::
+Time Out.wav::AudioStreamWAV::6255212066875256707::1567782392::1717022274::1::::<><>::
+You Win.wav::AudioStreamWAV::713077795244589573::1565029276::1717022274::1::::<><>::
+::res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/::1717022274
+Swords Sprite Sheet.png::CompressedTexture2D::5213594723723164694::1693947468::1717022274::1::::<><>::
+::res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/pngs/::1717022273
+Adamant Battle Sword.png::CompressedTexture2D::3888765405952001719::1693946250::1717022273::1::::<><>::
+Adamant Dagger.png::CompressedTexture2D::671477650011567903::1693946268::1717022273::1::::<><>::
+Adamant Long Sword.png::CompressedTexture2D::5051679466148507307::1693946272::1717022273::1::::<><>::
+Adamant Sword.png::CompressedTexture2D::7067726023208558050::1693946280::1717022273::1::::<><>::
+basic long sword 1.png::CompressedTexture2D::7013860705691268756::1693946296::1717022273::1::::<><>::
+basic long sword 2.png::CompressedTexture2D::8877774965830408394::1693946298::1717022273::1::::<><>::
+basic sword 1.png::CompressedTexture2D::2731317393166151358::1693946308::1717022273::1::::<><>::
+basic sword 2.png::CompressedTexture2D::4925039692286737628::1693946330::1717022273::1::::<><>::
+basic sword 3.png::CompressedTexture2D::3286985004387396503::1693946342::1717022273::1::::<><>::
+basic sword 4.png::CompressedTexture2D::4145274707655148208::1693946350::1717022273::1::::<><>::
+Blessed Sword.png::CompressedTexture2D::4050113103456283691::1693946362::1717022273::1::::<><>::
+Blossom Katana.png::CompressedTexture2D::4491105463197628452::1693946366::1717022273::1::::<><>::
+Celestial Serpent Katana.png::CompressedTexture2D::4693757855031372545::1693946382::1717022273::1::::<><>::
+Celestial Sword.png::CompressedTexture2D::8700825533673128683::1693946384::1717022273::1::::<><>::
+Cloud Dagger.png::CompressedTexture2D::2221822197856080008::1693946398::1717022273::1::::<><>::
+Copper Battle Sword.png::CompressedTexture2D::6752789876441553210::1693946406::1717022273::1::::<><>::
+Copper Dagger.png::CompressedTexture2D::2135084388063338238::1693944988::1717022273::1::::<><>::
+Copper Long Sword.png::CompressedTexture2D::3417982275300525691::1693945004::1717022273::1::::<><>::
+Copper Swords.png::CompressedTexture2D::9086333952967350460::1693945024::1717022273::1::::<><>::
+Crimson Battle Sword.png::CompressedTexture2D::3687893920749194947::1693945042::1717022273::1::::<><>::
+Crimson Dagger.png::CompressedTexture2D::2105073637500351351::1693945058::1717022273::1::::<><>::
+Crimson Gladius.png::CompressedTexture2D::348023368032501734::1693945068::1717022273::1::::<><>::
+Crimson Katana.png::CompressedTexture2D::8856285457590139899::1693945084::1717022273::1::::<><>::
+Crimson Knife.png::CompressedTexture2D::7454486483839918100::1693945098::1717022273::1::::<><>::
+Crimson Long Sword.png::CompressedTexture2D::3259229452310841604::1693945108::1717022273::1::::<><>::
+Crimson Pickaxe.png::CompressedTexture2D::8699699615144983803::1693945118::1717022273::1::::<><>::
+Crimson Scimitar.png::CompressedTexture2D::5727704725782033173::1693945130::1717022273::1::::<><>::
+Crimson Short Sword.png::CompressedTexture2D::886456374816042437::1693945142::1717022273::1::::<><>::
+Crimson Sword.png::CompressedTexture2D::8920667321668485850::1693945158::1717022273::1::::<><>::
+Crimson Wand 2.png::CompressedTexture2D::5922355323558189777::1693945166::1717022273::1::::<><>::
+Crimson Wand.png::CompressedTexture2D::7671751546281978788::1693945176::1717022273::1::::<><>::
+Crystal Axe.png::CompressedTexture2D::454176050701314284::1693945192::1717022273::1::::<><>::
+Crystal Old Sword.png::CompressedTexture2D::7968194325154635747::1693945204::1717022273::1::::<><>::
+Crystal Shard Katana.png::CompressedTexture2D::2839763104419341947::1693945214::1717022273::1::::<><>::
+Crystal Sword 2.png::CompressedTexture2D::7128955876866993682::1693945224::1717022273::1::::<><>::
+Crystal Sword 3.png::CompressedTexture2D::2038707133596404909::1693945234::1717022273::1::::<><>::
+Cursed Sword.png::CompressedTexture2D::3167161419475098320::1693945264::1717022273::1::::<><>::
+Death Sword.png::CompressedTexture2D::2535905600526827103::1693945276::1717022273::1::::<><>::
+Desert Light Wand.png::CompressedTexture2D::5561305681350492491::1693945286::1717022273::1::::<><>::
+Desert Wand.png::CompressedTexture2D::9132503500756127697::1693945302::1717022273::1::::<><>::
+Dragons Scale Katana.png::CompressedTexture2D::26454628637076317::1693945322::1717022273::1::::<><>::
+Earth Wand.png::CompressedTexture2D::8955808723103319451::1693945336::1717022273::1::::<><>::
+Eclipse Katana.png::CompressedTexture2D::2500483734237939640::1693945342::1717022273::1::::<><>::
+Eclipse Sword 2.png::CompressedTexture2D::4032035779713899269::1693945376::1717022273::1::::<><>::
+Eclipse Sword.png::CompressedTexture2D::8024351199957679821::1693945386::1717022273::1::::<><>::
+Ember Burning Sword.png::CompressedTexture2D::4575553943895278640::1693945394::1717022273::1::::<><>::
+Ember Dagger.png::CompressedTexture2D::1442831044152916225::1693945404::1717022273::1::::<><>::
+Ember Long Sword.png::CompressedTexture2D::1471882117319294397::1693945420::1717022273::1::::<><>::
+Ember Sword.png::CompressedTexture2D::1472202506758506499::1693945434::1717022273::1::::<><>::
+Emberblade Katana.png::CompressedTexture2D::4669231737956985689::1693945444::1717022273::1::::<><>::
+Forgotten Sword.png::CompressedTexture2D::8416138221272670118::1693945454::1717022273::1::::<><>::
+Glass Sword.png::CompressedTexture2D::4811247378763272465::1693945466::1717022273::1::::<><>::
+Gods Gladius.png::CompressedTexture2D::1459251531757202381::1693945478::1717022273::1::::<><>::
+Gold Sword.png::CompressedTexture2D::6727870083133438055::1693945494::1717022273::1::::<><>::
+Heroes Long Sword.png::CompressedTexture2D::8818348627348610302::1693945508::1717022273::1::::<><>::
+Heroes Rapier.png::CompressedTexture2D::3052305414533080598::1693945518::1717022273::1::::<><>::
+Ice Club.png::CompressedTexture2D::2912986890016832367::1693945526::1717022273::1::::<><>::
+Ice Sword.png::CompressedTexture2D::4925451761756296085::1693945534::1717022273::1::::<><>::
+Junkyard Dagger.png::CompressedTexture2D::8904397660599816835::1693945554::1717022273::1::::<><>::
+Junkyard Gladius.png::CompressedTexture2D::3634334623309828073::1693945566::1717022273::1::::<><>::
+Junkyard Pickaxe.png::CompressedTexture2D::1383369969170496520::1693945572::1717022273::1::::<><>::
+Junkyard Rapier.png::CompressedTexture2D::6311239670492318973::1693945582::1717022273::1::::<><>::
+Junkyard Wand.png::CompressedTexture2D::4654300160596812721::1693945592::1717022273::1::::<><>::
+Lightsaber Blue.png::CompressedTexture2D::2115732702493047548::1693945600::1717022273::1::::<><>::
+Lightsaber Green.png::CompressedTexture2D::3500339229260296822::1693945608::1717022273::1::::<><>::
+Lightsaber Orange.png::CompressedTexture2D::1261647043279081995::1693945618::1717022273::1::::<><>::
+Lightsaber Purple.png::CompressedTexture2D::126763387501453421::1693945630::1717022273::1::::<><>::
+Lightsaber rainbow.png::CompressedTexture2D::7760070427969166818::1693945640::1717022273::1::::<><>::
+Lightsaber Red.png::CompressedTexture2D::4863496974103207994::1693945650::1717022273::1::::<><>::
+Lightsaber Yellow.png::CompressedTexture2D::3974206666222362030::1693945658::1717022273::1::::<><>::
+Lotus Blossom Katana.png::CompressedTexture2D::158655753019015222::1693945668::1717022273::1::::<><>::
+Mirage Long Sword.png::CompressedTexture2D::6829776531442832501::1693945678::1717022273::1::::<><>::
+Mirage Sword.png::CompressedTexture2D::1878424095162753251::1693945688::1717022273::1::::<><>::
+Mirage Wizard Swod.png::CompressedTexture2D::594019559459199085::1693945702::1717022273::1::::<><>::
+Mithril Dagger.png::CompressedTexture2D::4755695746130770578::1693945706::1717022273::1::::<><>::
+Mithril Long Sword.png::CompressedTexture2D::5815855673465332565::1693945714::1717022273::1::::<><>::
+Mithril Sword.png::CompressedTexture2D::7277034907409562375::1693945724::1717022273::1::::<><>::
+Moonshadow Katana.png::CompressedTexture2D::3286519756875808188::1693945734::1717022273::1::::<><>::
+Oasis Dagger.png::CompressedTexture2D::3813912820543695365::1693945740::1717022273::1::::<><>::
+Oasis Dark Wand.png::CompressedTexture2D::3943196777559135662::1693945756::1717022273::1::::<><>::
+Oasis Deep Wand.png::CompressedTexture2D::3392522310966503979::1693945766::1717022273::1::::<><>::
+Oasis Mirror Wand.png::CompressedTexture2D::1348180975585270197::1693945774::1717022273::1::::<><>::
+Oasis Palm Wand.png::CompressedTexture2D::4728277589592828597::1693945782::1717022273::1::::<><>::
+Oasis Spectre.png::CompressedTexture2D::7510133110247829368::1693945790::1717022273::1::::<><>::
+Oasis Sword.png::CompressedTexture2D::6185441461202259885::1693945800::1717022273::1::::<><>::
+Ocean Sword.png::CompressedTexture2D::2618543669821427784::1693945808::1717022273::1::::<><>::
+Phoenix Blade.png::CompressedTexture2D::2616238374371489457::1693945818::1717022273::1::::<><>::
+Phoenix Dagger.png::CompressedTexture2D::5638125423456296775::1693945826::1717022273::1::::<><>::
+Phoenix Katana.png::CompressedTexture2D::3556766852515026057::1693945848::1717022273::1::::<><>::
+Phoenix Long Sword.png::CompressedTexture2D::1073011207163203345::1693945852::1717022273::1::::<><>::
+Phoenix Wing Scimitar.png::CompressedTexture2D::5520633708423116259::1693945864::1717022273::1::::<><>::
+Purple Katana.png::CompressedTexture2D::4595465382680618448::1693945882::1717022273::1::::<><>::
+Purple Sword.png::CompressedTexture2D::572155502938057284::1693945892::1717022273::1::::<><>::
+Runite Sword.png::CompressedTexture2D::5161154196619676644::1693945898::1717022273::1::::<><>::
+Rusty Sword.png::CompressedTexture2D::6246544460416815541::1693945908::1717022273::1::::<><>::
+Sakura Whisper Katana.png::CompressedTexture2D::7280350328786082951::1693945916::1717022273::1::::<><>::
+Sandsweeper Dagger.png::CompressedTexture2D::1346408691025187832::1693945926::1717022273::1::::<><>::
+Sandsweeper Katana.png::CompressedTexture2D::1184515429693146190::1693945938::1717022273::1::::<><>::
+Sandsweeper Scimitar.png::CompressedTexture2D::1937750133731486995::1693945946::1717022273::1::::<><>::
+Sandsweeper Stabber.png::CompressedTexture2D::1633487439631473674::1693945982::1717022273::1::::<><>::
+Serpent Dagger.png::CompressedTexture2D::1308609147434019462::1693945994::1717022273::1::::<><>::
+Serpent Scimitar.png::CompressedTexture2D::4363456209258243889::1693945998::1717022273::1::::<><>::
+Serpent Wand.png::CompressedTexture2D::2211366238299918862::1693946006::1717022273::1::::<><>::
+Shadow Dagger.png::CompressedTexture2D::310140004888643967::1693946022::1717022273::1::::<><>::
+Shadow Katana.png::CompressedTexture2D::3955819493171990006::1693946024::1717022273::1::::<><>::
+Shadow Speed Dagger.png::CompressedTexture2D::7470812096859308903::1693946048::1717022273::1::::<><>::
+Shadow Sword.png::CompressedTexture2D::4097663847773516038::1693946050::1717022273::1::::<><>::
+Shadowstrike Katana.png::CompressedTexture2D::3184637881843040368::1693946058::1717022273::1::::<><>::
+Steel Sword.png::CompressedTexture2D::3219772352716177229::1693946070::1717022273::1::::<><>::
+Stormrider Dagger.png::CompressedTexture2D::437726068528974099::1693946090::1717022273::1::::<><>::
+Stormrider Sword.png::CompressedTexture2D::8228352131644331039::1693946094::1717022273::1::::<><>::
+Stormrider Wand.png::CompressedTexture2D::4093408450197044182::1693946114::1717022273::1::::<><>::
+Sun Sword.png::CompressedTexture2D::2840138287773933338::1693946120::1717022273::1::::<><>::
+Typhoon Katana.png::CompressedTexture2D::3837194883265326765::1693946138::1717022273::1::::<><>::
+Whispering Wand.png::CompressedTexture2D::4606232616607527964::1693946152::1717022273::1::::<><>::
+Wooden Blackjack.png::CompressedTexture2D::1049407229771816578::1693946164::1717022273::1::::<><>::
+Wraith Dagger.png::CompressedTexture2D::657762099386007637::1693946188::1717022273::1::::<><>::
+Wraith Gladius.png::CompressedTexture2D::5755292234586843548::1693946192::1717022273::1::::<><>::
+Wraith King Sword.png::CompressedTexture2D::5578110382586244658::1693946202::1717022273::1::::<><>::
+Wraith Long Sword.png::CompressedTexture2D::1594221025276301985::1693946212::1717022273::1::::<><>::
+Wraith Pole.png::CompressedTexture2D::6157092424948168488::1693946222::1717022273::1::::<><>::
+Wraith Sword 2.png::CompressedTexture2D::7899080298416507425::1693946230::1717022273::1::::<><>::
+Wraith Sword.png::CompressedTexture2D::2342204349578379688::1693946246::1717022273::1::::<><>::
+::res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/swords/::1717022276
+Adamant Battle Sword.aseprite::PackedDataContainer::4502633099317046677::1693944458::1717022276::1::::<><>::
+Adamant Dagger.aseprite::PackedDataContainer::3533552011235898154::1693944378::1717022276::1::::<><>::
+Adamant Long Sword.aseprite::PackedDataContainer::5326757779538704938::1693944430::1717022276::1::::<><>::
+Adamant Sword.aseprite::PackedDataContainer::2389711338231486825::1693944400::1717022276::1::::<><>::
+basic long sword 1.aseprite::PackedDataContainer::4203435191033604993::1693936530::1717022276::1::::<><>::
+basic long sword 2.aseprite::PackedDataContainer::1777056471733746980::1693936552::1717022276::1::::<><>::
+basic sword 1.aseprite::PackedDataContainer::6156787675079051172::1693936446::1717022276::1::::<><>::
+basic sword 2.aseprite::PackedDataContainer::5558163942348845884::1693936464::1717022276::1::::<><>::
+basic sword 3.aseprite::PackedDataContainer::834041208205145785::1693936484::1717022276::1::::<><>::
+basic sword 4.aseprite::PackedDataContainer::2097774179837294816::1693936512::1717022276::1::::<><>::
+Blessed Sword.aseprite::PackedDataContainer::7231901628970276124::1693938656::1717022276::1::::<><>::
+Blossom Katana.aseprite::PackedDataContainer::8662155734046357666::1693921634::1717022276::1::::<><>::
+Celestial Serpent Katana.aseprite::PackedDataContainer::7705670500596262894::1693920490::1717022276::1::::<><>::
+Celestial Sword.aseprite::PackedDataContainer::1453347103677795689::1693927460::1717022276::1::::<><>::
+Cloud Dagger.aseprite::PackedDataContainer::6965487609397617005::1693928994::1717022276::1::::<><>::
+Copper Battle Sword.aseprite::PackedDataContainer::9087409439107314234::1693944568::1717022276::1::::<><>::
+Copper Dagger.aseprite::PackedDataContainer::8457243539178044437::1693944606::1717022276::1::::<><>::
+Copper Long Sword.aseprite::PackedDataContainer::5554944224232376890::1693944586::1717022276::1::::<><>::
+Copper Swords.aseprite::PackedDataContainer::8845699184628857291::1693944620::1717022276::1::::<><>::
+Crimson Battle Sword.aseprite::PackedDataContainer::2912609563546830766::1693934004::1717022276::1::::<><>::
+Crimson Dagger.aseprite::PackedDataContainer::7722888365957894839::1693934074::1717022276::1::::<><>::
+Crimson Gladius.aseprite::PackedDataContainer::8801365769931329526::1693934052::1717022276::1::::<><>::
+Crimson Katana.aseprite::PackedDataContainer::2251052381362586671::1693934094::1717022276::1::::<><>::
+Crimson Knife.aseprite::PackedDataContainer::3803372956554675356::1693934156::1717022276::1::::<><>::
+Crimson Long Sword.aseprite::PackedDataContainer::8324763695450497213::1693933938::1717022276::1::::<><>::
+Crimson Pickaxe.aseprite::PackedDataContainer::5428607109483370317::1693934186::1717022276::1::::<><>::
+Crimson Scimitar.aseprite::PackedDataContainer::8326714073853408887::1693933986::1717022276::1::::<><>::
+Crimson Short Sword.aseprite::PackedDataContainer::5387479596310109650::1693939264::1717022276::1::::<><>::
+Crimson Sword.aseprite::PackedDataContainer::4303024002466177473::1693934124::1717022276::1::::<><>::
+Crimson Wand 2.aseprite::PackedDataContainer::7499154575331506602::1693934518::1717022276::1::::<><>::
+Crimson Wand.aseprite::PackedDataContainer::6799011490128278936::1693934496::1717022276::1::::<><>::
+Crystal Axe.aseprite::PackedDataContainer::7027481585529242924::1693930798::1717022276::1::::<><>::
+Crystal Old Sword.aseprite::PackedDataContainer::3820081235255171625::1693930824::1717022276::1::::<><>::
+Crystal Shard Katana.aseprite::PackedDataContainer::3992984321431458098::1693920682::1717022276::1::::<><>::
+Crystal Sword 2.aseprite::PackedDataContainer::7291783760351401789::1693930844::1717022276::1::::<><>::
+Crystal Sword 3.aseprite::PackedDataContainer::8734139689382020308::1693935588::1717022276::1::::<><>::
+Crystal Sword.aseprite::PackedDataContainer::414542629550914519::1693930730::1717022276::1::::<><>::
+Cursed Sword.aseprite::PackedDataContainer::1831104338095762075::1693939164::1717022276::1::::<><>::
+Death Sword.aseprite::PackedDataContainer::6537954391244061788::1693938028::1717022276::1::::<><>::
+Desert Light Wand.aseprite::PackedDataContainer::2751822658048013672::1693930548::1717022276::1::::<><>::
+Desert Wand.aseprite::PackedDataContainer::281788632329555909::1693930424::1717022276::1::::<><>::
+Dragons Scale Katana.aseprite::PackedDataContainer::702357131983107916::1693919238::1717022276::1::::<><>::
+Earth Wand.aseprite::PackedDataContainer::8326198736011302586::1693930580::1717022276::1::::<><>::
+Eclipse Katana.aseprite::PackedDataContainer::9220888003761612344::1693921280::1717022276::1::::<><>::
+Eclipse Sword 2.aseprite::PackedDataContainer::2345181403574301315::1693938012::1717022276::1::::<><>::
+Eclipse Sword.aseprite::PackedDataContainer::3395681343577641316::1693937984::1717022276::1::::<><>::
+Ember Burning Sword.aseprite::PackedDataContainer::6884524864590981838::1693936142::1717022276::1::::<><>::
+Ember Dagger.aseprite::PackedDataContainer::3002005683169928674::1693936122::1717022276::1::::<><>::
+Ember Long Sword.aseprite::PackedDataContainer::6979717505006172301::1693936172::1717022276::1::::<><>::
+Ember Sword.aseprite::PackedDataContainer::2151747118652413717::1693936630::1717022276::1::::<><>::
+Emberblade Katana.aseprite::PackedDataContainer::6431215089317452727::1693921350::1717022276::1::::<><>::
+Forgotten Sword.aseprite::PackedDataContainer::353018779746613249::1693938678::1717022276::1::::<><>::
+Glass Sword.aseprite::PackedDataContainer::4547721600540087429::1693938544::1717022276::1::::<><>::
+Gods Gladius.aseprite::PackedDataContainer::7161834967391294070::1693938804::1717022276::1::::<><>::
+Gold Sword.aseprite::PackedDataContainer::5956173983950984382::1693939030::1717022276::1::::<><>::
+Heroes Long Sword.aseprite::PackedDataContainer::1981001919059416615::1693938706::1717022276::1::::<><>::
+Heroes Rapier.aseprite::PackedDataContainer::703766069818427020::1693938640::1717022276::1::::<><>::
+Ice Club.aseprite::PackedDataContainer::8380355521179683437::1693930602::1717022276::1::::<><>::
+Ice Sword.aseprite::PackedDataContainer::6393747065999815154::1693928732::1717022276::1::::<><>::
+Junkyard Dagger.aseprite::PackedDataContainer::1211369734685632386::1693935680::1717022276::1::::<><>::
+Junkyard Gladius.aseprite::PackedDataContainer::8835694943094444834::1693935728::1717022276::1::::<><>::
+Junkyard Pickaxe.aseprite::PackedDataContainer::5137910379535663276::1693935860::1717022276::1::::<><>::
+Junkyard Rapier.aseprite::PackedDataContainer::2714965304844583085::1693935798::1717022276::1::::<><>::
+Junkyard Wand.aseprite::PackedDataContainer::2266634168754911639::1693935834::1717022276::1::::<><>::
+Lightsaber Blue.aseprite::PackedDataContainer::8172409530336325982::1693944352::1717022276::1::::<><>::
+Lightsaber Green.aseprite::PackedDataContainer::8964984356622686315::1693944302::1717022276::1::::<><>::
+Lightsaber Orange.aseprite::PackedDataContainer::2761839931444731559::1693945616::1717022276::1::::<><>::
+Lightsaber Purple.aseprite::PackedDataContainer::6627844264450643369::1693944318::1717022276::1::::<><>::
+Lightsaber rainbow.aseprite::PackedDataContainer::8624753620657436503::1693944246::1717022276::1::::<><>::
+Lightsaber Red.aseprite::PackedDataContainer::6306969641017768192::1693944336::1717022276::1::::<><>::
+Lightsaber Yellow.aseprite::PackedDataContainer::7404048013185336419::1693944286::1717022276::1::::<><>::
+Lotus Blossom Katana.aseprite::PackedDataContainer::1900870799224211576::1693921730::1717022276::1::::<><>::
+Mirage Long Sword.aseprite::PackedDataContainer::6497252217327830327::1693927970::1717022276::1::::<><>::
+Mirage Sword.aseprite::PackedDataContainer::4137761696910651040::1693927874::1717022276::1::::<><>::
+Mirage Wizard Swod.aseprite::PackedDataContainer::1222340172897348648::1693928318::1717022276::1::::<><>::
+Mithril Dagger.aseprite::PackedDataContainer::5319104919489725714::1693944476::1717022276::1::::<><>::
+Mithril Long Sword.aseprite::PackedDataContainer::4270421126136566154::1693944508::1717022276::1::::<><>::
+Mithril Sword.aseprite::PackedDataContainer::8267017428248781776::1693944490::1717022276::1::::<><>::
+Moonshadow Katana.aseprite::PackedDataContainer::966143131865530676::1693919792::1717022276::1::::<><>::
+Oasis Dagger.aseprite::PackedDataContainer::5091894477487122282::1693935640::1717022276::1::::<><>::
+Oasis Dark Wand.aseprite::PackedDataContainer::5925480434750165904::1693930678::1717022276::1::::<><>::
+Oasis Deep Wand.aseprite::PackedDataContainer::5111121817377187214::1693930334::1717022276::1::::<><>::
+Oasis Mirror Wand.aseprite::PackedDataContainer::7273870459961975251::1693930252::1717022276::1::::<><>::
+Oasis Palm Wand.aseprite::PackedDataContainer::7819313906893947661::1693930286::1717022276::1::::<><>::
+Oasis Spectre.aseprite::PackedDataContainer::1307695272214946456::1693935622::1717022276::1::::<><>::
+Oasis Sword.aseprite::PackedDataContainer::4791499034408174558::1693935604::1717022276::1::::<><>::
+Ocean Sword.aseprite::PackedDataContainer::7822312928630291705::1693927552::1717022276::1::::<><>::
+Phoenix Blade.aseprite::PackedDataContainer::4261708034498955331::1693926060::1717022276::1::::<><>::
+Phoenix Dagger.aseprite::PackedDataContainer::6159954498577742411::1693926204::1717022276::1::::<><>::
+Phoenix Katana.aseprite::PackedDataContainer::5896924508389569932::1693926034::1717022276::1::::<><>::
+Phoenix Long Sword.aseprite::PackedDataContainer::6126937223707407030::1693926002::1717022276::1::::<><>::
+Phoenix Wing Scimitar.aseprite::PackedDataContainer::5822042473919320872::1693925766::1717022276::1::::<><>::
+Purple Katana.aseprite::PackedDataContainer::9061087707065861598::1693944542::1717022276::1::::<><>::
+Purple Sword.aseprite::PackedDataContainer::4016596371451944116::1693944528::1717022276::1::::<><>::
+Runite Sword.aseprite::PackedDataContainer::1608018249513986283::1693938562::1717022276::1::::<><>::
+Rusty Sword.aseprite::PackedDataContainer::3952826710010795838::1693939084::1717022276::1::::<><>::
+Sakura Whisper Katana.aseprite::PackedDataContainer::3691658214470033845::1693921884::1717022276::1::::<><>::
+Sandsweeper Dagger.aseprite::PackedDataContainer::3159514764107005765::1693927220::1717022276::1::::<><>::
+Sandsweeper Katana.aseprite::PackedDataContainer::8969511937937164918::1693927244::1717022276::1::::<><>::
+Sandsweeper Scimitar.aseprite::PackedDataContainer::8375349108116522471::1693927350::1717022276::1::::<><>::
+Sandsweeper Stabber.aseprite::PackedDataContainer::8287724381611063028::1693927288::1717022276::1::::<><>::
+Serpent Dagger.aseprite::PackedDataContainer::7821207778663539654::1693926470::1717022276::1::::<><>::
+Serpent Scimitar.aseprite::PackedDataContainer::3061458873425730435::1693926400::1717022276::1::::<><>::
+Serpent Wand.aseprite::PackedDataContainer::7858917934702923254::1693926612::1717022276::1::::<><>::
+Shadow Dagger.aseprite::PackedDataContainer::398449704180913981::1693935948::1717022276::1::::<><>::
+Shadow Katana.aseprite::PackedDataContainer::7900238344931883847::1693936066::1717022276::1::::<><>::
+Shadow Speed Dagger.aseprite::PackedDataContainer::8495330842499112542::1693935990::1717022276::1::::<><>::
+Shadow Sword.aseprite::PackedDataContainer::7830704421171568110::1693936012::1717022276::1::::<><>::
+Shadowstrike Katana.aseprite::PackedDataContainer::6492205389002463152::1693919590::1717022276::1::::<><>::
+Steel Sword.aseprite::PackedDataContainer::7703172507271572280::1693934266::1717022276::1::::<><>::
+Stormrider Dagger.aseprite::PackedDataContainer::6583975127043032250::1693929206::1717022276::1::::<><>::
+Stormrider Sword.aseprite::PackedDataContainer::9176251507874606021::1693929362::1717022276::1::::<><>::
+Stormrider Wand.aseprite::PackedDataContainer::6365438488630579060::1693930468::1717022276::1::::<><>::
+Sun Sword.aseprite::PackedDataContainer::401826350019843997::1693939070::1717022276::1::::<><>::
+Typhoon Katana.aseprite::PackedDataContainer::5497963489420343979::1693920952::1717022276::1::::<><>::
+Whispering Wand.aseprite::PackedDataContainer::3339417527262863829::1693930636::1717022276::1::::<><>::
+Wooden Blackjack.aseprite::PackedDataContainer::7178031117352303370::1693934246::1717022276::1::::<><>::
+Wooden Gladius.aseprite::PackedDataContainer::3271392776577101693::1693934226::1717022276::1::::<><>::
+Wraith Dagger.aseprite::PackedDataContainer::5295562248189690161::1693938512::1717022276::1::::<><>::
+Wraith Gladius.aseprite::PackedDataContainer::2235785021287773992::1693938442::1717022276::1::::<><>::
+Wraith King Sword.aseprite::PackedDataContainer::2547038436831933577::1693938458::1717022276::1::::<><>::
+Wraith Long Sword.aseprite::PackedDataContainer::6899395578509992875::1693938530::1717022276::1::::<><>::
+Wraith Pole.aseprite::PackedDataContainer::4474450657993499390::1693938584::1717022276::1::::<><>::
+Wraith Sword 2.aseprite::PackedDataContainer::4219650032119812215::1693938608::1717022276::1::::<><>::
+Wraith Sword.aseprite::PackedDataContainer::69694322520803864::1693938492::1717022276::1::::<><>::
 ::res://backgrounds/::1716298246
 ::res://backgrounds/background/::1716291927
 cloud_1.webp::CompressedTexture2D::1402597424691276910::1715890437::1716291927::1::::<><>::
@@ -2303,7 +3177,7 @@ Reference-Image.png::CompressedTexture2D::8980319169551836203::1596371730::17162
 6.png::CompressedTexture2D::4003812629809619151::1596372572::1716291884::1::::<><>::
 7.png::CompressedTexture2D::886680856249002571::1596372608::1716291886::1::::<><>::
 8.png::CompressedTexture2D::712985006401978902::1596372642::1716291884::1::::<><>::
-::res://gui/::1716992277
+::res://gui/::1717125455
 coins_counter.gd::GDScript::-1::1715902031::0::1::::CoinsCounter<>Panel<>::
 coins_counter.tscn::PackedScene::3700348756682227328::1716291333::0::1::::<><>::uid://da4noqsij73it::::res://gui/theme.tres<>uid://cj2absxg54f75::::res://level/coin.webp<>res://gui/coins_counter.gd
 default.tres::Theme::1222254602894815606::1715903440::0::1::::<><>::uid://cui02ywp3l68n::::res://gui/GUI.png
@@ -2315,7 +3189,7 @@ pause_menu.tscn::PackedScene::7645169633513271500::1716290984::0::1::::<><>::uid
 pause_menu_singleplayer.tscn::PackedScene::2486368782413283966::1716291333::0::1::::<><>::uid://dg6m3d5d2u061::::res://gui/pause_menu.tscn
 pause_menu_splitscreen.tscn::PackedScene::7592785982540389305::1716291333::0::1::::<><>::uid://dg6m3d5d2u061::::res://gui/pause_menu.tscn
 Pixelme.ttf::FontFile::5716964475780009339::1715902031::1715903441::1::::<><>::
-theme.tres::Theme::7219944196524551843::1716992277::0::1::::<><>::uid://wqrno8lackrm::::res://gui/kenney_mini_square.ttf
+theme.tres::Theme::7219944196524551843::1717125455::0::1::::<><>::uid://wqrno8lackrm::::res://gui/kenney_mini_square.ttf
 touch_button_fire.webp::CompressedTexture2D::1347362171361262843::1715902031::1715903441::1::::<><>::
 touch_button_jump.webp::CompressedTexture2D::6985027075830143774::1715902031::1715903441::1::::<><>::
 touch_button_left.webp::CompressedTexture2D::2330250603665238312::1715902031::1715903441::1::::<><>::
@@ -2341,7 +3215,7 @@ hangable.tscn::PackedScene::3721318870776670477::1716288108::0::1::::<><>::uid:/
 moving_platform.webp::CompressedTexture2D::4038666930121436347::1715890437::1715890437::1::::<><>::
 one_way_platform.webp::CompressedTexture2D::212755294916014983::1715890437::1715890437::1::::<><>::
 platform.tscn::PackedScene::5526165836132039511::1716257060::0::1::::<><>::uid://djwm5nol3d801::::res://level/props/wind_sway.tres<>uid://bxsmiv7k3fngt::::res://level/platforms/moving_platform.webp<>uid://bj6am5nfc0k73::::res://level/props/grass_1.webp<>uid://bju7r7jqn8bqy::::res://level/props/grass_2.webp<>uid://upfcr5xg5fvh::::res://level/props/grass_3.webp<>uid://cqydct6vajobg::::res://level/props/bush_1.webp<>uid://bu54lwrkcng25::::res://level/props/vine_2.webp<>uid://bvu4vgnc84r84::::res://level/props/vine_1.webp
-::res://level/props/::1716992277
+::res://level/props/::1717125454
 bush_1.webp::CompressedTexture2D::5945594701045367560::1715890437::1715890437::1::::<><>::
 fern_1.webp::CompressedTexture2D::6926924127593756318::1715890437::1715890437::1::::<><>::
 flower_1.webp::CompressedTexture2D::7395626615497965625::1715890437::1715890437::1::::<><>::
@@ -2354,18 +3228,18 @@ tree_1.webp::CompressedTexture2D::565827040325248988::1715890437::1715890437::1:
 tree_2.webp::CompressedTexture2D::7441597796757093123::1715890437::1715890437::1::::<><>::
 vine_1.webp::CompressedTexture2D::3903472584993895739::1715890437::1715890437::1::::<><>::
 vine_2.webp::CompressedTexture2D::3853910507831647316::1715890437::1715890437::1::::<><>::
-wind_sway.tres::ShaderMaterial::7837160837109431848::1716992277::0::1::::<><>::
-::res://shaders/::1716993608
-aura.gdshader::Shader::-1::1716993608::0::1::::<><>::
+wind_sway.tres::ShaderMaterial::7837160837109431848::1717125454::0::1::::<><>::
+::res://shaders/::1717128120
+aura.gdshader::Shader::-1::1717128120::0::1::::<><>::
 blur.gdshader::Shader::-1::1715680550::0::1::::<><>::
 dissintegrate.gdshader::Shader::-1::1715680550::0::1::::<><>::
-dropshadow.gdshader::Shader::-1::1715680550::0::1::::<><>::
+dropshadow.gdshader::Shader::-1::1717128120::0::1::::<><>::
 fatty.gdshader::Shader::-1::1715680550::0::1::::<><>::
-glow.gdshader::Shader::-1::1716993608::0::1::::<><>::
+glow.gdshader::Shader::-1::1717128120::0::1::::<><>::
 godotea.png::CompressedTexture2D::3745664325233652350::1715680550::1716284145::1::::<><>::
 offsetshadow.gdshader::Shader::-1::1715680550::0::1::::<><>::
 outline.gdshader::Shader::-1::1715680550::0::1::::<><>::
-silouette.gdshader::Shader::-1::1716993608::0::1::::<><>::
+silouette.gdshader::Shader::-1::1717128120::0::1::::<><>::
 sprite_shaders.tscn::PackedScene::1165493575684567042::1716288108::0::1::::<><>::res://shaders/outline.gdshader<>uid://btmosrc1jhnra::::res://shaders/godotea.png<>res://shaders/aura.gdshader<>res://shaders/blur.gdshader<>res://shaders/fatty.gdshader<>res://shaders/dropshadow.gdshader<>res://shaders/offsetshadow.gdshader<>res://shaders/silouette.gdshader<>res://shaders/glow.gdshader<>res://shaders/dissintegrate.gdshader
 ::res://src/::1716945581
 game.gd::GDScript::-1::1715942106::0::1::::Game<>Node<>::
@@ -2385,9 +3259,9 @@ Jump.png::CompressedTexture2D::972488368479975664::1686034218::1716320363::1::::
 Run+Attack.png::CompressedTexture2D::7792221675292009152::1686034022::1716320363::1::::<><>::
 Run.png::CompressedTexture2D::6460776828177333773::1686033868::1716320363::1::::<><>::
 walk.png::CompressedTexture2D::7375552660360332806::1686033640::1716320363::1::::<><>::
-::res://src/enemies/bringer_death/::1716993606
+::res://src/enemies/bringer_death/::1717125455
 bringer_death.gd::GDScript::-1::1716862150::0::1::::EnemyBridge<>CharacterBody2D<>::
-bringer_death.tscn::PackedScene::1904667324348085::1716993606::0::1::::<><>::uid://coj0d33vyyqx1::::res://src/players/player_knight/bullet.webp<>res://src/enemies/bringer_death/bringer_death.gd<>uid://8l6svkwpkpqk::::res://src/enemies/bringer_death/SpriteSheet/bringer_death.png<>res://shaders/aura.gdshader<>res://src/enemies/bringer_death/vision_attack.gd
+bringer_death.tscn::PackedScene::1904667324348085::1717125455::0::1::::<><>::uid://coj0d33vyyqx1::::res://src/players/player_knight/bullet.webp<>res://src/enemies/bringer_death/bringer_death.gd<>uid://8l6svkwpkpqk::::res://src/enemies/bringer_death/SpriteSheet/bringer_death.png<>res://shaders/aura.gdshader<>res://src/enemies/bringer_death/vision_attack.gd
 bringer_death.webp::CompressedTexture2D::2038099619081743381::1715902031::1716320362::1::::<><>::
 Contact.txt::TextFile::-1::1601133100::0::1::::<><>::
 explode.wav::AudioStreamWAV::1078233927202182474::1715902031::1716320364::1::::<><>::
@@ -2523,9 +3397,9 @@ Bringer-of-Death_Walk_8.png::CompressedTexture2D::4615670770718611673::161735272
 ::res://src/enemies/bringer_death/SpriteSheet/::1716320363
 bringer_death.png::CompressedTexture2D::2340855485874207206::1617352432::1716320363::1::::<><>::
 bringer_death_no_effect.png::CompressedTexture2D::2329651029885339808::1617352512::1716320363::1::::<><>::
-::res://src/enemies/demon_slime/::1716993607
-demonslime.gd::GDScript::-1::1716959461::0::1::::EnemyDeamon<>CharacterBody2D<>::
-demonslime.tscn::PackedScene::4753152889206183034::1716993607::0::1::::<><>::uid://coj0d33vyyqx1::::res://src/players/player_knight/bullet.webp<>res://src/enemies/demon_slime/demonslime.gd<>uid://dj10iq4gtssud::::res://src/enemies/demon_slime/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png<>res://shaders/aura.gdshader<>uid://cy4h5265jtuo1::::res://assets/vfx/BloodFX Batch 1/VFX Blood Batch 1_SpriteSheetRows.png<>res://src/enemies/bringer_death/vision_attack.gd
+::res://src/enemies/demon_slime/::1717125455
+demonslime.gd::GDScript::-1::1716998875::0::1::::EnemyDeamon<>CharacterBody2D<>::
+demonslime.tscn::PackedScene::4753152889206183034::1717125455::0::1::::<><>::uid://coj0d33vyyqx1::::res://src/players/player_knight/bullet.webp<>res://src/enemies/demon_slime/demonslime.gd<>uid://dj10iq4gtssud::::res://src/enemies/demon_slime/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png<>res://shaders/aura.gdshader<>uid://cy4h5265jtuo1::::res://assets/vfx/BloodFX Batch 1/VFX Blood Batch 1_SpriteSheetRows.png<>res://src/enemies/bringer_death/vision_attack.gd<>uid://c7cw2kl16m035::::res://assets/ui/ThaleahFat.ttf
 ::res://src/enemies/demon_slime/aseprite/::1716588633
 demon_slime_FREE_v1.0.aseprite::PackedDataContainer::1370865423208310414::1635219897::1716588633::1::::<><>::
 ::res://src/enemies/demon_slime/gifs/::1635219547
@@ -3165,10 +4039,10 @@ projectiles_and_effects_256x128_SpriteSheet.png::CompressedTexture2D::8078405757
 Elementals_leaf_ranger_free_v1.0.aseprite::PackedDataContainer::2752267837026177610::1653402904::1716941862::1::::<><>::
 projectiles_and_effects.aseprite::PackedDataContainer::2886749144211572424::1653400316::1716941862::1::::<><>::
 ::res://src/players/leaf_ranger/gif_samples/::1653452649
-::res://src/players/player_knight/::1716993608
+::res://src/players/player_knight/::1717128120
 Attacks.png::CompressedTexture2D::3391615933069944875::1610815126::1716083873::1::::<><>::
 attack_from_air.png::CompressedTexture2D::7354631485655855851::1610885354::1716083873::1::::<><>::
-attack_state.gd::GDScript::-1::1716834880::0::1::::<>StateMachine<>::
+attack_state.gd::GDScript::-1::1717119542::0::1::::<>StateMachine<>::
 bullet.gd::GDScript::-1::1716091145::0::1::::Bullet2<>RigidBody2D<>::
 bullet.tscn::PackedScene::7576454832912866420::1716091487::0::1::::<><>::uid://coj0d33vyyqx1::::res://src/players/player_knight/bullet.webp<>res://src/players/player_knight/bullet.gd
 bullet.webp::CompressedTexture2D::5775589375201576008::1715890437::1716083873::1::::<><>::
@@ -3180,6 +4054,7 @@ crouch_attack_1_state.gd::GDScript::-1::1716936861::0::1::::<>StateMachine<>::
 crouch_attack_2_state.gd::GDScript::-1::1716949060::0::1::::<>StateMachine<>::
 crouch_idle.png::CompressedTexture2D::8415216014442408194::1610990896::1716083873::1::::<><>::
 crouch_state.gd::GDScript::-1::1716936540::0::1::::<>StateMachine<>::
+dash_state.gd::GDScript::-1::1717001404::0::1::::<>StateMachine<>::
 Death.png::CompressedTexture2D::8550404937208788052::1716089737::1716083873::1::::<><>::
 death_state.gd::GDScript::-1::1716846728::0::1::::<>StateMachine<>::
 debug_state.gd::GDScript::-1::1716943886::0::1::::<>Label<>::
@@ -3187,24 +4062,25 @@ doble_jump_state.gd::GDScript::-1::1716823377::0::1::::<>StateMachine<>::
 gun.gd::GDScript::-1::1716091487::0::1::::Gun2<>Marker2D<>::
 Hanging.png::CompressedTexture2D::8938519540534387497::1610815106::1716083873::1::::<><>::
 Health.png::CompressedTexture2D::3521611610777266729::1610815098::1716083873::1::::<><>::
+health_state.gd::GDScript::-1::1716999844::0::1::::<>StateMachine<>::
 Hurt.png::CompressedTexture2D::4968113511035286713::1610815090::1716083873::1::::<><>::
 hurt_state.gd::GDScript::-1::1716957654::0::1::::<>StateMachine<>::
 Idle.png::CompressedTexture2D::563890254761150150::1610815082::1716083873::1::::<><>::
-idle_attack_2_state.gd::GDScript::-1::1716834880::0::1::::<>StateMachine<>::
-idle_attack_3_state.gd::GDScript::-1::1716835060::0::1::::<>StateMachine<>::
-idle_attack_4_state.gd::GDScript::-1::1716835080::0::1::::<>StateMachine<>::
-idle_state.gd::GDScript::-1::1716957292::0::1::::<>StateMachine<>::
+idle_attack_2_state.gd::GDScript::-1::1717119822::0::1::::<>StateMachine<>::
+idle_attack_3_state.gd::GDScript::-1::1717119822::0::1::::<>StateMachine<>::
+idle_attack_4_state.gd::GDScript::-1::1717119822::0::1::::<>StateMachine<>::
+idle_state.gd::GDScript::-1::1717000611::0::1::::<>StateMachine<>::
 Jump.png::CompressedTexture2D::7850089815281589206::1716085524::1716083873::1::::<><>::
 jump.wav::AudioStreamWAV::1282835396865514689::1715890437::1716083874::1::::<><>::
 jump_attack_down_1_state.gd::GDScript::-1::1716852882::0::1::::<>StateMachine<>::
 jump_hang_state.gd::GDScript::-1::1716932553::0::1::::<>StateMachine<>::
-jump_state.gd::GDScript::-1::1716953228::0::1::::<>StateMachine<>::
+jump_state.gd::GDScript::-1::1717119542::0::1::::<>StateMachine<>::
 jump_wall_state.gd::GDScript::-1::1716933821::0::1::::<>StateMachine<>::
 license.txt::TextFile::-1::1610832468::0::1::::<><>::
-machine_state.gd::GDScript::-1::1716993533::0::1::::MachineState<>Node<>::
-move_set.png::CompressedTexture2D::348880491494165307::1716498339::1716498371::1::::<><>::
-player_knight.gd::GDScript::-1::1716959461::0::1::::PlayerKnight<>CharacterBody2D<>::
-player_knight.tscn::PackedScene::1490386745740603214::1716993608::0::1::::<><>::res://src/players/player_knight/player_knight.gd<>uid://sjod173axgwf::::res://src/players/player_knight/jump.wav<>uid://8g15fmgwiffk::::res://gui/touch_button_left.webp<>uid://d3frwb2tyw2r7::::res://gui/touch_button_right.webp<>uid://c6rum08i3ntoo::::res://gui/touch_button_jump.webp<>uid://tgw4f8fu0btj::::res://gui/touch_button_fire.webp<>uid://c7cw2kl16m035::::res://assets/ui/ThaleahFat.ttf<>uid://b7bd74yj30p2u::::res://src/players/player_knight/Climb.png<>uid://dr5nm4j5n3hyg::::res://src/players/player_knight/crouch_idle.png<>uid://du0og81fg77aa::::res://src/players/player_knight/crouch_attacks.png<>uid://dt246jvcdblou::::res://src/players/player_knight/Death.png<>uid://cc1udr35l5drl::::res://src/players/player_knight/Hurt.png<>uid://dj3v3kgq4vmi5::::res://src/players/player_knight/Jump.png<>uid://dc1vyaglslprv::::res://src/players/player_knight/attack_from_air.png<>uid://d0l5d1g0y077b::::res://src/players/player_knight/Hanging.png<>uid://bqf5otuidlrvt::::res://src/players/player_knight/Health.png<>uid://ibfgp1dsbcuo::::res://src/players/player_knight/Idle.png<>uid://bok6oiikkkonj::::res://src/players/player_knight/Attacks.png<>uid://v74pppso8k3k::::res://src/players/player_knight/Pray.png<>uid://dfo6kkaahtmu4::::res://src/players/player_knight/Run.png<>uid://cifopb4pq4v1e::::res://src/players/player_knight/Slide.png<>res://src/player/gun.gd<>uid://b01brytl75mwa::::res://src/players/player_knight/shoot.wav<>res://shaders/aura.gdshader<>uid://e8aamnpkm7tv::::res://src/players/player_knight/move_set.png<>res://src/players/player_knight/machine_state.gd<>res://src/players/player_knight/idle_state.gd<>res://src/players/player_knight/jump_state.gd<>res://src/players/player_knight/spawn_state.gd<>res://src/players/player_knight/doble_jump_state.gd<>res://src/players/player_knight/attack_state.gd<>res://src/players/player_knight/debug_state.gd<>res://src/players/player_knight/hurt_state.gd<>res://src/players/player_knight/slide_state.gd<>res://src/players/player_knight/idle_attack_2_state.gd<>res://src/players/player_knight/idle_attack_3_state.gd<>res://src/players/player_knight/idle_attack_4_state.gd<>uid://cy4h5265jtuo1::::res://assets/vfx/BloodFX Batch 1/VFX Blood Batch 1_SpriteSheetRows.png<>res://src/players/player_knight/death_state.gd<>res://src/players/player_knight/jump_attack_down_1_state.gd<>res://src/players/player_knight/jump_wall_state.gd<>res://src/players/player_knight/jump_hang_state.gd<>res://src/players/player_knight/crouch_state.gd<>res://src/players/player_knight/crouch_attack_1_state.gd<>res://src/players/player_knight/pray_state.gd<>res://src/players/player_knight/climb_state.gd<>res://src/players/player_knight/crouch_attack_2_state.gd<>res://src/players/player_knight/roll_state.gd
+machine_state.gd::GDScript::-1::1716998640::0::1::::MachineState<>Node<>::
+move_set.png::CompressedTexture2D::348880491494165307::1717017604::1717017608::1::::<><>::
+player_knight.gd::GDScript::-1::1717002458::0::1::::PlayerKnight<>CharacterBody2D<>::
+player_knight.tscn::PackedScene::1490386745740603214::1717128120::0::1::::<><>::res://src/players/player_knight/player_knight.gd<>uid://sjod173axgwf::::res://src/players/player_knight/jump.wav<>uid://8g15fmgwiffk::::res://gui/touch_button_left.webp<>uid://p8sqtwjuu3pq::::res://assets/sprites/Sprite_no_arm.png<>uid://d3frwb2tyw2r7::::res://gui/touch_button_right.webp<>uid://c6rum08i3ntoo::::res://gui/touch_button_jump.webp<>uid://tgw4f8fu0btj::::res://gui/touch_button_fire.webp<>uid://ds4lssjxiriel::::res://assets/sprites/animated_player_sword/sword_1.png<>res://shaders/dropshadow.gdshader<>uid://dn4so7uay3tee::::res://assets/vfx/ATTACK FREE/BigSlashV.png<>uid://c7cw2kl16m035::::res://assets/ui/ThaleahFat.ttf<>uid://b7bd74yj30p2u::::res://src/players/player_knight/Climb.png<>uid://rhto0fm6h7nx::::res://assets/vfx/ATTACK FREE/vSlash1.png<>uid://dr5nm4j5n3hyg::::res://src/players/player_knight/crouch_idle.png<>uid://du0og81fg77aa::::res://src/players/player_knight/crouch_attacks.png<>uid://dt246jvcdblou::::res://src/players/player_knight/Death.png<>uid://cj5driu5vmqn6::::res://assets/vfx/ATTACK FREE/Hslash1.png<>uid://cc1udr35l5drl::::res://src/players/player_knight/Hurt.png<>uid://dj3v3kgq4vmi5::::res://src/players/player_knight/Jump.png<>uid://dc1vyaglslprv::::res://src/players/player_knight/attack_from_air.png<>uid://d0l5d1g0y077b::::res://src/players/player_knight/Hanging.png<>uid://bqf5otuidlrvt::::res://src/players/player_knight/Health.png<>uid://ibfgp1dsbcuo::::res://src/players/player_knight/Idle.png<>uid://bok6oiikkkonj::::res://src/players/player_knight/Attacks.png<>uid://v74pppso8k3k::::res://src/players/player_knight/Pray.png<>uid://dfo6kkaahtmu4::::res://src/players/player_knight/Run.png<>uid://cifopb4pq4v1e::::res://src/players/player_knight/Slide.png<>res://src/player/gun.gd<>uid://b01brytl75mwa::::res://src/players/player_knight/shoot.wav<>res://shaders/aura.gdshader<>res://src/players/player_knight/machine_state.gd<>res://src/players/player_knight/idle_state.gd<>res://src/players/player_knight/jump_state.gd<>res://src/players/player_knight/spawn_state.gd<>res://src/players/player_knight/doble_jump_state.gd<>res://src/players/player_knight/attack_state.gd<>res://src/players/player_knight/debug_state.gd<>res://src/players/player_knight/hurt_state.gd<>res://src/players/player_knight/slide_state.gd<>res://src/players/player_knight/idle_attack_2_state.gd<>res://src/players/player_knight/idle_attack_3_state.gd<>res://src/players/player_knight/idle_attack_4_state.gd<>uid://cy4h5265jtuo1::::res://assets/vfx/BloodFX Batch 1/VFX Blood Batch 1_SpriteSheetRows.png<>res://src/players/player_knight/death_state.gd<>res://src/players/player_knight/jump_attack_down_1_state.gd<>res://src/players/player_knight/jump_wall_state.gd<>res://src/players/player_knight/jump_hang_state.gd<>res://src/players/player_knight/crouch_state.gd<>res://src/players/player_knight/crouch_attack_1_state.gd<>res://src/players/player_knight/pray_state.gd<>res://src/players/player_knight/climb_state.gd<>res://src/players/player_knight/crouch_attack_2_state.gd<>res://src/players/player_knight/roll_state.gd<>res://src/players/player_knight/health_state.gd<>res://src/players/player_knight/dash_state.gd
 Pray.png::CompressedTexture2D::1541814196087568082::1610815068::1716083873::1::::<><>::
 pray_state.gd::GDScript::-1::1716934395::0::1::::<>StateMachine<>::
 robot.webp::CompressedTexture2D::4980187363432508418::1715890437::1716083873::1::::<><>::
@@ -3245,22 +4121,22 @@ level_spleetscreen.tscn::PackedScene::8166505648226110006::1716094665::0::1::::<
 level_1_map.gd::GDScript::-1::1715890437::0::1::::<>Node2D<>::
 level_1_map.tscn::PackedScene::551790339024252686::1716320928::0::1::::<><>::uid://08mkofgbxx70::::res://src/scenes/scene_levels/level_2/level_map/tileset.tres<>uid://djwm5nol3d801::::res://level/props/wind_sway.tres<>uid://ddmq5iwm2qd1j::::res://level/props/flower_1.webp<>uid://crfy1osk1c1gc::::res://level/props/ground_flowers_1.webp<>uid://c3dh7xb6ef76q::::res://level/coin.tscn<>uid://cky6e5nl0nyod::::res://level/platforms/platform.tscn<>uid://bxsmiv7k3fngt::::res://level/platforms/moving_platform.webp<>uid://6mtip3ruyn::::res://src/enemy_2/enemy_2.tscn<>res://next_level.gd<>uid://cw6nldo3rjyyq::::res://level/background/parallax_background.tscn<>uid://icddaryasunc::::res://level/props/tree_1.webp<>uid://dea1a76o6b0ix::::res://level/props/tree_2.webp<>uid://co8bwstg3ea6x::::res://level/props/rock_1.webp
 tileset.tres::TileSet::1823592762012833405::1716066135::0::1::::<><>::uid://d0ops71sk562g::::res://level/tiles.webp
-::res://src/scenes/scene_levels/level_2/::1716993606
+::res://src/scenes/scene_levels/level_2/::1717125454
 level.gd::GDScript::-1::1715998199::0::1::::Level_23<>Node<>::
-level.tscn::PackedScene::8862132961315393941::1716993606::0::1::::<><>::res://src/scenes/scene_levels/level_2/level.gd<>uid://dlnm83nen2cjv::::res://src/scenes/scene_levels/level_2/level_map/level_map.tscn<>res://next_level.gd<>uid://bbooeo7pgtu35::::res://gui/pause_menu_singleplayer.tscn<>uid://vh7pmputa7r3::::res://src/players/player_knight/player_knight.tscn
+level.tscn::PackedScene::8862132961315393941::1717125454::0::1::::<><>::res://src/scenes/scene_levels/level_2/level.gd<>uid://dlnm83nen2cjv::::res://src/scenes/scene_levels/level_2/level_map/level_map.tscn<>res://next_level.gd<>uid://bbooeo7pgtu35::::res://gui/pause_menu_singleplayer.tscn<>uid://vh7pmputa7r3::::res://src/players/player_knight/player_knight.tscn
 level_spleetscreen.gd::GDScript::-1::1716289055::0::1::::<>Level_333<>::
 level_spleetscreen.tscn::PackedScene::8166505648226110006::1716289587::0::1::::<><>::res://src/scenes/scene_levels/level_2/level_spleetscreen.gd<>uid://dyi5bgtsdr678::::res://src/scenes/scene_levels/level_2/level.tscn<>uid://cw6nldo3rjyyq::::res://level/background/parallax_background.tscn<>uid://vh7pmputa7r3::::res://src/players/player_knight/player_knight.tscn<>uid://dggactv0aho4p::::res://gui/pause_menu_splitscreen.tscn
-::res://src/scenes/scene_levels/level_2/level_map/::1716993606
+::res://src/scenes/scene_levels/level_2/level_map/::1717125455
 climb_area.gd::GDScript::-1::1716937847::0::1::::<>Area2D<>::
 level_2_map.gd::GDScript::-1::1715890437::0::1::::<>Node2D<>::
 level_2_map.tscn::PackedScene::9117181371014590936::1716066597::0::1::::<><>::uid://08mkofgbxx70::::res://src/scenes/scene_levels/level_1/level_map/tileset.tres<>uid://djwm5nol3d801::::res://level/props/wind_sway.tres<>uid://ddmq5iwm2qd1j::::res://level/props/flower_1.webp<>uid://crfy1osk1c1gc::::res://level/props/ground_flowers_1.webp<>uid://c3dh7xb6ef76q::::res://level/coin.tscn<>uid://cky6e5nl0nyod::::res://level/platforms/platform.tscn<>uid://bxsmiv7k3fngt::::res://level/platforms/moving_platform.webp<>uid://6mtip3ruyn::::res://src/enemy/enemy.tscn<>uid://cw6nldo3rjyyq::::res://level/background/parallax_background.tscn<>uid://icddaryasunc::::res://level/props/tree_1.webp<>uid://dea1a76o6b0ix::::res://level/props/tree_2.webp<>uid://cqydct6vajobg::::res://level/props/bush_1.webp<>uid://co8bwstg3ea6x::::res://level/props/rock_1.webp
-level_map.tscn::PackedScene::7958965267948934967::1716993606::0::1::::<><>::uid://djwm5nol3d801::::res://level/props/wind_sway.tres<>uid://dfdqb5y1077dq::::res://src/scenes/scene_levels/level_2/level_map/tileset2.tres<>uid://ddmq5iwm2qd1j::::res://level/props/flower_1.webp<>uid://crfy1osk1c1gc::::res://level/props/ground_flowers_1.webp<>uid://c3dh7xb6ef76q::::res://level/coin.tscn<>uid://cky6e5nl0nyod::::res://level/platforms/platform.tscn<>uid://bxsmiv7k3fngt::::res://level/platforms/moving_platform.webp<>uid://6mtip3ruyn::::res://src/enemy_2/enemy_2.tscn<>res://next_level.gd<>uid://d16a8rdfy3vka::::res://backgrounds/The Dawn/dawn_parallax_background.tscn<>uid://b8ypy7da0iumc::::res://src/enemies/demon_slime/demonslime.tscn<>uid://cw6nldo3rjyyq::::res://level/background/parallax_background.tscn<>res://src/scenes/scene_levels/level_2/level_map/climb_area.gd<>uid://dea1a76o6b0ix::::res://level/props/tree_2.webp<>uid://cqydct6vajobg::::res://level/props/bush_1.webp<>uid://co8bwstg3ea6x::::res://level/props/rock_1.webp
-tileset2.tres::TileSet::7517374274201647302::1716992277::0::1::::<><>::uid://d0ops71sk562g::::res://level/tiles.webp<>uid://c7r2hnyioctnk::::res://assets/tiles/cavesofgallet/cavesofgallet_tiles.png
+level_map.tscn::PackedScene::7958965267948934967::1717125455::0::1::::<><>::uid://djwm5nol3d801::::res://level/props/wind_sway.tres<>uid://dfdqb5y1077dq::::res://src/scenes/scene_levels/level_2/level_map/tileset2.tres<>uid://ddmq5iwm2qd1j::::res://level/props/flower_1.webp<>uid://crfy1osk1c1gc::::res://level/props/ground_flowers_1.webp<>uid://c3dh7xb6ef76q::::res://level/coin.tscn<>uid://cky6e5nl0nyod::::res://level/platforms/platform.tscn<>uid://bxsmiv7k3fngt::::res://level/platforms/moving_platform.webp<>uid://6mtip3ruyn::::res://src/enemy_2/enemy_2.tscn<>res://next_level.gd<>uid://d16a8rdfy3vka::::res://backgrounds/The Dawn/dawn_parallax_background.tscn<>uid://b8ypy7da0iumc::::res://src/enemies/demon_slime/demonslime.tscn<>uid://cw6nldo3rjyyq::::res://level/background/parallax_background.tscn<>res://src/scenes/scene_levels/level_2/level_map/climb_area.gd<>uid://dea1a76o6b0ix::::res://level/props/tree_2.webp<>uid://cqydct6vajobg::::res://level/props/bush_1.webp<>uid://co8bwstg3ea6x::::res://level/props/rock_1.webp
+tileset2.tres::TileSet::7517374274201647302::1717125455::0::1::::<><>::uid://d0ops71sk562g::::res://level/tiles.webp<>uid://c7r2hnyioctnk::::res://assets/tiles/cavesofgallet/cavesofgallet_tiles.png
 tileset.tres::TileSet::1823592762012833405::1716320928::0::1::::<><>::uid://d0ops71sk562g::::res://level/tiles.webp<>uid://c7r2hnyioctnk::::res://assets/tiles/cavesofgallet/cavesofgallet_tiles.png
 ::res://src/scenes/scene_levels/level_3/::1716072705
 level.tscn::PackedScene::3734486742446063642::1716072705::0::1::::<><>::uid://bikkxqt1epbam::::res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav<>res://src/scenes/scene_levels/Level.gd
-::res://src/scenes/scene_levels_list/::1716065162
-levels_list.tscn::PackedScene::8105931525274987992::1716065162::0::1::::<><>::res://src/scenes/scene_levels_list/levels_listLevel.gd<>uid://b2ohkw0i20y78::::res://assets/images/platformer.webp<>res://src/scenes/scene_levels_list/level_list_VBox.gd<>uid://bikkxqt1epbam::::res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav
+::res://src/scenes/scene_levels_list/::1717125457
+levels_list.tscn::PackedScene::8105931525274987992::1717125457::0::1::::<><>::res://src/scenes/scene_levels_list/levels_listLevel.gd<>uid://b2ohkw0i20y78::::res://assets/images/platformer.webp<>res://src/scenes/scene_levels_list/level_list_VBox.gd<>uid://bikkxqt1epbam::::res://assets/sounds/Door-Bell-Ding-A1-www.fesliyanstudios.com.wav
 levels_listLevel.gd::GDScript::-1::1716063189::0::1::::LevelsList<>CanvasLayer<>::
 level_list_VBox.gd::GDScript::-1::1716061298::0::1::::<>VBoxContainer<>::
 ::res://src/scenes/scene_load_game/::1716063703

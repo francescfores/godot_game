@@ -60,10 +60,10 @@ func _physics_process(delta: float) -> void:
 		direction2= Input.get_axis("move_left" + action_suffix, "move_right" + action_suffix) * machine_state.current_state.WALK_SPEED
 	if !is_hanging  :# and  combo_timer>COMBO_MAX_TIME:
 			velocity.x = move_toward(velocity.x, direction2,machine_state.current_state.ACCELERATION_SPEED * delta)
-	if direction2>0:
+	if velocity.x>0:
 		direction = 1
-	else:
-		direction = -1		
+	elif velocity.x<0:
+		direction = -1	
 	if not is_zero_approx(velocity.x):
 		if velocity.x > 0.0:
 			sprite.scale.x = 2.5

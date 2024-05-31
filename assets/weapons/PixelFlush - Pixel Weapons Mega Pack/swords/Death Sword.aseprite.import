@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c0fbfht0r3su3"
+path="res://.godot/imported/Death Sword.aseprite-c44d89760d631dbd537f72386de8fcd5.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack/swords/Death Sword.aseprite"
+dest_files=["res://.godot/imported/Death Sword.aseprite-c44d89760d631dbd537f72386de8fcd5.res"]
+
+[params]
+

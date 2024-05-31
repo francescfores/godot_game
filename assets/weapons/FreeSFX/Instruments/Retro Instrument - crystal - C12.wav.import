@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://m081x2h1fmwe"
+path="res://.godot/imported/Retro Instrument - crystal - C12.wav-2f565a76ff3eaaceb531b78420d487e3.sample"
+
+[deps]
+
+source_file="res://assets/weapons/FreeSFX/Instruments/Retro Instrument - crystal - C12.wav"
+dest_files=["res://.godot/imported/Retro Instrument - crystal - C12.wav-2f565a76ff3eaaceb531b78420d487e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
