@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://b8ypy7da0iumc"]
 
-[ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://src/players/player_knight/bullet.webp" id="1"]
+[ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://src/players/ROBIN_HOOD/bullet.webp" id="1"]
 [ext_resource type="Script" path="res://src/enemies/demon_slime/demonslime.gd" id="1_sst8a"]
 [ext_resource type="Texture2D" uid="uid://dj10iq4gtssud" path="res://src/enemies/demon_slime/spritesheets/demon_slime_FREE_v1.0_288x160_spritesheet.png" id="2_0gb5m"]
 [ext_resource type="Shader" path="res://shaders/aura.gdshader" id="3_vwe3b"]

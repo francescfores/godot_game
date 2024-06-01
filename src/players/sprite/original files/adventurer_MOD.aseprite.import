@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dpmvrwjk8atke"
+path="res://.godot/imported/adventurer_MOD.aseprite-0d57e41dbdee4969b54cbe505f395a67.res"
+
+[deps]
+
+source_file="res://src/players/sprite/original files/adventurer_MOD.aseprite"
+dest_files=["res://.godot/imported/adventurer_MOD.aseprite-0d57e41dbdee4969b54cbe505f395a67.res"]
+
+[params]
+

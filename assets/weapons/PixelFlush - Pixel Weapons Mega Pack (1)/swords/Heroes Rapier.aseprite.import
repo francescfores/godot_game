@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dwkuhq5g5snm2"
+path="res://.godot/imported/Heroes Rapier.aseprite-e9ed81fb8a47654db54a13a2fdcafb78.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack (1)/swords/Heroes Rapier.aseprite"
+dest_files=["res://.godot/imported/Heroes Rapier.aseprite-e9ed81fb8a47654db54a13a2fdcafb78.res"]
+
+[params]
+

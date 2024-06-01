@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cgkcd6q6y7gfs"
+path="res://.godot/imported/Steel Bolter.aseprite-fd96a603d453c3ca0da7f51219d6f535.res"
+
+[deps]
+
+source_file="res://assets/weapons/RPG - Bows/Bow-ase/Steel Bolter.aseprite"
+dest_files=["res://.godot/imported/Steel Bolter.aseprite-fd96a603d453c3ca0da7f51219d6f535.res"]
+
+[params]
+

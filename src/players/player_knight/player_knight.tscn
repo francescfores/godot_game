@@ -1,7 +1,7 @@
-[gd_scene load_steps=229 format=3 uid="uid://vh7pmputa7r3"]
+[gd_scene load_steps=231 format=3 uid="uid://vh7pmputa7r3"]
 
 [ext_resource type="Script" path="res://src/players/player_knight/player_knight.gd" id="1_u24k8"]
-[ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/players/player_knight/jump.wav" id="2_arex7"]
+[ext_resource type="AudioStream" uid="uid://sjod173axgwf" path="res://src/players/ROBIN_HOOD/jump.wav" id="2_arex7"]
 [ext_resource type="Texture2D" uid="uid://8g15fmgwiffk" path="res://gui/touch_button_left.webp" id="3_yo5bo"]
 [ext_resource type="Texture2D" uid="uid://p8sqtwjuu3pq" path="res://assets/sprites/Sprite_no_arm.png" id="4_in1t0"]
 [ext_resource type="Texture2D" uid="uid://d3frwb2tyw2r7" path="res://gui/touch_button_right.webp" id="4_tpffl"]
@@ -11,24 +11,25 @@
 [ext_resource type="Shader" path="res://shaders/dropshadow.gdshader" id="7_6aurh"]
 [ext_resource type="Texture2D" uid="uid://dn4so7uay3tee" path="res://assets/vfx/ATTACK FREE/BigSlashV.png" id="7_45bbt"]
 [ext_resource type="FontFile" uid="uid://c7cw2kl16m035" path="res://assets/ui/ThaleahFat.ttf" id="7_r203t"]
-[ext_resource type="Texture2D" uid="uid://b7bd74yj30p2u" path="res://src/players/player_knight/Climb.png" id="7_wq1yr"]
+[ext_resource type="Texture2D" uid="uid://b7bd74yj30p2u" path="res://src/players/ROBIN_HOOD/Climb.png" id="7_wq1yr"]
 [ext_resource type="Texture2D" uid="uid://rhto0fm6h7nx" path="res://assets/vfx/ATTACK FREE/vSlash1.png" id="8_a5b0n"]
-[ext_resource type="Texture2D" uid="uid://dr5nm4j5n3hyg" path="res://src/players/player_knight/crouch_idle.png" id="8_ejf32"]
-[ext_resource type="Texture2D" uid="uid://du0og81fg77aa" path="res://src/players/player_knight/crouch_attacks.png" id="9_8nqjh"]
-[ext_resource type="Texture2D" uid="uid://dt246jvcdblou" path="res://src/players/player_knight/Death.png" id="10_5sue4"]
+[ext_resource type="Texture2D" uid="uid://dr5nm4j5n3hyg" path="res://src/players/ROBIN_HOOD/crouch_idle.png" id="8_ejf32"]
+[ext_resource type="Texture2D" uid="uid://du0og81fg77aa" path="res://src/players/ROBIN_HOOD/crouch_attacks.png" id="9_8nqjh"]
+[ext_resource type="Texture2D" uid="uid://dt246jvcdblou" path="res://src/players/ROBIN_HOOD/Death.png" id="10_5sue4"]
 [ext_resource type="Texture2D" uid="uid://cj5driu5vmqn6" path="res://assets/vfx/ATTACK FREE/Hslash1.png" id="10_y2blw"]
-[ext_resource type="Texture2D" uid="uid://cc1udr35l5drl" path="res://src/players/player_knight/Hurt.png" id="11_fobep"]
-[ext_resource type="Texture2D" uid="uid://dj3v3kgq4vmi5" path="res://src/players/player_knight/Jump.png" id="12_jkoub"]
-[ext_resource type="Texture2D" uid="uid://dc1vyaglslprv" path="res://src/players/player_knight/attack_from_air.png" id="13_cpgyd"]
-[ext_resource type="Texture2D" uid="uid://d0l5d1g0y077b" path="res://src/players/player_knight/Hanging.png" id="14_o5dqh"]
-[ext_resource type="Texture2D" uid="uid://bqf5otuidlrvt" path="res://src/players/player_knight/Health.png" id="15_e23wm"]
-[ext_resource type="Texture2D" uid="uid://ibfgp1dsbcuo" path="res://src/players/player_knight/Idle.png" id="16_2f1y4"]
-[ext_resource type="Texture2D" uid="uid://bok6oiikkkonj" path="res://src/players/player_knight/Attacks.png" id="17_t5jkx"]
-[ext_resource type="Texture2D" uid="uid://v74pppso8k3k" path="res://src/players/player_knight/Pray.png" id="18_pcktm"]
-[ext_resource type="Texture2D" uid="uid://dfo6kkaahtmu4" path="res://src/players/player_knight/Run.png" id="19_uekag"]
-[ext_resource type="Texture2D" uid="uid://cifopb4pq4v1e" path="res://src/players/player_knight/Slide.png" id="20_q0d24"]
+[ext_resource type="Texture2D" uid="uid://cc1udr35l5drl" path="res://src/players/ROBIN_HOOD/Hurt.png" id="11_fobep"]
+[ext_resource type="Texture2D" uid="uid://crvcuoayhc88k" path="res://assets/weapons/arco e flecha-sheet_no_arm.png" id="11_rq1cx"]
+[ext_resource type="Texture2D" uid="uid://dj3v3kgq4vmi5" path="res://src/players/ROBIN_HOOD/Jump.png" id="12_jkoub"]
+[ext_resource type="Texture2D" uid="uid://dc1vyaglslprv" path="res://src/players/ROBIN_HOOD/attack_from_air.png" id="13_cpgyd"]
+[ext_resource type="Texture2D" uid="uid://d0l5d1g0y077b" path="res://src/players/ROBIN_HOOD/Hanging.png" id="14_o5dqh"]
+[ext_resource type="Texture2D" uid="uid://bqf5otuidlrvt" path="res://src/players/ROBIN_HOOD/Health.png" id="15_e23wm"]
+[ext_resource type="Texture2D" uid="uid://ibfgp1dsbcuo" path="res://src/players/ROBIN_HOOD/Idle.png" id="16_2f1y4"]
+[ext_resource type="Texture2D" uid="uid://bok6oiikkkonj" path="res://src/players/ROBIN_HOOD/Attacks.png" id="17_t5jkx"]
+[ext_resource type="Texture2D" uid="uid://v74pppso8k3k" path="res://src/players/ROBIN_HOOD/Pray.png" id="18_pcktm"]
+[ext_resource type="Texture2D" uid="uid://dfo6kkaahtmu4" path="res://src/players/ROBIN_HOOD/Run.png" id="19_uekag"]
+[ext_resource type="Texture2D" uid="uid://cifopb4pq4v1e" path="res://src/players/ROBIN_HOOD/Slide.png" id="20_q0d24"]
 [ext_resource type="Script" path="res://src/player/gun.gd" id="21_o55tq"]
-[ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://src/players/player_knight/shoot.wav" id="22_bv7td"]
+[ext_resource type="AudioStream" uid="uid://b01brytl75mwa" path="res://src/players/ROBIN_HOOD/shoot.wav" id="22_bv7td"]
 [ext_resource type="Shader" path="res://shaders/aura.gdshader" id="23_bv4vj"]
 [ext_resource type="Script" path="res://src/players/player_knight/machine_state.gd" id="25_wrfe3"]
 [ext_resource type="Script" path="res://src/players/player_knight/idle_state.gd" id="26_j8l6t"]
@@ -55,6 +56,7 @@
 [ext_resource type="Script" path="res://src/players/player_knight/roll_state.gd" id="45_n58a2"]
 [ext_resource type="Script" path="res://src/players/player_knight/health_state.gd" id="48_0l8k1"]
 [ext_resource type="Script" path="res://src/players/player_knight/dash_state.gd" id="49_fue0l"]
+[ext_resource type="Script" path="res://src/players/player_knight/bow_state.gd" id="56_5nley"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j7t82"]
 shader = ExtResource("23_bv4vj")
@@ -417,6 +419,155 @@ tracks/27/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(2, 6)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("bows/wow_Sprite2D:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(21.6, 4.4)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("bows/wow_Sprite2D:rotation")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("bows/wow_Sprite2D:frame")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("bows/wow_Sprite2D:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_p1mt0"]
+resource_name = "dash"
+length = 0.2
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sword2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sword2D/CollisionShape2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-8, 15.9), Vector2(24, 4.9), Vector2(24, 4.9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sword2D/CollisionShape2D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.472984, 1.5708, 1.5708]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("bows/wow_Sprite2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14.8, 5.6)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("bows/wow_Sprite2D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("bows/wow_Sprite2D:frame")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.06, 0.09, 0.12, 0.15, 0.18),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("bows/wow_Sprite2D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_jt0qx"]
@@ -1973,59 +2124,6 @@ tracks/0/keys = {
 "values": [314, 315, 316, 317, 323, 324, 325]
 }
 
-[sub_resource type="Animation" id="Animation_p1mt0"]
-resource_name = "dash"
-length = 0.2
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [10, 11, 12, 13]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sword2D/CollisionShape2D:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sword2D/CollisionShape2D:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-8, 15.9), Vector2(24, 4.9), Vector2(24, 4.9)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sword2D/CollisionShape2D:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.472984, 1.5708, 1.5708]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_va7ae"]
 _data = {
 "RESET": SubResource("Animation_xh44k"),
@@ -3171,7 +3269,6 @@ wait_time = 0.3
 one_shot = true
 
 [node name="Sword2D" type="Area2D" parent="Sprite2D"]
-visible = false
 collision_mask = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Sword2D"]
@@ -3238,22 +3335,13 @@ libraries = {
 collision_mask = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Sword2D2"]
+visible = false
 texture_filter = 2
 material = SubResource("ShaderMaterial_8a6ws")
 use_parent_material = true
 position = Vector2(24, 4.9)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_s6hhf")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D/Sword2D2"]
-z_index = -2
-z_as_relative = false
-position = Vector2(-0.799999, -9.2)
-rotation = -1.32732
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_r1ntt")
-hframes = 5
-vframes = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sword2D2"]
 visible = false
@@ -3291,6 +3379,17 @@ rotation = -0.200713
 texture = ExtResource("10_y2blw")
 hframes = 5
 frame = 3
+
+[node name="bows" type="Node2D" parent="Sprite2D"]
+
+[node name="wow_Sprite2D" type="Sprite2D" parent="Sprite2D/bows"]
+z_index = -2
+z_as_relative = false
+position = Vector2(21.6, 4.4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_rq1cx")
+hframes = 3
+vframes = 3
 
 [node name="damage_zone" type="Area2D" parent="."]
 position = Vector2(-12.5, 3.75)
@@ -3347,7 +3446,7 @@ wait_time = 0.1
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(1.90735e-06, -3.8147e-06)
 offset = Vector2(0, 50)
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.8, 0.8)
 limit_left = -7000
 limit_top = -500
 limit_right = 5000
@@ -3431,8 +3530,9 @@ auroa_material = SubResource("ShaderMaterial_amixm")
 current_state = NodePath("spawn_state")
 hurt_state = NodePath("hurt_state")
 death_state = NodePath("death_state")
+action_suffix = null
 
-[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state", "pray_state", "crouch_state", "slide_state", "coyote_timer", "climb_state", "roll_state", "health_state", "dash_state")]
+[node name="ground_state" type="Node" parent="machine_state" node_paths=PackedStringArray("jump_state", "attack_state", "pray_state", "crouch_state", "slide_state", "coyote_timer", "climb_state", "roll_state", "health_state", "dash_state", "bow_state")]
 script = ExtResource("26_j8l6t")
 jump_state = NodePath("../air_state")
 attack_state = NodePath("../attack_state")
@@ -3444,6 +3544,7 @@ climb_state = NodePath("../climb_state")
 roll_state = NodePath("../roll_state")
 health_state = NodePath("../health_state")
 dash_state = NodePath("../dash_state")
+bow_state = NodePath("../bow_state")
 
 [node name="coyote_timer" type="Timer" parent="machine_state/ground_state"]
 wait_time = 0.2
@@ -3557,6 +3658,11 @@ can_move = false
 
 [node name="dash_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
 script = ExtResource("49_fue0l")
+air_state = NodePath("../ground_state")
+can_move = false
+
+[node name="bow_state" type="Node" parent="machine_state" node_paths=PackedStringArray("air_state")]
+script = ExtResource("56_5nley")
 air_state = NodePath("../ground_state")
 can_move = false
 

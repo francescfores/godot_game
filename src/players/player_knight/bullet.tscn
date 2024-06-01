@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://df7ddsoclivwe"]
 
-[ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://src/players/player_knight/bullet.webp" id="1"]
+[ext_resource type="Texture2D" uid="uid://coj0d33vyyqx1" path="res://src/players/ROBIN_HOOD/bullet.webp" id="1"]
 [ext_resource type="Script" path="res://src/players/player_knight/bullet.gd" id="1_vq1tl"]
 
 [sub_resource type="CanvasItemMaterial" id="1"]

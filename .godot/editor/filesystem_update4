@@ -7,7 +7,10 @@ res://shaders/dropshadow.gdshader
 res://shaders/glow.gdshader
 res://shaders/silouette.gdshader
 res://src/scenes/scene_levels/level_2/level_map/level_map.tscn
-res://src/enemies/bringer_death/bringer_death.tscn
 res://src/enemies/demon_slime/demonslime.tscn
 res://src/players/player_knight/player_knight.tscn
-res://src/scenes/scene_levels_list/levels_list.tscn
+res://src/players/player_knight/bullet.tscn
+res://src/players/ROBIN_HOOD/player_hood.tscn
+res://src/players/ROBIN_HOOD/air_state.gd
+res://src/players/player_knight/state.gd
+res://src/players/player_knight/jump_state.gd

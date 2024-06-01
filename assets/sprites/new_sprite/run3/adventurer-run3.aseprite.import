@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://baey3pjmj5gxq"
+path="res://.godot/imported/adventurer-run3.aseprite-d6d3ce999b5eb8e3c54dfc2ea657ae99.res"
+
+[deps]
+
+source_file="res://assets/sprites/new_sprite/run3/adventurer-run3.aseprite"
+dest_files=["res://.godot/imported/adventurer-run3.aseprite-d6d3ce999b5eb8e3c54dfc2ea657ae99.res"]
+
+[params]
+

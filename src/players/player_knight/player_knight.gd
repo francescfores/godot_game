@@ -1,4 +1,4 @@
-class_name PlayerKnight extends CharacterBody2D
+class_name PlayerHood extends CharacterBody2D
 
 @export var machine_state: MachineState
 signal coin_collected()

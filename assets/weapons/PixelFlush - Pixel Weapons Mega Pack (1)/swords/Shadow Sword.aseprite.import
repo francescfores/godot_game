@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dr1i6dxqfpg4b"
+path="res://.godot/imported/Shadow Sword.aseprite-e58834b5ca1cd5a96c509ddd805c1492.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack (1)/swords/Shadow Sword.aseprite"
+dest_files=["res://.godot/imported/Shadow Sword.aseprite-e58834b5ca1cd5a96c509ddd805c1492.res"]
+
+[params]
+

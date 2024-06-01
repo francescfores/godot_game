@@ -726,7 +726,7 @@ script = ExtResource("14_rst5b")
 escena = "3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hangables/next_level7"]
-position = Vector2(-25.7812, 23)
+position = Vector2(-25.7812, 24)
 shape = SubResource("RectangleShape2D_p2foo")
 
 [node name="next_level8" type="Area2D" parent="Hangables"]

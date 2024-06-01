@@ -4,7 +4,7 @@ class_name StateMachine
 
 var WALK_SPEED = 400.0
 var ACCELERATION_SPEED = WALK_SPEED * 12.0
-var JUMP_VELOCITY = -600.0
+var JUMP_VELOCITY = -800.0
 ## Maximum speed at which the player can fall.
 var TERMINAL_VELOCITY = 700
 

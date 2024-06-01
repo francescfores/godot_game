@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cg0ccdynesgws"
+path="res://.godot/imported/adventurer.aseprite-1974cf37cf8a59e3ed9fb311dcc9d854.res"
+
+[deps]
+
+source_file="res://src/players/ROBIN_HOOD/sprite/original files/adventurer.aseprite"
+dest_files=["res://.godot/imported/adventurer.aseprite-1974cf37cf8a59e3ed9fb311dcc9d854.res"]
+
+[params]
+

@@ -474,7 +474,7 @@ vframes = 8
 frame = 19
 
 [node name="Gun" type="Marker2D" parent="Sprite2D"]
-position = Vector2(14, 1)
+position = Vector2(47.75, 1)
 script = ExtResource("8")
 
 [node name="Shoot" type="AudioStreamPlayer2D" parent="Sprite2D/Gun"]

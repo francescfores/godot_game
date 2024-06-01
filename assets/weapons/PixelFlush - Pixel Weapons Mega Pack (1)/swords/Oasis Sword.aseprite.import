@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c1gvrwlygb12r"
+path="res://.godot/imported/Oasis Sword.aseprite-bc831afff3c5a83a992c9ab6cb8e1e0d.res"
+
+[deps]
+
+source_file="res://assets/weapons/PixelFlush - Pixel Weapons Mega Pack (1)/swords/Oasis Sword.aseprite"
+dest_files=["res://.godot/imported/Oasis Sword.aseprite-bc831afff3c5a83a992c9ab6cb8e1e0d.res"]
+
+[params]
+
